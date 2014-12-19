@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <swf path="XP_Earned_Animations.swf">
-	<popup title="" path="test.linkage">
-		<text key = "text_key" path=""></text>
-		<button path="btnCollect" onClick="hidePopup"></button>
+	<popup title="" path="XPEarnedBracket">
+		<property type="text" key = "text_key" path="XPEarnedBracket"></property>
+		<property type="button" path="btnCollect" onClick="hidePopup"></property>
 	</popup>
 </swf>
