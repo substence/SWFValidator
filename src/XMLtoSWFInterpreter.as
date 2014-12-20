@@ -1,23 +1,20 @@
 package
 {
-	import flash.display.DisplayObject;
 	import flash.display.DisplayObjectContainer;
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
-	import flash.system.ApplicationDomain;
-	import flash.xml.XMLNode;
+	
+	import properties.PropertyFactory;
 
-	public class DataDrivenSWF extends Sprite
+	public class XMLtoSWFInterpreter extends Sprite
 	{
 		private var _swf:*;
 		private var _xml:XML;
+		private var _propertyFactory:PropertyFactory;
 		
-		public function DataDrivenSWF(swf:*, xml:XML)
+		public function XMLtoSWFInterpreter(swf:*, xml:XML)
 		{
-			addChild(swf);
-			_xml = xml;
-			_swf = swf;
-			//validatePopups();
+			_propertyFactory = new PropertyFactory();
 		}
 		
 		public function validatePopups():void
@@ -31,7 +28,7 @@ package
 					{
 						var mcClass:Class = _swf.loaderInfo.applicationDomain.getDefinition( path ) as Class;
 						var mc:MovieClip = new mcClass() as MovieClip;
-						validateProperties(mc, popup.properties);
+						validateProperties(mc, popup.property);
 					}
 					else
 					{
@@ -48,11 +45,8 @@ package
 		
 		private function validateProperties(movieclip:DisplayObjectContainer, properties:XMLList):void
 		{
-			for each (var property:* in properties) 
-			{
-				var type:String = properties.@type;
-				trace(type);
-			}
+			_propertyFactory = new PropertyFactory();
+			_propertyFactory.getProperties(movieclip, properties);
 		}
 		
 		private function error(message:String):void

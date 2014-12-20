@@ -64,7 +64,7 @@ package
 			//loader.x = -(200);
 			//loader.y = -(200);
 			//addChild(loader);
-			var swf:DataDrivenSWF = new DataDrivenSWF(event.target.content, _loadedXML);
+			var swf:XMLtoSWFInterpreter = new XMLtoSWFInterpreter(event.target.content, _loadedXML);
 			addChild(swf);
 			swf.validatePopups();		
 		}
