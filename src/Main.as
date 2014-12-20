@@ -19,9 +19,11 @@ package
 	{
 		private var _loadedXML:XML;
 		private var _loadedSWF:*;
+		private var _interpeter:XMLtoSWFInterpreter;
 		
 		public function Main()
 		{
+			_interpeter = new XMLtoSWFInterpreter();
 			loadXML("TestXML.xml");
 		}
 		
@@ -49,31 +51,13 @@ package
 			var ldrContext:LoaderContext = new LoaderContext(false, ApplicationDomain.currentDomain); 
 			ldr.contentLoaderInfo.addEventListener(Event.COMPLETE, completeHandler); 
 			ldr.load(req, ldrContext);  			//loader.addEventListener(Event.COMPLETE, loadedSWF);		
-			//loader.load(new URLRequest(url));
-			//loader.x = -(200);
-			//loader.y = -(200);
-			//addChild(loader);
-			//var swf:DataDrivenSWF = new DataDrivenSWF(loader, _loadedXML);
-			//addChild(swf);
-			//swf.validatePopups();
 		}
 		
 		protected function completeHandler(event:Event):void
 		{
-			// TODO Auto-generated method stub
-			//loader.x = -(200);
-			//loader.y = -(200);
-			//addChild(loader);
-			var swf:XMLtoSWFInterpreter = new XMLtoSWFInterpreter(event.target.content, _loadedXML);
-			addChild(swf);
-			swf.validatePopups();		
-		}
-		
-		protected function loadedSWF(event:Event):void
-		{
-			// TODO Auto-generated method stub
-			trace();
-			addChild(event.target.data);
+			_loadedSWF = event.target.content;
+			addChild(_loadedSWF);
+			_interpeter.getPopups(_loadedSWF, _loadedXML);		
 		}
 	}
 }

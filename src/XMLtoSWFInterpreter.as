@@ -4,31 +4,34 @@ package
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	
+	import properties.Property;
 	import properties.PropertyFactory;
 
 	public class XMLtoSWFInterpreter extends Sprite
 	{
-		private var _swf:*;
-		private var _xml:XML;
 		private var _propertyFactory:PropertyFactory;
 		
-		public function XMLtoSWFInterpreter(swf:*, xml:XML)
+		public function XMLtoSWFInterpreter()
 		{
 			_propertyFactory = new PropertyFactory();
 		}
 		
-		public function validatePopups():void
+		public function getPopups(swf:MovieClip, xml:XML):void
 		{
-			for each (var popup:XML in _xml.popup) 
+			var popups:Vector.<XMLtoPopup> = new Vector.<XMLtoPopup>();
+			for each (var popupXML:XML in xml.popup) 
 			{
-				var path:String = popup.@path;
+				var path:String = popupXML.@path;
 				if (path)
 				{
-					if (MovieClip(_swf).loaderInfo.applicationDomain.hasDefinition(path))//_swf.contentLoaderInfo.applicationDomain.hasDefinition(path))
+					if (swf.loaderInfo.applicationDomain.hasDefinition(path))
 					{
-						var mcClass:Class = _swf.loaderInfo.applicationDomain.getDefinition( path ) as Class;
+						var mcClass:Class = swf.loaderInfo.applicationDomain.getDefinition( path ) as Class;
 						var mc:MovieClip = new mcClass() as MovieClip;
-						validateProperties(mc, popup.property);
+						var properties:Vector.<Property> = _propertyFactory.getProperties(mc, popupXML.property);
+						var name:String = popupXML.@name ? popupXML.@name : path;
+						var popup:XMLtoPopup = new XMLtoPopup(name, properties);
+						popups.push(popup);
 					}
 					else
 					{
@@ -41,12 +44,6 @@ package
 					return;
 				}
 			}			
-		}
-		
-		private function validateProperties(movieclip:DisplayObjectContainer, properties:XMLList):void
-		{
-			_propertyFactory = new PropertyFactory();
-			_propertyFactory.getProperties(movieclip, properties);
 		}
 		
 		private function error(message:String):void
