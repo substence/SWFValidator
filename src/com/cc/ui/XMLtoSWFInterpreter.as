@@ -1,11 +1,11 @@
-package
+package com.cc.ui
 {
 	import flash.display.DisplayObjectContainer;
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	
-	import properties.Property;
-	import properties.PropertyFactory;
+	import com.cc.ui.properties.Property;
+	import com.cc.ui.properties.PropertyFactory;
 
 	public class XMLtoSWFInterpreter extends Sprite
 	{

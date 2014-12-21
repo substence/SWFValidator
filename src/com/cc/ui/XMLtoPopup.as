@@ -1,6 +1,6 @@
-package
+package com.cc.ui
 {
-	import properties.Property;
+	import com.cc.ui.properties.Property;
 
 	public class XMLtoPopup
 	{
@@ -22,6 +22,5 @@ package
 		{
 			return _properties;
 		}
-
 	}
 }

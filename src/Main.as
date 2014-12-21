@@ -12,6 +12,7 @@ package
 	import flash.system.LoaderContext;
 	
 	import org.osmf.elements.SWFLoader;
+	import com.cc.ui.XMLtoSWFInterpreter;
 	
 	[SWF(backgroundColor="0x333333", width="760" , height="750", frameRate="40")]
 	

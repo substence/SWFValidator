@@ -1,7 +1,8 @@
-package properties
+package com.cc.ui.properties
 {
 	import flash.display.DisplayObject;
 	import flash.display.DisplayObjectContainer;
+	import com.cc.utils.GraphicUtils;
 	
 	public class Property
 	{

@@ -1,4 +1,4 @@
-package properties
+package com.cc.ui.properties
 {
 	import flash.display.DisplayObjectContainer;
 	import flash.utils.Dictionary;

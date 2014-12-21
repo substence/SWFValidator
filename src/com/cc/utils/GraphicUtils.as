@@ -1,4 +1,4 @@
-package
+package com.cc.utils
 {
 	import flash.display.DisplayObject;
 	import flash.display.DisplayObjectContainer;
