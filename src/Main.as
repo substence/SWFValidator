@@ -1,5 +1,7 @@
 package
 {
+	import com.cc.ui.XMLtoSWFInterpreter;
+	
 	import flash.display.Loader;
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
@@ -12,20 +14,27 @@ package
 	import flash.system.LoaderContext;
 	
 	import org.osmf.elements.SWFLoader;
-	import com.cc.ui.XMLtoSWFInterpreter;
 	
-	[SWF(backgroundColor="0x333333", width="760" , height="750", frameRate="40")]
+	[SWF(backgroundColor="0xFFFFFF", width="760" , height="750", frameRate="40")]
 	
 	public class Main extends Sprite
 	{
 		private var _loadedXML:XML;
 		private var _loadedSWF:*;
 		private var _interpeter:XMLtoSWFInterpreter;
+		private var _view:XMLValidatorView;
 		
 		public function Main()
 		{
 			_interpeter = new XMLtoSWFInterpreter();
-			loadXML("TestXML.xml");
+			_view = new XMLValidatorView();
+			_view.addEventListener(Event.CHANGE, updatedViewInfo);
+			addChild(_view);
+		}
+		
+		protected function updatedViewInfo(event:Event):void
+		{
+			loadXML(_view.xmlPath);
 		}
 		
 		private function loadXML(url:String):void
@@ -57,7 +66,7 @@ package
 		protected function completeHandler(event:Event):void
 		{
 			_loadedSWF = event.target.content;
-			addChild(_loadedSWF);
+			//addChild(_loadedSWF);
 			_interpeter.getPopups(_loadedSWF, _loadedXML);		
 		}
 	}
