@@ -1,9 +1,11 @@
 package com.cc.ui.properties
 {
 	import flash.display.DisplayObjectContainer;
+	import flash.events.ErrorEvent;
+	import flash.events.EventDispatcher;
 	import flash.utils.Dictionary;
 
-	public class PropertyFactory
+	public class PropertyFactory extends EventDispatcher
 	{
 		private var _propertyTypes:Dictionary;
 		
@@ -28,13 +30,13 @@ package com.cc.ui.properties
 					var error:Error = property.validate(movieclip, propertyXML);
 					if (error)
 					{
-						error;
+						dispatchError(error.message);
 					}
 					finalProperties.push(property);
 				}
 				else
 				{
-					new Error("unknown property type " + typeString);
+					dispatchError("Unknown property type '" + typeString + "'");
 				}
 			}
 			return finalProperties;
@@ -43,6 +45,11 @@ package com.cc.ui.properties
 		private function getTypeFromTypeString(typeString:String):Class
 		{
 			return _propertyTypes[typeString];
+		}
+		
+		private function dispatchError(message:String):void
+		{
+			dispatchEvent(new ErrorEvent(ErrorEvent.ERROR,false, false, message));
 		}
 	}
 }

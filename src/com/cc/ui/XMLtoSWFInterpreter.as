@@ -1,11 +1,13 @@
 package com.cc.ui
 {
+	import com.cc.ui.properties.Property;
+	import com.cc.ui.properties.PropertyFactory;
+	
 	import flash.display.DisplayObjectContainer;
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
-	
-	import com.cc.ui.properties.Property;
-	import com.cc.ui.properties.PropertyFactory;
+	import flash.events.ErrorEvent;
+	import flash.events.Event;
 
 	public class XMLtoSWFInterpreter extends Sprite
 	{
@@ -14,6 +16,12 @@ package com.cc.ui
 		public function XMLtoSWFInterpreter()
 		{
 			_propertyFactory = new PropertyFactory();
+			_propertyFactory.addEventListener(ErrorEvent.ERROR, caughtPropertyError);
+		}
+		
+		protected function caughtPropertyError(event:ErrorEvent):void
+		{
+			error(event.text);
 		}
 		
 		public function getPopups(swf:MovieClip, xml:XML):void
@@ -30,17 +38,17 @@ package com.cc.ui
 						var mc:MovieClip = new mcClass() as MovieClip;
 						var properties:Vector.<Property> = _propertyFactory.getProperties(mc, popupXML.property);
 						var name:String = popupXML.@name ? popupXML.@name : path;
-						var popup:XMLtoPopup = new XMLtoPopup(name, properties);
+						var popup:XMLtoPopup = new XMLtoPopup(name);
 						popups.push(popup);
 					}
 					else
 					{
-						error("popup has an invalid linkage name");
+						error("Popup(" + popupXML.@name + ") could not find '" + path + "' in the library");
 					}
 				}
 				else
 				{
-					error("no popup linkage name");
+					error("Popup(" + popupXML.@name + ") has no path.");
 					return;
 				}
 			}			
@@ -48,7 +56,7 @@ package com.cc.ui
 		
 		private function error(message:String):void
 		{
-			
+			dispatchEvent(new ErrorEvent(ErrorEvent.ERROR,false, false, message));
 		}
 	}
 }

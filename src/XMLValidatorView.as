@@ -9,27 +9,33 @@ package
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
 	import flash.text.TextFieldType;
-	import flash.text.TextFormat;
 
 	public class XMLValidatorView extends Sprite
 	{
-		private var _actionButton:Shape;
+		private var _actionButton:Button;
 		private var _swfTextfield:TextField;
 		private var _xmlTextfield:TextField;
+		private var _defaultXMLPath:String;
+		private var _outputText:TextField;
 		
 		public function XMLValidatorView()
 		{
-			addChild(_xmlTextfield = getInputTextfield("TestXML.xml"));
+			addChild(_xmlTextfield = getInputTextfield());
 			
-			addChild(_swfTextfield = getInputTextfield("Enter SWF name"));
+			addChild(_swfTextfield = getInputTextfield());
 			
-			_actionButton = new Shape();
-			_actionButton.graphics.beginFill(0xFF0000);
-			_actionButton.graphics.drawRect(0,0,100,20);
+			_actionButton = new Button();
+			_actionButton.label = "Submit";
+			_actionButton.buttonMode = true;
 			_actionButton.addEventListener(MouseEvent.CLICK, clickedSubmit);
 			addChild(_actionButton);
 			
-			init();
+			_outputText = new TextField();
+			_outputText.multiline = true;
+			_outputText.wordWrap = true;
+			addChild(_outputText);
+			
+			addEventListener(Event.ADDED_TO_STAGE, addedToStage);
 		}
 		
 		protected function clickedSubmit(event:Event):void
@@ -48,15 +54,31 @@ package
 			return inputTextfield;
 		}
 		
-		private function init():void
+		private function addedToStage(event:Event):void
 		{
 			_swfTextfield.y = _xmlTextfield.height;
 			_actionButton.y = _swfTextfield.y + _swfTextfield.height;
+			_outputText.y = _actionButton.y + _actionButton.height;
+			_outputText.width = this.stage.stageWidth;
 		}
 		
 		public function get xmlPath():String
 		{
 			return _xmlTextfield.text;
+		}
+		
+		public function set defaultXMLPath(value:String):void
+		{
+			_defaultXMLPath = value;
+			if (!_xmlTextfield.text)
+			{
+				_xmlTextfield.text = _defaultXMLPath;
+			}
+		}
+		
+		public function set output(value:String):void
+		{
+			_outputText.text = value;
 		}
 	}
 }

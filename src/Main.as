@@ -6,6 +6,7 @@ package
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.errors.IOError;
+	import flash.events.ErrorEvent;
 	import flash.events.Event;
 	import flash.events.IOErrorEvent;
 	import flash.net.URLLoader;
@@ -19,6 +20,7 @@ package
 	
 	public class Main extends Sprite
 	{
+		private static const _DEFAULT_XML:String = "TestXML.xml";
 		private var _loadedXML:XML;
 		private var _loadedSWF:*;
 		private var _interpeter:XMLtoSWFInterpreter;
@@ -27,9 +29,16 @@ package
 		public function Main()
 		{
 			_interpeter = new XMLtoSWFInterpreter();
+			_interpeter.addEventListener(ErrorEvent.ERROR, onInterpeterError);
 			_view = new XMLValidatorView();
+			_view.defaultXMLPath = _DEFAULT_XML;
 			_view.addEventListener(Event.CHANGE, updatedViewInfo);
 			addChild(_view);
+		}
+		
+		protected function onInterpeterError(event:ErrorEvent):void
+		{
+			showOutput(event.text);
 		}
 		
 		protected function updatedViewInfo(event:Event):void
@@ -41,7 +50,13 @@ package
 		{
 			var loader:URLLoader = new URLLoader();
 			loader.addEventListener(Event.COMPLETE, loadedXML);
+			loader.addEventListener(IOErrorEvent.IO_ERROR, onLoadError);
 			loader.load(new URLRequest(url));
+		}
+		
+		protected function onLoadError(event:IOErrorEvent):void
+		{
+			showOutput(event.text);
 		}
 		
 		protected function loadedXML(event:Event):void
@@ -56,18 +71,23 @@ package
 		
 		private function loadSWF(url:String):void
 		{
-			var ldr:Loader = new Loader(); 
-			var req:URLRequest = new URLRequest(url); 
-			var ldrContext:LoaderContext = new LoaderContext(false, ApplicationDomain.currentDomain); 
-			ldr.contentLoaderInfo.addEventListener(Event.COMPLETE, completeHandler); 
-			ldr.load(req, ldrContext);  			//loader.addEventListener(Event.COMPLETE, loadedSWF);		
+			var loader:Loader = new Loader(); 
+			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, completeHandler); 
+			loader.addEventListener(IOErrorEvent.IO_ERROR, onLoadError);
+			loader.load(new URLRequest(url), new LoaderContext(false, ApplicationDomain.currentDomain));		
 		}
 		
 		protected function completeHandler(event:Event):void
 		{
 			_loadedSWF = event.target.content;
-			//addChild(_loadedSWF);
-			_interpeter.getPopups(_loadedSWF, _loadedXML);		
+			addChild(_loadedSWF);
+			_interpeter.getPopups(_loadedSWF, _loadedXML);
+			//showOutput("Success!");
+		}
+		
+		private function showOutput(message:String):void
+		{
+			_view.output = message + "\n";
 		}
 	}
 }

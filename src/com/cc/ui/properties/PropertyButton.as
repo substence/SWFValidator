@@ -15,7 +15,7 @@ package com.cc.ui.properties
 				button = _property as UIButton;
 				if (!button)
 				{
-					return new Error("poperty is not a valid button");
+					return new Error("Property is not a valid button");
 				}
 				onClickScript = xml.@onClick
 			}
