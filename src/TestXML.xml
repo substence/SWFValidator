@@ -2,6 +2,6 @@
 <swf path="XP_Earned_Animations.swf">
 	<popup title="" path="XPEarnedBracket">
 		<property type="text"	path="btnCollect.bBuild.label"	key="text_key"></property>
-		<property type="button"	path="btnCollect" 			onClick="hidePopup"></property>
+		<property type="button"	path="btnCollect" 				onClick="hidePopup"></property>
 	</popup>
 </swf>
