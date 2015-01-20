@@ -1,0 +1,36 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Deposit Glow/map_ring_purple" itemID="52b0bd20-000004af" symbolType="graphic" lastModified="1387325051">
+  <timeline>
+    <DOMTimeline name="map_ring_purple">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="2">
+                        <fill>
+                          <SolidColor color="#D270FF"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="1" edges="!1033 -317S4/1033 327!1033 327/8 656!8 656/-1000 334!-1000 334/-1000 -314!-1000 -314/4 -640!4 -640/1033 -317"/>
+                    <Edge cubics="!-1000 -314(;-1000,-314 -1000,334 -1000,334q-1000 -314 -1000 334);"/>
+                    <Edge cubics="!1033 -317(;1033,-317 1033,327 1033,327q1033 -317 1033 327);"/>
+                    <Edge cubics="!8 656(;8,656 1033,327 1033,327q8 656 1033 327);"/>
+                    <Edge cubics="!4 -640(;4,-640 1033,-317 1033,-317q4 -640 1033 -317);"/>
+                    <Edge cubics="!-1000 334(;-1000,334 8,656 8,656q-1000 334 8 656);"/>
+                    <Edge cubics="!-1000 -314(;-1000,-314 4,-640 4,-640q-1000 -314 4 -640);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

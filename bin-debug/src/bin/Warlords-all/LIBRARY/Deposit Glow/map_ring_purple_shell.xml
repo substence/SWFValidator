@@ -1,0 +1,51 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Deposit Glow/map_ring_purple_shell" itemID="52b0bd12-000004a9" symbolType="graphic" lastModified="1387314617">
+  <timeline>
+    <DOMTimeline name="map_ring_purple_shell" currentFrame="79">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="11" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Deposit Glow/map_ring_purple" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point x="40" y="25"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="68" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Deposit Glow/map_ring_purple" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix a="0.97930908203125" d="0.97930908203125" ty="-2.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="40" y="25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="79" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Deposit Glow/map_ring_blue" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix a="0.850006103515625" d="0.850006103515625" ty="-21.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="40" y="24.8"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,696 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Operations/General/WC_BonusXPEarned_Anim" itemID="515617cd-000003a7" linkageExportForAS="true" linkageClassName="Bonus_XP_Anim" lastModified="1369959046" lastUniqueIdentifier="16">
+  <timeline>
+    <DOMTimeline name="WC_BonusXPEarned_Anim">
+      <layers>
+        <DOMLayer name="Action" color="#4FFF4F" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="84" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="84" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Sheen Mask" color="#9933CC" locked="true" autoNamed="false" layerType="mask">
+          <frames>
+            <DOMFrame index="0" duration="39" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="39" duration="46" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#00FF00"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!1268 -2840|1268 -1609!1268 -1609|537 -1351!537 -1351|-31 -1553!-31 -1553|-1001 -1212!-1001 -1212|-1001 -726!-1001 -726|-31 -385!-31 -385|1268 -844!1268 -844|1268 -485!1268 -485|-31 -29!-31 -29|-1329 -485!-1329 -485|-1329 -1452!-1329
+ -1452|-31 -1909!-31 -1909|537 -1710!537 -1710|940 -1852!940 -1852|940 -2570!940 -2570|1268 -2840!1268 -1090|619 -1322!619 -1322|1127 -1502!1127 -1502|1268 -1452!1268 -1452|1268 -1090!306 -1066|97 -907!97 -907|174 -652!174 -652|-41 -808
+!-41 -808|-250 -652!-250 -652|-173 -907!-173 -907|-382 -1066!-382 -1066|-122 -1070!-122 -1070|-41 -1325!-41 -1325|44 -1070!44 -1070|306 -1066"/>
+                    <Edge fillStyle0="1" edges="
+!1704 -45|-29 555!-29 555|-1777 -64!-1777 -64|-1777 -3259!-1777 -3259|1704 -3259!1704 -3259|1704 -45!6766 714|5414 714!5414 714|5414 2051!5414 2051|6771 2054!6771 2054|7000 1797!7000 1797|7000 976!7000 976|6766 714!6625 1747|5786 1747
+!5786 1747|5786 1018!5786 1018|6625 1018!6625 1018|6625 1747!5241 1250|4188 1250!4188 1250|4188 1018!4188 1018|5241 1018!5241 1018|5241 714!5241 714|4050 714!4050 714|3816 976!3816 976|3816 1797!3816 1797|4045 2054!4045 2054|5241 2054
+!5241 2054|5241 1750!5241 1750|4188 1750!4188 1750|4188 1554!4188 1554|5241 1554!5241 1554|5241 1250!3291 714|3291 1616!3291 1616|2459 714!2459 714|2097 714!2097 714|2097 2051!2097 2051|2471 2051!2471 2051|2471 1149!2471 1149|3306 2051
+!3306 2051|3665 2051!3665 2051|3665 714!3665 714|3291 714!1680 714|353 714!353 714|353 2054!353 2054|727 2054!727 2054|727 1619!727 1619|1381 1619!1381 1619|1582 2054!1582 2054|1926 2054!1926 2054|1712 1601!1712 1601|1901 1390!1901 1390
+|1901 963!1901 963|1680 714!727 1018|1529 1018!1529 1018|1529 1315!1529 1315|727 1315!727 1315|727 1018"/>
+                    <Edge fillStyle1="1" edges="
+!1804 42|-50 667!-50 667|-1878 45!-1878 45|-1877 -3369!-1877 -3369|1804 -3369!1804 -3369|1804 42!-1001 -2570|-1001 -1852!-1001 -1852|-680 -1740!-680 -1740|-1186 -1562!-1186 -1562|-1329 -1609!-1329 -1609|-1329 -2840!-1329 -2840|-1001 -2570"/>
+                    <Edge fillStyle0="1" edges="
+!-1617 1250|-2670 1250!-2670 1250|-2670 1018!-2670 1018|-1617 1018!-1617 1018|-1617 714!-1617 714|-2811 714!-2811 714|-3045 976!-3045 976|-3045 1797!-3045 1797|-2816 2054!-2816 2054|-1617 2054!-1617 2054|-1617 1750!-1617 1750|-2670 1750
+!-2670 1750|-2670 1554!-2670 1554|-1617 1554!-1617 1554|-1617 1250!-361 1513|-896 1513!-896 1513|-630 1061!-630 1061|-361 1513!-836 714|-1600 2051!-1600 2051|-1200 2051!-1200 2051|-1062 1817!-1062 1817|-198 1817!-198 1817|-57 2051!-57
+ 2051|343 2051!343 2051|-421 714!-421 714|-836 714!-3927 714|-5251 714!-5251 714|-5251 2054!-5251 2054|-4879 2054!-4879 2054|-4879 1619!-4879 1619|-3924 1619!-3924 1619|-3703 1390!-3703 1390|-3703 963!-3703 963|-3927 714!-4078 1315|-4879
+ 1315!-4879 1315|-4879 1018!-4879 1018|-4078 1018!-4078 1018|-4078 1315!-6226 1141|-6601 714!-6601 714|-7015 714!-7015 714|-7023 727!-7023 727|-6435 1380!-6435 1380|-7023 2051!-7023 2051|-6623 2051!-6623 2051|-6231 1609!-6231 1609|-5834
+ 2051!-5834 2051|-5435 2051!-5435 2051|-6025 1375!-6025 1375|-5442 714!-5442 714|-5854 714!-5854 714|-6226 1141"/>
+                    <Edge cubics="!-5442 714(;-5442,714 -5854,714 -5854,714q-5442 714 -5854 714);"/>
+                    <Edge cubics="!-5854 714(;-5854,714 -6226,1141 -6226,1141q-5854 714 -6226 1141);"/>
+                    <Edge cubics="!-6435 1380(;-6435,1380 -7023,2051 -7023,2051q-6435 1380 -7023 2051);"/>
+                    <Edge cubics="!-7023 2051(;-7023,2051 -6623,2051 -6623,2051q-7023 2051 -6623 2051);"/>
+                    <Edge cubics="!-6623 2051(;-6457,1863 -6339,1729 -6231,1609q-6623 2051 -6231 1609);"/>
+                    <Edge cubics="!-6025 1375(;-5887,1217 -5739,1049 -5442,714q-6025 1375 -5442 714);"/>
+                    <Edge cubics="!-5834 2051(;-5834,2051 -5435,2051 -5435,2051q-5834 2051 -5435 2051);"/>
+                    <Edge cubics="!-5435 2051(;-5435,2051 -6025,1375 -6025,1375q-5435 2051 -6025 1375);"/>
+                    <Edge cubics="!-6226 1141(;-6226,1141 -6601,714 -6601,714q-6226 1141 -6601 714);"/>
+                    <Edge cubics="!-6601 714(;-6601,714 -7015,714 -7015,714q-6601 714 -7015 714);"/>
+                    <Edge cubics="!-7015 714(;-7015,714 -7023,727 -7023,727q-7015 714 -7023 727);"/>
+                    <Edge cubics="!-7023 727(;-6721,1061 -6576,1224 -6435,1380q-7023 727 -6435 1380);"/>
+                    <Edge cubics="!-6231 1609(;-6123,1732 -6003,1865 -5834,2051q-6231 1609 -5834 2051);"/>
+                    <Edge cubics="!-4078 1018(;-4078,1018 -4078,1315 -4078,1315q-4078 1018 -4078 1315);"/>
+                    <Edge cubics="!-4078 1315(;-4078,1315 -4879,1315 -4879,1315q-4078 1315 -4879 1315);"/>
+                    <Edge cubics="!-4879 1315(;-4879,1315 -4879,1018 -4879,1018q-4879 1315 -4879 1018);"/>
+                    <Edge cubics="!-4879 1018(;-4879,1018 -4078,1018 -4078,1018q-4879 1018 -4078 1018);"/>
+                    <Edge cubics="!-3703 1390(;-3703,1390 -3703,963 -3703,963q-3703 1390 -3703 963);"/>
+                    <Edge cubics="!-3703 963(;-3703,963 -3927,714 -3927,714q-3703 963 -3927 714);"/>
+                    <Edge cubics="!-5251 714(;-5251,714 -5251,2054 -5251,2054q-5251 714 -5251 2054);"/>
+                    <Edge cubics="!-5251 2054(;-5251,2054 -4879,2054 -4879,2054q-5251 2054 -4879 2054);"/>
+                    <Edge cubics="!-4879 2054(;-4879,2054 -4879,1619 -4879,1619q-4879 2054 -4879 1619);"/>
+                    <Edge cubics="!-3924 1619(;-3814,1503 -3814,1503 -3703,1390q-3924 1619 -3703 1390);"/>
+                    <Edge cubics="!-361 1513(;-361,1513 -896,1513 -896,1513q-361 1513 -896 1513);"/>
+                    <Edge cubics="!-896 1513(;-896,1513 -630,1061 -630,1061q-896 1513 -630 1061);"/>
+                    <Edge cubics="!-630 1061(;-630,1061 -361,1513 -361,1513q-630 1061 -361 1513);"/>
+                    <Edge cubics="!-1600 2051(;-1600,2051 -1200,2051 -1200,2051q-1600 2051 -1200 2051);"/>
+                    <Edge cubics="!-1200 2051(;-1200,2051 -1062,1817 -1062,1817q-1200 2051 -1062 1817);"/>
+                    <Edge cubics="!-1062 1817(;-1062,1817 -198,1817 -198,1817q-1062 1817 -198 1817);"/>
+                    <Edge cubics="!-198 1817(;-198,1817 -57,2051 -57,2051q-198 1817 -57 2051);"/>
+                    <Edge cubics="!-57 2051(;-57,2051 343,2051 343,2051q-57 2051 343 2051);"/>
+                    <Edge cubics="!-3045 976(;-3045,976 -3045,1797 -3045,1797q-3045 976 -3045 1797);"/>
+                    <Edge cubics="!-3045 1797(;-3045,1797 -2816,2054 -2816,2054q-3045 1797 -2816 2054);"/>
+                    <Edge cubics="!-2816 2054(;-2816,2054 -1617,2054 -1617,2054q-2816 2054 -1617 2054);"/>
+                    <Edge cubics="!-1617 2054(;-1617,2054 -1617,1750 -1617,1750q-1617 2054 -1617 1750);"/>
+                    <Edge cubics="!-1617 1750(;-1617,1750 -2670,1750 -2670,1750q-1617 1750 -2670 1750);"/>
+                    <Edge cubics="!-2670 1750(;-2670,1750 -2670,1554 -2670,1554q-2670 1750 -2670 1554);"/>
+                    <Edge cubics="!-2670 1554(;-2670,1554 -1617,1554 -1617,1554q-2670 1554 -1617 1554);"/>
+                    <Edge cubics="!-1617 1554(;-1617,1554 -1617,1250 -1617,1250q-1617 1554 -1617 1250);"/>
+                    <Edge cubics="!-2670 1250(;-2670,1250 -2670,1018 -2670,1018q-2670 1250 -2670 1018);"/>
+                    <Edge cubics="!-2670 1018(;-2670,1018 -1617,1018 -1617,1018q-2670 1018 -1617 1018);"/>
+                    <Edge cubics="!-1617 1018(;-1617,1018 -1617,714 -1617,714q-1617 1018 -1617 714);"/>
+                    <Edge cubics="!-1617 714(;-1617,714 -2811,714 -2811,714q-1617 714 -2811 714);"/>
+                    <Edge cubics="!-2811 714(;-2811,714 -3045,976 -3045,976q-2811 714 -3045 976);"/>
+                    <Edge cubics="!-3927 714(;-3927,714 -5251,714 -5251,714q-3927 714 -5251 714);"/>
+                    <Edge cubics="!-4879 1619(;-4879,1619 -3924,1619 -3924,1619q-4879 1619 -3924 1619);"/>
+                    <Edge cubics="!2459 714(;2459,714 2097,714 2097,714q2459 714 2097 714);"/>
+                    <Edge cubics="!2097 714(;2097,714 2097,2051 2097,2051q2097 714 2097 2051);"/>
+                    <Edge cubics="!2097 2051(;2097,2051 2471,2051 2471,2051q2097 2051 2471 2051);"/>
+                    <Edge cubics="!2471 2051(;2471,2051 2471,1149 2471,1149q2471 2051 2471 1149);"/>
+                    <Edge cubics="!3306 2051(;3306,2051 3665,2051 3665,2051q3306 2051 3665 2051);"/>
+                    <Edge cubics="!3665 2051(;3665,2051 3665,714 3665,714q3665 2051 3665 714);"/>
+                    <Edge cubics="!3665 714(;3665,714 3291,714 3291,714q3665 714 3291 714);"/>
+                    <Edge cubics="!3291 714(;3291,714 3291,1616 3291,1616q3291 714 3291 1616);"/>
+                    <Edge cubics="!3291 1616(;3291,1616 2459,714 2459,714q3291 1616 2459 714);"/>
+                    <Edge cubics="!2471 1149(;2471,1149 3306,2051 3306,2051q2471 1149 3306 2051);"/>
+                    <Edge cubics="!3816 976(;3816,976 3816,1797 3816,1797q3816 976 3816 1797);"/>
+                    <Edge cubics="!3816 1797(;3816,1797 4045,2054 4045,2054q3816 1797 4045 2054);"/>
+                    <Edge cubics="!4045 2054(;4045,2054 5241,2054 5241,2054q4045 2054 5241 2054);"/>
+                    <Edge cubics="!5241 2054(;5241,2054 5241,1750 5241,1750q5241 2054 5241 1750);"/>
+                    <Edge cubics="!5241 1750(;5241,1750 4188,1750 4188,1750q5241 1750 4188 1750);"/>
+                    <Edge cubics="!4188 1750(;4188,1750 4188,1554 4188,1554q4188 1750 4188 1554);"/>
+                    <Edge cubics="!4188 1554(;4188,1554 5241,1554 5241,1554q4188 1554 5241 1554);"/>
+                    <Edge cubics="!5241 1554(;5241,1554 5241,1250 5241,1250q5241 1554 5241 1250);"/>
+                    <Edge cubics="!5241 1250(;5241,1250 4188,1250 4188,1250q5241 1250 4188 1250);"/>
+                    <Edge cubics="!4188 1250(;4188,1250 4188,1018 4188,1018q4188 1250 4188 1018);"/>
+                    <Edge cubics="!4188 1018(;4188,1018 5241,1018 5241,1018q4188 1018 5241 1018);"/>
+                    <Edge cubics="!5241 1018(;5241,1018 5241,714 5241,714q5241 1018 5241 714);"/>
+                    <Edge cubics="!5241 714(;5241,714 4050,714 4050,714q5241 714 4050 714);"/>
+                    <Edge cubics="!4050 714(;4050,714 3816,976 3816,976q4050 714 3816 976);"/>
+                    <Edge cubics="!6625 1018(;6625,1018 6625,1747 6625,1747q6625 1018 6625 1747);"/>
+                    <Edge cubics="!6625 1747(;6625,1747 5786,1747 5786,1747q6625 1747 5786 1747);"/>
+                    <Edge cubics="!5786 1747(;5786,1747 5786,1018 5786,1018q5786 1747 5786 1018);"/>
+                    <Edge cubics="!5786 1018(;5786,1018 6625,1018 6625,1018q5786 1018 6625 1018);"/>
+                    <Edge cubics="!5414 714(;5414,714 5414,2051 5414,2051q5414 714 5414 2051);"/>
+                    <Edge cubics="!5414 2051(;5414,2051 6771,2054 6771,2054q5414 2051 6771 2054);"/>
+                    <Edge cubics="!6771 2054(;6771,2054 7000,1797 7000,1797q6771 2054 7000 1797);"/>
+                    <Edge cubics="!7000 1797(;7000,1797 7000,976 7000,976q7000 1797 7000 976);"/>
+                    <Edge cubics="!7000 976(;7000,976 6766,714 6766,714q7000 976 6766 714);"/>
+                    <Edge cubics="!6766 714(;6766,714 5414,714 5414,714q6766 714 5414 714);"/>
+                    <Edge cubics="!1529 1018(;1529,1018 1529,1315 1529,1315q1529 1018 1529 1315);"/>
+                    <Edge cubics="!1529 1315(;1529,1315 727,1315 727,1315q1529 1315 727 1315);"/>
+                    <Edge cubics="!727 1315(;727,1315 727,1018 727,1018q727 1315 727 1018);"/>
+                    <Edge cubics="!1712 1601(;1712,1601 1901,1390 1901,1390q1712 1601 1901 1390);"/>
+                    <Edge cubics="!1901 1390(;1901,1390 1901,963 1901,963q1901 1390 1901 963);"/>
+                    <Edge cubics="!1901 963(;1901,963 1680,714 1680,714q1901 963 1680 714);"/>
+                    <Edge cubics="!353 2054(;353,2054 727,2054 727,2054q353 2054 727 2054);"/>
+                    <Edge cubics="!727 2054(;727,2054 727,1619 727,1619q727 2054 727 1619);"/>
+                    <Edge cubics="!727 1619(;727,1619 1381,1619 1381,1619q727 1619 1381 1619);"/>
+                    <Edge cubics="!1381 1619(;1381,1619 1582,2054 1582,2054q1381 1619 1582 2054);"/>
+                    <Edge cubics="!1582 2054(;1582,2054 1926,2054 1926,2054q1582 2054 1926 2054);"/>
+                    <Edge cubics="!1926 2054(;1926,2054 1712,1601 1712,1601q1926 2054 1712 1601);"/>
+                    <Edge cubics="!-1777 -64(;-1777,-64 -1777,-3259 -1777,-3259q-1777 -64 -1777 -3259);"/>
+                    <Edge cubics="!1704 -3259(;1704,-3259 1704,-45 1704,-45q1704 -3259 1704 -45);"/>
+                    <Edge cubics="!-1777 -3259(;-1777,-3259 1704,-3259 1704,-3259q-1777 -3259 1704 -3259);"/>
+                    <Edge cubics="!-1777 -64(;-1777,-64 -29,555 -29,555q-1777 -64 -29 555);"/>
+                    <Edge cubics="!-1878 45(;-1878,45 -1877,-3369 -1877,-3369q-1878 45 -1877 -3369);"/>
+                    <Edge cubics="!1704 -45(;1704,-45 -29,555 -29,555q1704 -45 -29 555);"/>
+                    <Edge cubics="!-1878 45(;-1878,45 -50,667 -50,667q-1878 45 -50 667);"/>
+                    <Edge cubics="!-836 714(;-836,714 -1600,2051 -1600,2051q-836 714 -1600 2051);"/>
+                    <Edge cubics="!-421 714(;-421,714 -836,714 -836,714q-421 714 -836 714);"/>
+                    <Edge cubics="!343 2051(;343,2051 -421,714 -421,714q343 2051 -421 714);"/>
+                    <Edge cubics="!-1617 1250(;-1617,1250 -2670,1250 -2670,1250q-1617 1250 -2670 1250);"/>
+                    <Edge cubics="!1804 -3369(;1804,-3369 1804,42 1804,42q1804 -3369 1804 42);"/>
+                    <Edge cubics="!353 714(;353,714 353,2054 353,2054q353 714 353 2054);"/>
+                    <Edge cubics="!-1877 -3369(;-1877,-3369 1804,-3369 1804,-3369q-1877 -3369 1804 -3369);"/>
+                    <Edge cubics="!1680 714(;1680,714 353,714 353,714q1680 714 353 714);"/>
+                    <Edge cubics="!1804 42(;1804,42 -50,667 -50,667q1804 42 -50 667);"/>
+                    <Edge cubics="!727 1018(;727,1018 1529,1018 1529,1018q727 1018 1529 1018);"/>
+                    <Edge cubics="!-31 -1553(;-31,-1553 -1001,-1212 -1001,-1212q-31 -1553 -1001 -1212);"/>
+                    <Edge cubics="!-1001 -1212(;-1001,-1212 -1001,-726 -1001,-726q-1001 -1212 -1001 -726);"/>
+                    <Edge cubics="!-1001 -726(;-1001,-726 -31,-385 -31,-385q-1001 -726 -31 -385);"/>
+                    <Edge cubics="!-31 -385(;-31,-385 1268,-844 1268,-844q-31 -385 1268 -844);"/>
+                    <Edge cubics="!1268 -844(;1268,-844 1268,-485 1268,-485q1268 -844 1268 -485);"/>
+                    <Edge cubics="!1268 -485(;1268,-485 -31,-29 -31,-29q1268 -485 -31 -29);"/>
+                    <Edge cubics="!-31 -29(;-31,-29 -1329,-485 -1329,-485q-31 -29 -1329 -485);"/>
+                    <Edge cubics="!-1329 -485(;-1329,-485 -1329,-1452 -1329,-1452q-1329 -485 -1329 -1452);"/>
+                    <Edge cubics="!-31 -1909(;-31,-1909 537,-1710 537,-1710q-31 -1909 537 -1710);"/>
+                    <Edge cubics="!-1329 -1452(;-1329,-1452 -31,-1909 -31,-1909q-1329 -1452 -31 -1909);"/>
+                    <Edge cubics="!537 -1710(;537,-1710 940,-1852 940,-1852q537 -1710 940 -1852);"/>
+                    <Edge cubics="!940 -1852(;940,-1852 940,-2570 940,-2570q940 -1852 940 -2570);"/>
+                    <Edge cubics="!619 -1322(;619,-1322 1127,-1502 1127,-1502q619 -1322 1127 -1502);"/>
+                    <Edge cubics="!1127 -1502(;1127,-1502 1268,-1452 1268,-1452q1127 -1502 1268 -1452);"/>
+                    <Edge cubics="!1268 -1452(;1268,-1452 1268,-1090 1268,-1090q1268 -1452 1268 -1090);"/>
+                    <Edge cubics="!1268 -1090(;1268,-1090 619,-1322 619,-1322q1268 -1090 619 -1322);"/>
+                    <Edge cubics="!-1186 -1562(;-1186,-1562 -1329,-1609 -1329,-1609q-1186 -1562 -1329 -1609);"/>
+                    <Edge cubics="!-1329 -1609(;-1329,-1609 -1329,-2840 -1329,-2840q-1329 -1609 -1329 -2840);"/>
+                    <Edge cubics="!-1329 -2840(;-1329,-2840 -1001,-2570 -1001,-2570q-1329 -2840 -1001 -2570);"/>
+                    <Edge cubics="!-1001 -2570(;-1001,-2570 -1001,-1852 -1001,-1852q-1001 -2570 -1001 -1852);"/>
+                    <Edge cubics="!-1001 -1852(;-1001,-1852 -680,-1740 -680,-1740q-1001 -1852 -680 -1740);"/>
+                    <Edge cubics="!-680 -1740(;-680,-1740 -1186,-1562 -1186,-1562q-680 -1740 -1186 -1562);"/>
+                    <Edge cubics="!940 -2570(;940,-2570 1268,-2840 1268,-2840q940 -2570 1268 -2840);"/>
+                    <Edge cubics="!1268 -2840(;1268,-2840 1268,-1609 1268,-1609q1268 -2840 1268 -1609);"/>
+                    <Edge cubics="!1268 -1609(;1268,-1609 537,-1351 537,-1351q1268 -1609 537 -1351);"/>
+                    <Edge cubics="!537 -1351(;537,-1351 -31,-1553 -31,-1553q537 -1351 -31 -1553);"/>
+                    <Edge cubics="!44 -1070(;44,-1070 306,-1066 306,-1066q44 -1070 306 -1066);"/>
+                    <Edge cubics="!306 -1066(;306,-1066 97,-907 97,-907q306 -1066 97 -907);"/>
+                    <Edge cubics="!97 -907(;97,-907 174,-652 174,-652q97 -907 174 -652);"/>
+                    <Edge cubics="!174 -652(;174,-652 -41,-808 -41,-808q174 -652 -41 -808);"/>
+                    <Edge cubics="!-41 -808(;-41,-808 -250,-652 -250,-652q-41 -808 -250 -652);"/>
+                    <Edge cubics="!-250 -652(;-250,-652 -173,-907 -173,-907q-250 -652 -173 -907);"/>
+                    <Edge cubics="!-173 -907(;-173,-907 -382,-1066 -382,-1066q-173 -907 -382 -1066);"/>
+                    <Edge cubics="!-382 -1066(;-382,-1066 -122,-1070 -122,-1070q-382 -1066 -122 -1070);"/>
+                    <Edge cubics="!-122 -1070(;-122,-1070 -41,-1325 -41,-1325q-122 -1070 -41 -1325);"/>
+                    <Edge cubics="!-41 -1325(;-41,-1325 44,-1070 44,-1070q-41 -1325 44 -1070);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Sheen" color="#FF800A" parentLayerIndex="1" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="39" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="39" duration="45" tweenType="motion" motionTweenSnap="true" keyMode="22017" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/VectorElements/SlashGradient" blendMode="add" centerPoint3DX="-440.9" centerPoint3DY="67.1">
+                  <matrix>
+                    <Matrix a="2.57029724121094" b="3.61602783203125" c="-3.93109130859375" d="2.79425048828125" tx="-615.45" ty="-240.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="79.4" y="7.45"/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                    <GlowFilter blurX="0" blurY="0" strength="0"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="84" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/VectorElements/SlashGradient" blendMode="add" centerPoint3DX="459.1" centerPoint3DY="67.1">
+                  <matrix>
+                    <Matrix a="2.57029724121094" b="3.61602783203125" c="-3.93109130859375" d="2.79425048828125" tx="284.55" ty="-240.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="79.4" y="7.45"/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="14" blurY="14"/>
+                    <GlowFilter color="#FFFFFF" strength="0.71"/>
+                  </filters>
+                  <color>
+                    <Color tintMultiplier="0.16" tintColor="#990000"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Logo" color="#FF4FFF" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="24" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Anims/WC_Logo" centerPoint3DX="0.05" centerPoint3DY="-81.6">
+                  <matrix>
+                    <Matrix tx="-96.95" ty="-189.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="97" y="107.5"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="25" duration="9" tweenType="motion" motionTweenSnap="true" keyMode="22017" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Anims/WC_Logo" centerPoint3DX="0.05" centerPoint3DY="-81.6">
+                  <matrix>
+                    <Matrix tx="-96.95" ty="-189.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="97" y="107.5"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="34" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Anims/WC_Logo" centerPoint3DX="0.05" centerPoint3DY="-53.6">
+                  <matrix>
+                    <Matrix tx="-96.95" ty="-161.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="97" y="107.5"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="35" duration="3" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Anims/WC_Logo" centerPoint3DX="0.05" centerPoint3DY="-56.35">
+                  <matrix>
+                    <Matrix tx="-96.95" ty="-163.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="97" y="107.5"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="38" duration="47" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Anims/WC_Logo" centerPoint3DX="0.05" centerPoint3DY="-65.6">
+                  <matrix>
+                    <Matrix tx="-96.95" ty="-173.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="97" y="107.5"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Bonus XP" color="#4FFFFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="19" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="19" duration="9" tweenType="motion" motionTweenSnap="true" keyMode="22017" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Assets/WC_BonusXP_Earned" centerPoint3DX="1.3" centerPoint3DY="14.35">
+                  <matrix>
+                    <Matrix a="1.19999694824219" d="1.19999694824219" tx="-454.7" ty="-55.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="380" y="58"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="28" duration="57" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Assets/WC_Bonus_XP" centerPoint3DX="1.3" centerPoint3DY="14.35">
+                  <matrix>
+                    <Matrix tx="-378.7" ty="-43.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="380" y="58"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Red Glow" color="#808080" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="84" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Anims/WC_Logo Glow" centerPoint3DX="3.05" centerPoint3DY="-65.6">
+                  <matrix>
+                    <Matrix tx="-189.95" ty="-184.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="193" y="119"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Left Wing" color="#4F80FF" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="84" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Anims/WC_Wing Animation" centerPoint3DX="-125.45" centerPoint3DY="-71.1">
+                  <matrix>
+                    <Matrix a="-1" tx="88.8" ty="-299.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Right Wings" color="#FF4F4F" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="84" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Anims/WC_Wing Animation" centerPoint3DX="120.55" centerPoint3DY="-71.1">
+                  <matrix>
+                    <Matrix tx="-93.7" ty="-299.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="XP Points" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="53" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Assets/WC_BonusTxtField" name="mcXP" selected="true" centerPoint3DX="-9.65" centerPoint3DY="152.6">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="152.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0" redOffset="255"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="53" duration="32" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Assets/WC_BonusTxtField" name="mcXP" centerPoint3DX="-9.65" centerPoint3DY="152.6">
+                  <matrix>
+                    <Matrix tx="-9.65" ty="152.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <BlurFilter blurX="0" blurY="0"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="XP Glow 2" color="#9933CC" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="55" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="55" duration="30" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Assets/WC_XP Glow" blendMode="overlay" centerPoint3DX="8.5" centerPoint3DY="151.5">
+                  <matrix>
+                    <Matrix a="0.878890991210938" d="0.751861572265625" tx="-215.2" ty="108.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="254.55" y="57.5"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.51953125" redOffset="-255" blueOffset="255" greenOffset="-123"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="XP Glow" color="#FF800A" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="48" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="48" duration="3" tweenType="motion" motionTweenSnap="true" keyMode="22017" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Assets/WC_XP Glow" blendMode="add" centerPoint3DX="8.5" centerPoint3DY="151.5">
+                  <matrix>
+                    <Matrix a="0.03302001953125" d="0.0764617919921875" tx="0.1" ty="147.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="254.4" y="57.55"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0" blueOffset="204" greenOffset="51"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="51" duration="2" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Assets/WC_XP Glow" blendMode="add" centerPoint3DX="8.5" centerPoint3DY="151.45">
+                  <matrix>
+                    <Matrix a="0.987213134765625" d="0.20989990234375" tx="-242.6" ty="139.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="254.35" y="57.4"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.83984375" greenMultiplier="0.51171875" redOffset="-255" blueOffset="255" greenOffset="-3"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="53" duration="2" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Assets/WC_XP Glow" blendMode="add" centerPoint3DX="8.5" centerPoint3DY="151.5">
+                  <matrix>
+                    <Matrix a="1.1689453125" tx="-289" ty="94"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="254.5" y="57.5"/>
+                  </transformationPoint>
+                  <color>
+                    <Color tintMultiplier="1" tintColor="#0033CC"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="55" duration="30" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Assets/WC_XP Glow" blendMode="add" centerPoint3DX="8.5" centerPoint3DY="151.5">
+                  <matrix>
+                    <Matrix a="0.878890991210938" d="0.751861572265625" tx="-215.2" ty="108.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="254.55" y="57.5"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.19921875" redOffset="123" blueOffset="255" greenOffset="184"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="XP Window" color="#FF4FFF" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="39" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="39" duration="9" tweenType="motion" motionTweenSnap="true" keyMode="22017" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Assets/WC_XP Window">
+                  <matrix>
+                    <Matrix tx="-67.05" ty="69.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color brightness="-1"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="48" duration="37" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Assets/WC_XP Window">
+                  <matrix>
+                    <Matrix tx="-67.05" ty="154.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Collect" color="#9933CC" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="74" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/WC_BTN_CollectAnimation" name="btnCollect" centerPoint3DX="-0.35" centerPoint3DY="152.35">
+                  <matrix>
+                    <Matrix tx="-98.65" ty="127.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="98.3" y="24.5"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="74" duration="8" tweenType="motion" motionTweenSnap="true" keyMode="22017" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/WC_BTN_CollectAnimation" name="btnCollect" centerPoint3DX="-0.35" centerPoint3DY="152.35">
+                  <matrix>
+                    <Matrix tx="-98.65" ty="127.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="98.3" y="24.5"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="82" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/WC_BTN_CollectAnimation" name="btnCollect" centerPoint3DX="-0.35" centerPoint3DY="216.35">
+                  <matrix>
+                    <Matrix tx="-98.65" ty="191.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="98.3" y="24.5"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="83" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/WC_BTN_CollectAnimation" name="btnCollect" centerPoint3DX="-0.35" centerPoint3DY="225.35">
+                  <matrix>
+                    <Matrix tx="-98.65" ty="200.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="98.3" y="24.5"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="84" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/WC_BTN_CollectAnimation" name="btnCollect" centerPoint3DX="-0.35" centerPoint3DY="216.35">
+                  <matrix>
+                    <Matrix tx="-98.65" ty="191.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="98.3" y="24.5"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Collect Frame" color="#9933CC" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="74" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="74" duration="8" tweenType="motion" motionTweenSnap="true" keyMode="22017" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Collect Frame" centerPoint3DY="155.1">
+                  <matrix>
+                    <Matrix tx="-135.6" ty="106.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="135.6" y="48.55"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="82" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Collect Frame" centerPoint3DY="214.1">
+                  <matrix>
+                    <Matrix tx="-135.6" ty="165.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="135.6" y="48.55"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="83" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Collect Frame" centerPoint3DY="220.1">
+                  <matrix>
+                    <Matrix tx="-135.6" ty="171.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="135.6" y="48.55"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="84" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Collect Frame" centerPoint3DY="214.1">
+                  <matrix>
+                    <Matrix tx="-135.6" ty="165.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="135.6" y="48.55"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Guide" color="#4FFFFF" locked="true" autoNamed="false" visible="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" duration="85" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

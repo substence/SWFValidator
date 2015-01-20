@@ -1,0 +1,14 @@
+package com.cc.sound
+{
+	public class Sound_Units_Data
+	{
+		public function Sound_Units_Data()
+		{
+		}
+		
+		public static function get Data() : Object
+		{
+			return #data;
+		}
+	}
+}

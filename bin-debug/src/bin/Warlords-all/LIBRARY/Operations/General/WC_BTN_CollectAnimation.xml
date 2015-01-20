@@ -1,0 +1,57 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Operations/General/WC_BTN_CollectAnimation" itemID="5106cdf3-00000265" lastModified="1359677871" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="WC_BTN_CollectAnimation" currentFrame="29">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="29" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Buttons/Btn_Collect" name="bBuild" centerPoint3DX="109.75" centerPoint3DY="126.15">
+                  <matrix>
+                    <Matrix a="0.936431884765625" tx="57.4" ty="104.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="43.7" y="-79.65"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="0" blurY="0" color="#FFFFFF" inner="true" quality="3" strength="0"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" duration="30" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Buttons/Btn_Collect" name="bBuild" selected="true" centerPoint3DX="109.75" centerPoint3DY="126.15">
+                  <matrix>
+                    <Matrix a="0.936431884765625" tx="57.4" ty="104.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="43.7" y="-79.65"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="23" blurY="23" color="#FFFFCC" inner="true" quality="3" strength="1.2"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="59" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Buttons/Btn_Collect" name="bBuild" centerPoint3DX="109.75" centerPoint3DY="126.15">
+                  <matrix>
+                    <Matrix a="0.936431884765625" tx="57.4" ty="104.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="43.7" y="-79.65"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter blurX="0" blurY="0" color="#FFFFFF" inner="true" quality="3" strength="0"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

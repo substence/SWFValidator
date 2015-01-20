@@ -1,0 +1,973 @@
+<?xml version="1.0"?>
+<testsuite name="smoke" game="wc" description="A basic smoke, covering building, upgrades, and instant finishes">
+  <testcase name="Mandatory wait">
+    <function id="WAIT" timeout="200"/>
+  </testcase>
+  <testcase name="Eliminate resources">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Replenish resources">
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Eliminate buildings in base">
+    <function id="DESTROY_ALL_BUILDINGS" timeout="40"/>
+    <function id="DESTROY_ALL_BUILDINGS" timeout="40"/>
+    <function id="DESTROY_ALL_BUILDINGS" timeout="40"/>
+    <function id="DESTROY_ALL_BUILDINGS" timeout="40"/>
+    <function id="DESTROY_ALL_BUILDINGS" timeout="40"/>
+  </testcase>
+  <testcase name="Build POWER_PLANT">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_POWER_PLANT" timeout="40"/>
+    <condition id="POWER_PLANT_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of POWER_PLANT">
+    <function id="STOP_BUILD_POWER_PLANT" timeout="40"/>
+    <condition id="POWER_PLANT_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish POWER_PLANT">
+    <function id="BUILD_POWER_PLANT" timeout="40"/>
+    <condition id="POWER_PLANT_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="POWER_PLANT_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build METAL">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_METAL" timeout="40"/>
+    <condition id="METAL_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of METAL">
+    <function id="STOP_BUILD_METAL" timeout="40"/>
+    <condition id="METAL_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Naturally finish METAL">
+    <function id="BUILD_METAL" timeout="40"/>
+    <condition id="METAL_BUILDING" timeout="40" skippable="true"/>
+    <condition id="METAL_IS_LEVEL_1" timeout="200"/>
+  </testcase>
+  <testcase name="Build OIL">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_OIL" timeout="40"/>
+    <condition id="OIL_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of OIL">
+    <function id="STOP_BUILD_OIL" timeout="40"/>
+    <condition id="OIL_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Naturally finish OIL">
+    <function id="BUILD_OIL" timeout="40"/>
+    <condition id="OIL_BUILDING" timeout="40" skippable="true"/>
+    <condition id="OIL_IS_LEVEL_1" timeout="200"/>
+  </testcase>
+  <testcase name="Build METAL_STORAGE">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_METAL_STORAGE" timeout="40"/>
+    <condition id="METAL_STORAGE_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of METAL_STORAGE">
+    <function id="STOP_BUILD_METAL_STORAGE" timeout="40"/>
+    <condition id="METAL_STORAGE_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish METAL_STORAGE">
+    <function id="BUILD_METAL_STORAGE" timeout="40"/>
+    <condition id="METAL_STORAGE_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="METAL_STORAGE_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build OIL_STORAGE">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_OIL_STORAGE" timeout="40"/>
+    <condition id="OIL_STORAGE_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of OIL_STORAGE">
+    <function id="STOP_BUILD_OIL_STORAGE" timeout="40"/>
+    <condition id="OIL_STORAGE_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish OIL_STORAGE">
+    <function id="BUILD_OIL_STORAGE" timeout="40"/>
+    <condition id="OIL_STORAGE_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="OIL_STORAGE_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build MINE">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_MINE" timeout="40"/>
+    <condition id="MINE_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of MINE">
+    <function id="STOP_BUILD_MINE" timeout="40"/>
+    <condition id="MINE_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish MINE">
+    <function id="BUILD_MINE" timeout="40"/>
+    <condition id="MINE_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="MINE_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build GOGO_BAR">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_GOGO_BAR" timeout="40"/>
+    <condition id="GOGO_BAR_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of GOGO_BAR">
+    <function id="STOP_BUILD_GOGO_BAR" timeout="40"/>
+    <condition id="GOGO_BAR_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish GOGO_BAR">
+    <function id="BUILD_GOGO_BAR" timeout="40"/>
+    <condition id="GOGO_BAR_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="GOGO_BAR_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build MORTAR">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_MORTAR" timeout="40"/>
+    <condition id="MORTAR_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of MORTAR">
+    <function id="STOP_BUILD_MORTAR" timeout="40"/>
+    <condition id="MORTAR_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish MORTAR">
+    <function id="BUILD_MORTAR" timeout="40"/>
+    <condition id="MORTAR_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="MORTAR_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build GUN">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_GUN" timeout="40"/>
+    <condition id="GUN_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of GUN">
+    <function id="STOP_BUILD_GUN" timeout="40"/>
+    <condition id="GUN_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish GUN">
+    <function id="BUILD_GUN" timeout="40"/>
+    <condition id="GUN_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="GUN_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build ACADEMY">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_ACADEMY" timeout="40"/>
+    <condition id="ACADEMY_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of ACADEMY">
+    <function id="STOP_BUILD_ACADEMY" timeout="40"/>
+    <condition id="ACADEMY_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish ACADEMY">
+    <function id="BUILD_ACADEMY" timeout="40"/>
+    <condition id="ACADEMY_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="ACADEMY_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build RADIO_TOWER">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_RADIO_TOWER" timeout="40"/>
+    <condition id="RADIO_TOWER_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of RADIO_TOWER">
+    <function id="STOP_BUILD_RADIO_TOWER" timeout="40"/>
+    <condition id="RADIO_TOWER_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish RADIO_TOWER">
+    <function id="BUILD_RADIO_TOWER" timeout="40"/>
+    <condition id="RADIO_TOWER_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="RADIO_TOWER_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build BARRACKS">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_BARRACKS" timeout="40"/>
+    <condition id="BARRACKS_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of BARRACKS">
+    <function id="STOP_BUILD_BARRACKS" timeout="40"/>
+    <condition id="BARRACKS_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish BARRACKS">
+    <function id="BUILD_BARRACKS" timeout="40"/>
+    <condition id="BARRACKS_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="BARRACKS_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build WAREHOUSE">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_WAREHOUSE" timeout="40"/>
+    <condition id="WAREHOUSE_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of WAREHOUSE">
+    <function id="STOP_BUILD_WAREHOUSE" timeout="40"/>
+    <condition id="WAREHOUSE_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish WAREHOUSE">
+    <function id="BUILD_WAREHOUSE" timeout="40"/>
+    <condition id="WAREHOUSE_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="WAREHOUSE_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build STAGING_AREA">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_STAGING_AREA" timeout="40"/>
+    <condition id="STAGING_AREA_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build 4">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_4" timeout="40"/>
+    <condition id="4_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading METAL">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_METAL" timeout="40"/>
+    <condition id="METAL_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of METAL">
+    <function id="STOP_UPGRADE_METAL" timeout="40"/>
+    <condition id="METAL_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish METAL">
+    <function id="UPGRADE_METAL" timeout="40"/>
+    <condition id="METAL_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="METAL_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading OIL">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_OIL" timeout="40"/>
+    <condition id="OIL_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of OIL">
+    <function id="STOP_UPGRADE_OIL" timeout="40"/>
+    <condition id="OIL_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish OIL">
+    <function id="UPGRADE_OIL" timeout="40"/>
+    <condition id="OIL_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="OIL_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading METAL_STORAGE">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_METAL_STORAGE" timeout="40"/>
+    <condition id="METAL_STORAGE_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of METAL_STORAGE">
+    <function id="STOP_UPGRADE_METAL_STORAGE" timeout="40"/>
+    <condition id="METAL_STORAGE_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish METAL_STORAGE">
+    <function id="UPGRADE_METAL_STORAGE" timeout="40"/>
+    <condition id="METAL_STORAGE_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="METAL_STORAGE_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading OIL_STORAGE">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_OIL_STORAGE" timeout="40"/>
+    <condition id="OIL_STORAGE_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of OIL_STORAGE">
+    <function id="STOP_UPGRADE_OIL_STORAGE" timeout="40"/>
+    <condition id="OIL_STORAGE_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish OIL_STORAGE">
+    <function id="UPGRADE_OIL_STORAGE" timeout="40"/>
+    <condition id="OIL_STORAGE_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="OIL_STORAGE_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading METAL">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_METAL" timeout="40"/>
+    <condition id="METAL_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of METAL">
+    <function id="STOP_UPGRADE_METAL" timeout="40"/>
+    <condition id="METAL_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish METAL">
+    <function id="UPGRADE_METAL" timeout="40"/>
+    <condition id="METAL_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="METAL_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading OIL">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_OIL" timeout="40"/>
+    <condition id="OIL_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of OIL">
+    <function id="STOP_UPGRADE_OIL" timeout="40"/>
+    <condition id="OIL_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish OIL">
+    <function id="UPGRADE_OIL" timeout="40"/>
+    <condition id="OIL_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="OIL_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading METAL_STORAGE">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_METAL_STORAGE" timeout="40"/>
+    <condition id="METAL_STORAGE_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of METAL_STORAGE">
+    <function id="STOP_UPGRADE_METAL_STORAGE" timeout="40"/>
+    <condition id="METAL_STORAGE_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish METAL_STORAGE">
+    <function id="UPGRADE_METAL_STORAGE" timeout="40"/>
+    <condition id="METAL_STORAGE_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="METAL_STORAGE_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading OIL_STORAGE">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_OIL_STORAGE" timeout="40"/>
+    <condition id="OIL_STORAGE_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of OIL_STORAGE">
+    <function id="STOP_UPGRADE_OIL_STORAGE" timeout="40"/>
+    <condition id="OIL_STORAGE_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish OIL_STORAGE">
+    <function id="UPGRADE_OIL_STORAGE" timeout="40"/>
+    <condition id="OIL_STORAGE_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="OIL_STORAGE_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade METAL to level 3">
+    <function id="INSTANT_UPGRADE_METAL" timeout="40"/>
+    <condition id="METAL_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade METAL to level 4">
+    <function id="INSTANT_UPGRADE_METAL" timeout="40"/>
+    <condition id="METAL_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade METAL to level 5">
+    <function id="INSTANT_UPGRADE_METAL" timeout="40"/>
+    <condition id="METAL_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade OIL to level 3">
+    <function id="INSTANT_UPGRADE_OIL" timeout="40"/>
+    <condition id="OIL_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade OIL to level 4">
+    <function id="INSTANT_UPGRADE_OIL" timeout="40"/>
+    <condition id="OIL_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade OIL to level 5">
+    <function id="INSTANT_UPGRADE_OIL" timeout="40"/>
+    <condition id="OIL_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade METAL_STORAGE to level 3">
+    <function id="INSTANT_UPGRADE_METAL_STORAGE" timeout="40"/>
+    <condition id="METAL_STORAGE_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade METAL_STORAGE to level 4">
+    <function id="INSTANT_UPGRADE_METAL_STORAGE" timeout="40"/>
+    <condition id="METAL_STORAGE_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade METAL_STORAGE to level 5">
+    <function id="INSTANT_UPGRADE_METAL_STORAGE" timeout="40"/>
+    <condition id="METAL_STORAGE_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade OIL_STORAGE to level 3">
+    <function id="INSTANT_UPGRADE_OIL_STORAGE" timeout="40"/>
+    <condition id="OIL_STORAGE_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade OIL_STORAGE to level 4">
+    <function id="INSTANT_UPGRADE_OIL_STORAGE" timeout="40"/>
+    <condition id="OIL_STORAGE_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade OIL_STORAGE to level 5">
+    <function id="INSTANT_UPGRADE_OIL_STORAGE" timeout="40"/>
+    <condition id="OIL_STORAGE_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading POWER_PLANT">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_POWER_PLANT" timeout="40"/>
+    <condition id="POWER_PLANT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of POWER_PLANT">
+    <function id="STOP_UPGRADE_POWER_PLANT" timeout="40"/>
+    <condition id="POWER_PLANT_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish POWER_PLANT">
+    <function id="UPGRADE_POWER_PLANT" timeout="40"/>
+    <condition id="POWER_PLANT_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="POWER_PLANT_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading MINE">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_MINE" timeout="40"/>
+    <condition id="MINE_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of MINE">
+    <function id="STOP_UPGRADE_MINE" timeout="40"/>
+    <condition id="MINE_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish MINE">
+    <function id="UPGRADE_MINE" timeout="40"/>
+    <condition id="MINE_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="MINE_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading STAGING_AREA">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_STAGING_AREA" timeout="40"/>
+    <condition id="STAGING_AREA_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of STAGING_AREA">
+    <function id="STOP_UPGRADE_STAGING_AREA" timeout="40"/>
+    <condition id="STAGING_AREA_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish STAGING_AREA">
+    <function id="UPGRADE_STAGING_AREA" timeout="40"/>
+    <condition id="STAGING_AREA_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="STAGING_AREA_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading GOGO_BAR">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_GOGO_BAR" timeout="40"/>
+    <condition id="GOGO_BAR_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of GOGO_BAR">
+    <function id="STOP_UPGRADE_GOGO_BAR" timeout="40"/>
+    <condition id="GOGO_BAR_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish GOGO_BAR">
+    <function id="UPGRADE_GOGO_BAR" timeout="40"/>
+    <condition id="GOGO_BAR_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="GOGO_BAR_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading MORTAR">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_MORTAR" timeout="40"/>
+    <condition id="MORTAR_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of MORTAR">
+    <function id="STOP_UPGRADE_MORTAR" timeout="40"/>
+    <condition id="MORTAR_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish MORTAR">
+    <function id="UPGRADE_MORTAR" timeout="40"/>
+    <condition id="MORTAR_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="MORTAR_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading GUN">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_GUN" timeout="40"/>
+    <condition id="GUN_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of GUN">
+    <function id="STOP_UPGRADE_GUN" timeout="40"/>
+    <condition id="GUN_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish GUN">
+    <function id="UPGRADE_GUN" timeout="40"/>
+    <condition id="GUN_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="GUN_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading ACADEMY">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_ACADEMY" timeout="40"/>
+    <condition id="ACADEMY_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of ACADEMY">
+    <function id="STOP_UPGRADE_ACADEMY" timeout="40"/>
+    <condition id="ACADEMY_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish ACADEMY">
+    <function id="UPGRADE_ACADEMY" timeout="40"/>
+    <condition id="ACADEMY_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="ACADEMY_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Start upgrading BARRACKS">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="UPGRADE_BARRACKS" timeout="40"/>
+    <condition id="BARRACKS_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel upgrade of BARRACKS">
+    <function id="STOP_UPGRADE_BARRACKS" timeout="40"/>
+    <condition id="BARRACKS_NOT_UPGRADING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Upgrade and speed up finish BARRACKS">
+    <function id="UPGRADE_BARRACKS" timeout="40"/>
+    <condition id="BARRACKS_UPGRADING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="BARRACKS_IS_LEVEL_2" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build TECH_CENTER">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_TECH_CENTER" timeout="40"/>
+    <condition id="TECH_CENTER_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of TECH_CENTER">
+    <function id="STOP_BUILD_TECH_CENTER" timeout="40"/>
+    <condition id="TECH_CENTER_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish TECH_CENTER">
+    <function id="BUILD_TECH_CENTER" timeout="40"/>
+    <condition id="TECH_CENTER_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="TECH_CENTER_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build WAR_ROOM">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_WAR_ROOM" timeout="40"/>
+    <condition id="WAR_ROOM_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of WAR_ROOM">
+    <function id="STOP_BUILD_WAR_ROOM" timeout="40"/>
+    <condition id="WAR_ROOM_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish WAR_ROOM">
+    <function id="BUILD_WAR_ROOM" timeout="40"/>
+    <condition id="WAR_ROOM_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="WAR_ROOM_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build AIRFIELD">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_AIRFIELD" timeout="40"/>
+    <condition id="AIRFIELD_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of AIRFIELD">
+    <function id="STOP_BUILD_AIRFIELD" timeout="40"/>
+    <condition id="AIRFIELD_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish AIRFIELD">
+    <function id="BUILD_AIRFIELD" timeout="40"/>
+    <condition id="AIRFIELD_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="AIRFIELD_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Build BUNKER">
+    <function id="ELIMINATE_OIL" timeout="40"/>
+    <condition id="OIL_EMPTY" timeout="40" skippable="true"/>
+    <function id="ELIMINATE_METAL" timeout="40"/>
+    <condition id="METAL_EMPTY" timeout="40" skippable="true"/>
+    <function id="FILL_OIL" timeout="40"/>
+    <condition id="OIL_FULL" timeout="40" skippable="true"/>
+    <function id="FILL_METAL" timeout="40"/>
+    <condition id="METAL_FULL" timeout="40" skippable="true"/>
+    <function id="BUILD_BUNKER" timeout="40"/>
+    <condition id="BUNKER_BUILDING" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Cancel construction of BUNKER">
+    <function id="STOP_BUILD_BUNKER" timeout="40"/>
+    <condition id="BUNKER_DOES_NOT_EXIST" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Speedup finish BUNKER">
+    <function id="BUILD_BUNKER" timeout="40"/>
+    <condition id="BUNKER_BUILDING" timeout="40" skippable="true"/>
+    <function id="SPEED_UP_FINISH" timeout="40"/>
+    <condition id="BUNKER_IS_LEVEL_1" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade POWER_PLANT to level 3">
+    <function id="INSTANT_UPGRADE_POWER_PLANT" timeout="40"/>
+    <condition id="POWER_PLANT_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade POWER_PLANT to level 4">
+    <function id="INSTANT_UPGRADE_POWER_PLANT" timeout="40"/>
+    <condition id="POWER_PLANT_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade POWER_PLANT to level 5">
+    <function id="INSTANT_UPGRADE_POWER_PLANT" timeout="40"/>
+    <condition id="POWER_PLANT_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade MINE to level 3">
+    <function id="INSTANT_UPGRADE_MINE" timeout="40"/>
+    <condition id="MINE_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade MINE to level 4">
+    <function id="INSTANT_UPGRADE_MINE" timeout="40"/>
+    <condition id="MINE_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade MINE to level 5">
+    <function id="INSTANT_UPGRADE_MINE" timeout="40"/>
+    <condition id="MINE_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade STAGING_AREA to level 3">
+    <function id="INSTANT_UPGRADE_STAGING_AREA" timeout="40"/>
+    <condition id="STAGING_AREA_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade STAGING_AREA to level 4">
+    <function id="INSTANT_UPGRADE_STAGING_AREA" timeout="40"/>
+    <condition id="STAGING_AREA_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade STAGING_AREA to level 5">
+    <function id="INSTANT_UPGRADE_STAGING_AREA" timeout="40"/>
+    <condition id="STAGING_AREA_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade GOGO_BAR to level 3">
+    <function id="INSTANT_UPGRADE_GOGO_BAR" timeout="40"/>
+    <condition id="GOGO_BAR_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade GOGO_BAR to level 4">
+    <function id="INSTANT_UPGRADE_GOGO_BAR" timeout="40"/>
+    <condition id="GOGO_BAR_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade GOGO_BAR to level 5">
+    <function id="INSTANT_UPGRADE_GOGO_BAR" timeout="40"/>
+    <condition id="GOGO_BAR_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade MORTAR to level 3">
+    <function id="INSTANT_UPGRADE_MORTAR" timeout="40"/>
+    <condition id="MORTAR_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade MORTAR to level 4">
+    <function id="INSTANT_UPGRADE_MORTAR" timeout="40"/>
+    <condition id="MORTAR_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade MORTAR to level 5">
+    <function id="INSTANT_UPGRADE_MORTAR" timeout="40"/>
+    <condition id="MORTAR_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade GUN to level 3">
+    <function id="INSTANT_UPGRADE_GUN" timeout="40"/>
+    <condition id="GUN_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade GUN to level 4">
+    <function id="INSTANT_UPGRADE_GUN" timeout="40"/>
+    <condition id="GUN_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade GUN to level 5">
+    <function id="INSTANT_UPGRADE_GUN" timeout="40"/>
+    <condition id="GUN_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade ACADEMY to level 3">
+    <function id="INSTANT_UPGRADE_ACADEMY" timeout="40"/>
+    <condition id="ACADEMY_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade ACADEMY to level 4">
+    <function id="INSTANT_UPGRADE_ACADEMY" timeout="40"/>
+    <condition id="ACADEMY_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade ACADEMY to level 5">
+    <function id="INSTANT_UPGRADE_ACADEMY" timeout="40"/>
+    <condition id="ACADEMY_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade BARRACKS to level 3">
+    <function id="INSTANT_UPGRADE_BARRACKS" timeout="40"/>
+    <condition id="BARRACKS_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade BARRACKS to level 4">
+    <function id="INSTANT_UPGRADE_BARRACKS" timeout="40"/>
+    <condition id="BARRACKS_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade BARRACKS to level 5">
+    <function id="INSTANT_UPGRADE_BARRACKS" timeout="40"/>
+    <condition id="BARRACKS_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade TECH_CENTER to level 3">
+    <function id="INSTANT_UPGRADE_TECH_CENTER" timeout="40"/>
+    <condition id="TECH_CENTER_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade TECH_CENTER to level 4">
+    <function id="INSTANT_UPGRADE_TECH_CENTER" timeout="40"/>
+    <condition id="TECH_CENTER_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade TECH_CENTER to level 5">
+    <function id="INSTANT_UPGRADE_TECH_CENTER" timeout="40"/>
+    <condition id="TECH_CENTER_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade WAR_ROOM to level 3">
+    <function id="INSTANT_UPGRADE_WAR_ROOM" timeout="40"/>
+    <condition id="WAR_ROOM_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade WAR_ROOM to level 4">
+    <function id="INSTANT_UPGRADE_WAR_ROOM" timeout="40"/>
+    <condition id="WAR_ROOM_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade WAR_ROOM to level 5">
+    <function id="INSTANT_UPGRADE_WAR_ROOM" timeout="40"/>
+    <condition id="WAR_ROOM_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade AIRFIELD to level 3">
+    <function id="INSTANT_UPGRADE_AIRFIELD" timeout="40"/>
+    <condition id="AIRFIELD_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade AIRFIELD to level 4">
+    <function id="INSTANT_UPGRADE_AIRFIELD" timeout="40"/>
+    <condition id="AIRFIELD_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade AIRFIELD to level 5">
+    <function id="INSTANT_UPGRADE_AIRFIELD" timeout="40"/>
+    <condition id="AIRFIELD_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade BUNKER to level 3">
+    <function id="INSTANT_UPGRADE_BUNKER" timeout="40"/>
+    <condition id="BUNKER_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade BUNKER to level 4">
+    <function id="INSTANT_UPGRADE_BUNKER" timeout="40"/>
+    <condition id="BUNKER_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade BUNKER to level 5">
+    <function id="INSTANT_UPGRADE_BUNKER" timeout="40"/>
+    <condition id="BUNKER_IS_LEVEL_5" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade WALL to level 3">
+    <function id="INSTANT_UPGRADE_WALL" timeout="40"/>
+    <condition id="WALL_IS_LEVEL_3" timeout="40" skippable="true"/>
+  </testcase>
+  <testcase name="Instant upgrade WALL to level 4">
+    <function id="INSTANT_UPGRADE_WALL" timeout="40"/>
+    <condition id="WALL_IS_LEVEL_4" timeout="40" skippable="true"/>
+  </testcase>
+</testsuite>

@@ -1,0 +1,5 @@
+--- src/com/cc/assets/AssetManager.as
++++ src/com/cc/assets/AssetManager.as
+@@ -2,13 +2,14 @@
+ {   import com.adverserealms.log.Logger;   import com.cc.display.ImageCache;+	import com.cc.loading.CDNDataLoader;   import com.cc.models.Flags;   import com.cc.utils.JSONUtils;   import com.kixeye.wc.resources.CDNManifestDataManager;-	import flash.utils.Dictionary;+	import flash.utils.Dictionary;-	public class AssetManager+	public class AssetManager extends CDNDataLoader   {     private static var _instance:AssetManager;     private var _assetDictionary:Dictionary;@@ -29,6 +30,8 @@
+         CDNManifestDataManager.retrieveAssetByName(_ASSET_MANIFEST_CDN_NAME, loadedAssetManifestFromCDN);       }       CDNManifestDataManager.manifestDataLoaded.add(loadedAssetManifestFromCDN);++			super(_ASSET_MANIFEST_CDN_NAME, OrderedRequestLoaderAndNativeDataOrganizer.PRIORITY_PREFFERED);     }     private function loadedAssetManifestFromCDN(payload:Object) : void

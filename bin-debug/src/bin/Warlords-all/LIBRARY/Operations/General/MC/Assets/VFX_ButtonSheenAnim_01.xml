@@ -1,0 +1,70 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Operations/General/MC/Assets/VFX_ButtonSheenAnim_01" itemID="50bcee8e-0000076f" lastModified="1354569539" lastUniqueIdentifier="2">
+  <timeline>
+    <DOMTimeline name="VFX_ButtonSheenAnim_01" currentFrame="14">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="14" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="14" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="art" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="5" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Assets/VFX_ButtonSheen_01" blendMode="add" centerPoint3DX="12" centerPoint3DY="12">
+                  <matrix>
+                    <Matrix a="0.0516357421875" tx="87.15" ty="-2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="93.95" y="16.25"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" duration="9" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Assets/VFX_ButtonSheen_01" blendMode="add" centerPoint3DX="12" centerPoint3DY="12">
+                  <matrix>
+                    <Matrix tx="-2" ty="-2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="93.5" y="16"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.48828125"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/General/MC/Assets/VFX_ButtonSheen_01" blendMode="add" centerPoint3DX="12" centerPoint3DY="12">
+                  <matrix>
+                    <Matrix tx="-2" ty="-2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="93.5" y="16"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

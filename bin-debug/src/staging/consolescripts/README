@@ -1,0 +1,7 @@
+In order to run a script in-game, create a text file with a name that you can use from the console. For example, if you create myscript.txt, you can run the script from the console using "runScript myscript".
+
+You can create a script that will run at startup (i.e. at the end of GLOBAL.SetupOnce) by naming it startup.txt - this will be ignored by SVN, so you cannot checkin your startup script.
+
+The format of your console script is simple - one console command per line, as if you were typing it into the console.
+
+Enjoy!

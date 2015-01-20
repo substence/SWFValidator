@@ -1,0 +1,34 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Operations/DominationEvent/check01" itemID="4fbd6e9d-0000025b" lastModified="1337815187">
+  <timeline>
+    <DOMTimeline name="check01">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#00CC66"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!219 -342|199 -342!199 -342|199 -360!199 -360|219 -360!219 -360|219 -342!259 -302|159 -302!159 -302|159 -320!159 -320|259 -320!259 -320|259 -302!300 -262|120 -262!120 -262|120 -280!120 -280|300 -280!300 -280|300 -262!179 -142|-161 -142
+!-161 -142|-161 -160!-161 -160|179 -160!179 -160|179 -142"/>
+                    <Edge fillStyle0="1" edges="
+!78 -222|260 -222!260 -222|260 -240!260 -240|78 -240!78 -240|78 -222!38 -182|219 -182!219 -182|219 -200!219 -200|38 -200!38 -200|38 -182"/>
+                    <Edge fillStyle1="1" edges="
+!59 -22|-41 -22!-41 -22|-41 -40!-41 -40|59 -40!59 -40|59 -22!99 -62|-81 -62!-81 -62|-81 -80!-81 -80|99 -80!99 -80|99 -62!139 -102|-121 -102!-121 -102|-121 -120!-121 -120|139 -120!139 -120|139 -102!0 0|18 0!18 0|18 18!18 18|0 18!0 18|0
+ 0"/>
+                    <Edge fillStyle0="1" edges="
+!-60 -240|-120 -240!-120 -240|-120 -222!-120 -222|-60 -222!-60 -222|-60 -240!-20 -200|-161 -200!-161 -200|-161 -182!-161 -182|-20 -182!-20 -182|-20 -200"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

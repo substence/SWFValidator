@@ -1,0 +1,110 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Buildings/Hits/building46/building46hit" itemID="51561085-00000422" linkageExportForAS="true" linkageClassName="building46hit" lastModified="1364857237">
+  <timeline>
+    <DOMTimeline name="building46hit">
+      <layers>
+        <DOMLayer name="hitbox" color="#9933CC" autoNamed="false" visible="false">
+          <frames>
+            <DOMFrame index="0" name="f1" labelType="name" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000" alpha="0.996078431372549"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!3960 1120[3960 1110 3965 1104!3965 1104[4034 1014 4060 880!4060 880[3545 635 3063 356!3063 356[2822 217 2600 240!2600 240[2600 230 2600 220!2600 220[2600 180 2600 140!2600 140[2600 130 2596 122!2596 122[2590 110 2580 100!2580 100[2580
+ 90 2580 80!2580 80[2580 70 2580 60!2580 60[2580 50 2580 40!2580 40|2580 30!2580 30[2403 43 2200 40!2200 40[2200 50 2200 60!2200 60[2190 60 2180 59!2180 59[2084 54 2020 80!2020 80[2020 90 2020 100!2020 100[2010 100 2000 100!2000 100[1990
+ 100 1980 100!1980 100[1980 110 1980 120!1980 120[1970 120 1961 123!1961 123[1920 140 1880 160!1880 160[1870 160 1862 164!1862 164[1477 377 1060 560!1060 560[1060 570 1060 580!1060 580[1050 580 1050 581!1050 581[1040 700 980 760!980 760
+[980 780 980 800!980 800[980 810 980 820!980 820[970 820 960 820!960 820[960 1070 960 1320!960 1320[960 1330 960 1340!960 1340[950 1340 940 1340!940 1340[733 1343 600 1420!600 1420[590 1420 586 1425!586 1425[392 1662 280 1980!280 1980
+[280 1990 280 2000!280 2000[280 2010 280 2020!280 2020[270 2020 266 2025!266 2025[223 2083 180 2140!180 2140[327 2453 820 2421!820 2421[830 2420 840 2420!840 2420[960 2420 1079 2410!1079 2410[1080 2410 1080 2400!1080 2400[1110 2400 1140
+ 2400!1140 2400[1150 2400 1160 2400!1160 2400[1180 2400 1200 2400!1200 2400[1210 2400 1220 2400!1220 2400[1324 2486 1500 2499!1500 2499[1510 2500 1520 2500!1520 2500[1772 2638 2081 2718!2081 2718[2090 2720 2100 2720!2100 2720[2126 2744
+ 2178 2731!2178 2731[2180 2730 2180 2720!2180 2720[2201 2701 2237 2691!2237 2691[2240 2690 2240 2680!2240 2680[2250 2680 2260 2680!2260 2680[2412 2698 2522 2756!2522 2756[2530 2760 2540 2760!2540 2760[2750 2850 2942 2956!2942 2956[2950
+ 2960 2960 2960!2960 2960[3218 2848 3456 2712!3456 2712[3460 2710 3460 2700!3460 2700[3720 2580 3976 2452!3976 2452[3980 2450 3980 2440!3980 2440[4100 2390 4216 2332!4216 2332[4220 2330 4220 2320!4220 2320[4280 2300 4336 2272!4336 2272
+[4340 2270 4340 2260!4340 2260[4460 2210 4576 2152!4576 2152[4580 2150 4580 2140!4580 2140[4659 2119 4715 2074!4715 2074[4720 2070 4720 2060!4720 2060[4720 2030 4706 2009!4706 2009[4587 1823 4340 1760!4340 1760[4330 1760 4327 1755!4327
+ 1755[4295 1705 4220 1700!4220 1700[4220 1690 4216 1688!4216 1688[4160 1660 4100 1640!4100 1640[4100 1630 4096 1628!4096 1628[4040 1600 3980 1580!3980 1580[3980 1570 3976 1568!3976 1568[3960 1560 3940 1560!3940 1560[3940 1550 3937 1549
+!3937 1549[3901 1539 3880 1520!3880 1520[3870 1520 3860 1520!3860 1520[3860 1510 3856 1502!3856 1502[3850 1490 3840 1480!3840 1480[3840 1470 3840 1460!3840 1460[3870 1440 3878 1400!3878 1400[3880 1390 3880 1380!3880 1380[3983 1275 3962
+ 1140!3962 1140[3960 1130 3960 1120"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="building" color="#4FFF4F" current="true" isSelected="true" autoNamed="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="Buildings/Hits/building46/top.1.png">
+                  <matrix>
+                    <Matrix tx="-120" ty="-31"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="Buildings/Hits/building46/anim.1.png">
+                  <matrix>
+                    <Matrix tx="-13" ty="-27.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="Buildings/Hits/building46/special.1.png">
+                  <matrix>
+                    <Matrix tx="41.75" ty="36"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="Buildings/Hits/building46/top.1.damaged.png">
+                  <matrix>
+                    <Matrix tx="-120" ty="-31.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="Buildings/Hits/building46/top.1.destroyed.png">
+                  <matrix>
+                    <Matrix tx="-90" ty="14"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="footprint" color="#FF800A" autoNamed="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.250980392156863"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#FFFFFF"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="
+!-2800 1403|-1 2800!-1 2800|2800 1398!2800 1398|-1 0!-1 0|-2800 1403"/>
+                    <Edge cubics="!-2800 1403(;-2800,1403 -1,2800 -1,2800q-2800 1403 -1 2800);"/>
+                    <Edge cubics="!-1 2800(;-1,2800 2800,1398 2800,1398q-1 2800 2800 1398);"/>
+                    <Edge cubics="!-2800 1403(;-2800,1403 -1,0 -1,0q-2800 1403 -1 0);"/>
+                    <Edge cubics="!-1 0(;-1,0 2800,1398 2800,1398q-1 0 2800 1398);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

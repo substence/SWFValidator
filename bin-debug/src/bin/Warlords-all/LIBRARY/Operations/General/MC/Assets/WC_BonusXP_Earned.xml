@@ -1,0 +1,21 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Operations/General/MC/Assets/WC_BonusXP_Earned" itemID="51562158-000004b3" lastModified="1364599152">
+  <timeline>
+    <DOMTimeline name="WC_BonusXP_Earned">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="Operations/General/PNG/bonusxp_block.png">
+                  <matrix>
+                    <Matrix tx="-2.5" ty="58"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

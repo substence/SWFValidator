@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- build-build-local.xml -->
+<!--
+  Build the War Commander client.
+  For use in the local development environment, in either of:
+    * the Stack-in-the-Box (SIAB) VM (Ubuntu)
+    * the host MBP OS (OSX or Windows).
+
+  Do NOT try to run this script within a Jenkins project. It will not work.
+
+  NOTE: This build script was modeled after the Jenkins build scripts for the
+        War Commander client, so uses similar naming conventions and/or specific names.
+        The files used for reference are:
+        ^/warlords/client/build.xml
+        ^/warlords/client/commonant/build.xml
+        ^/warlords/client/commonant/wctrunk.mxmlc.inc
+
+        Also, certain targets and properties from the client build.xml file are referenced
+        directly (via the ant import directive), to minimize divergent code as much as possible.
+-->
+
+<project name="Local War Commander Client Build" default="dist" xmlns:ac="antlib:net.sf.antcontrib">
+
+  <property name="flex.sdk.version" value="4.6"/>
+	
+  <!-- Load user overrides to local properties -->
+  <property file="build-local-user.properties"/>
+
+  <!-- Build debug or release (override in .properties file or command line to build release) -->
+  <property name="build.config" value="debug" />
+
+  <!-- Load local properties -->
+  <available property="is.local.build" file="build-local.properties"/>
+  <fail message="******** Missing required [build-local.properties] file ********" unless="is.local.build" />
+  <property file="build-local.properties"/>
+
+  <!-- We use some functionality and properties from the official Jenkins build.xml file. -->
+  <!-- We assume that the caller pass a proper commonant.build.url value from command line -->
+  <property name="get.commonant" value="true" />
+  <property name="get.commonant.enabled" value="true" />
+  <import file="build.xml"/>
+
+  <!-- Initialize -->
+  <target name="-init" depends="-init-env,if_windows,if_unix,if_mac">
+    <echo message="******** Local Development build (Stack in a Box). Do not run from Jenkins.  ********" level="warning" />
+
+		<!-- We only try to read from .jenkins if it is a file;
+		     this since we abuse the ~/.jenkins path in a lot of our
+		     builds -->
+		<if>
+		  <available file="${user.home}/.jenkins" type="file"/>
+			<then><property file="${user.home}/.jenkins"/></then>
+			<else><property file="${user.home}/.jenkins_auth"/></else>
+  	</if>
+		
+    <mkdir dir="${output.dir}"/>
+    <antcall target="-show-time"/>
+  </target>
+
+  <!-- OS Specific code -->
+  <condition property="isWindows">
+    <os family="windows" />
+  </condition>
+
+  <condition property="isUnix">
+    <and>
+      <os family="unix" />
+      <not>
+        <os family="mac" />
+      </not>
+    </and>
+  </condition>
+
+  <condition property="isMac">
+    <os family="mac" />
+  </condition>
+
+  <target name="-init-env">
+    <!-- Environment variables override default values -->
+    <property environment="env"/>
+
+    <condition property="FLEX_HOME" value="${env.FLEX_HOME}">
+      <isset property="env.FLEX_HOME"/>
+    </condition>
+
+    <!-- Detect whether we're running in the SIAB VM or not -->
+    <condition property="isSIAB">
+      <equals arg1="${env.USER}" arg2="vagrant" />
+    </condition>
+
+    <!-- We must be able to find aibox; in SIAB it's a well-known path, otherwise, it's user-defined -->
+    <condition property="isAiBoxPathOk">
+      <or>
+        <isset property="isSIAB"/>
+        <isset property="aibox.src.dir"/>
+      </or>
+    </condition>
+
+    <fail unless="isAiBoxPathOk" >
+      ******** Missing required property [aibox.src.dir] ********
+      ** This property must be set by the user when running outside of the Stack-in-the-Box virtual machine.
+      ** In your build-local-user.properties file, set this property to the directory that contains the aibox.swc file
+      ** created by the aibox build. If the build-local-user.properties file does not exist, create it alongside
+      ** the build-local.properties file. IMPORTANT: do not commit the build-local-user.properties file to version control.
+    </fail>
+
+    <condition property="aibox.dir"
+               value="/home/vagrant/project/enyo/compile"
+               else="${aibox.src.dir}">
+      <!-- If we're in the SIAB VM, we use the well-known path; else we use the user property. -->
+      <isset property="isSIAB"/>
+    </condition>
+
+  </target>
+
+  <!-- OS-specific defaults -->
+  <!--
+  <target name="if_windows" if="isWindows">
+  	<property name="FLEX_HOME" value="C:\Program Files (x86)\Adobe\Adobe Flash Builder 4.5\sdks\${flex.sdk.version}" />
+  </target>
+
+  <target name="if_unix" if="isUnix">
+  	<property name="FLEX_HOME" value="/opt/sdks/flex_sdk_${flex.sdk.version}" />
+  </target>
+
+  <target name="if_mac" if="isMac">
+  	<property name="FLEX_HOME" value="/Applications/Adobe Flash Builder 4.5/sdks/${flex.sdk.version}" />
+  </target>
+  -->
+
+  <!-- Delete all output files -->
+  <target name="clean">
+      <delete dir="${dist.dir}" failOnError="true" includeEmptyDirs="true" />
+  </target>
+
+  <target name="-show-time">
+    <exec executable="/bin/bash" dir=".">
+      <arg value="-c"/>
+      <arg line='"date"'/>
+    </exec>
+  </target>
+
+  <!-- ********************************************************************************** -->
+  <!--                          Compilation Targets                                       -->
+  <!-- ********************************************************************************** -->
+  <!-- NOTE: for now, the target "clean" is not a dependency of any other target, and will not automatically be called. This may change. -->
+  <target name="compile-debug">
+      <echo>Building debug...</echo>
+      <!-- default compiler settings; override in build-local-user.properties -->
+      <property name="incremental" value="true"/>
+      <property name="optimize" value="false"/>
+      <property name="keep-generated-actionscript" value="true"/>
+
+      <!-- Build config settings are properties because they're shared by both game and gameloader. -->
+      <property name="debug.config" value="true"/>
+      <property name="release.config" value="false"/>
+
+      <!-- Build the client -->
+      <antcall target="-compile-swf">
+          <param name="compile.swf.file" value="${compiled.swf.file}"/>
+      </antcall>
+
+      <!-- Build the gameloader for the client. -->
+      <!-- Set properties needed by the target. Normally would use antcall with params but can't here because commonant is not available until the get-commonant target is run. -->
+      <property name="wctrunk" value="true"/>
+      <property name="compile.swf.file" value="gameloader-local.swf"/>
+      <property name="bitdamagelocation.config" value="0" />	<!-- Disable disabling of decompression -->
+      <ant target="-compile-gameloader-wctrunk" dir="commonant" antFile="wctrunk.mxmlc.inc"/>
+  </target>
+
+  <target name="compile-release">
+      <echo>Building release...</echo>
+      <!-- default compiler settings; override in build-local-user.properties -->
+      <property name="incremental" value="false"/>
+      <property name="optimize" value="true"/>
+      <property name="keep-generated-actionscript" value="false"/>
+
+      <!-- Build config settings are properties because they're shared by both game and gameloader. -->
+      <property name="debug.config" value="false"/>
+      <property name="release.config" value="true"/>
+
+      <!-- Build the client -->
+      <antcall target="-compile-swf">
+          <param name="compile.swf.file" value="${compiled.swf.file}"/>
+      </antcall>
+
+      <!-- Build the gameloader for the client. -->
+      <!-- Set properties needed by the target. Normally would use antcall with params but can't here because commonant is not available until the get-commonant target is run. -->
+      <property name="wctrunk" value="true"/>
+      <property name="compile.swf.file" value="gameloader-local.swf"/>
+      <property name="bitdamagelocation.config" value="0" />	<!-- Disable disabling of decompression -->
+      <ant target="-compile-gameloader-wctrunk" dir="commonant" antFile="wctrunk.mxmlc.inc"/>
+  </target>
+
+  <target name="compile" depends="-init,init-common,-get-versions,get-commonant" >
+    <!-- Lifted from the client build.xml target of the same name, and modified for use by SIAB. --> 
+    <!-- Release or debug builds -->
+    <if>
+      <equals arg1="${build.config}" arg2="release" />
+    <then>
+      <antcall target="compile-release" />
+    </then>
+    <else>
+      <if>
+	<equals arg1="${build.config}" arg2="debug" />
+      <then>
+	<antcall target="compile-debug" />
+      </then>
+      <else>
+	<fail message="******** Missing required [build.config] property ********" />
+      </else>
+      </if>
+    </else>
+    </if>
+
+  </target>
+
+  <target name="-init-wc">
+    <taskdef resource="net/sf/antcontrib/antlib.xml" >
+      <classpath>
+        <pathelement location="${ant.home}/lib/ant-contrib-1.0b3.jar" />
+      </classpath>
+    </taskdef>
+  </target>
+
+  <target name="-compile-swf" depends="-init-wc">
+    <echo>Compiling War Commander SWF ...</echo>
+    <echo message="SWF file: ${compile.swf.file}"/>
+    <echo message="Debug config: ${debug.config}"/>
+    <echo message="Release config: ${release.config}"/>
+
+    <if>
+      <equals arg1="${debug.config}" arg2="true" />
+      <then>
+        <property name="services.swc" value="${main.src.dir}/bin/kixeye-services-lib-v${services.swc.version}.debug.swc" />
+        <property name="core.actionscript.swc" value="${main.src.dir}/bin/kixeye-core.swc" />
+      </then>
+      <else>
+        <property name="services.swc" value="${main.src.dir}/bin/kixeye-services-lib-v${services.swc.version}.swc" />
+        <property name="core.actionscript.swc" value="${main.src.dir}/bin/kixeye-core.swc" />
+      </else>
+    </if>
+
+    <if>
+      <available file="src-protobuf"/>
+      <then>
+        <property name="src-protobuf.dir" location="src-protobuf" />
+      </then>
+      <else>
+        <!-- just duplicate src in this case -->
+        <property name="src-protobuf.dir" location="src" />
+      </else>
+    </if>
+
+    <echo message="Services SWC: ${services.swc}" />
+
+    <taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+
+    <mxmlc output="${output.dir}/${compile.swf.file}"
+           file="${main.src.dir}/GAME.as"
+           debug="${debug.config}"
+           verbose-stacktraces="${debug.config}">
+
+      <define name="CONFIG::debug" value="${debug.config}" />
+      <define name="CONFIG::release" value="${release.config}" />
+      <!-- <define name="CONFIG::local" value="true" /> -->
+      <define name="CONFIG::local" value="false" />
+      <define name="CONFIG::loadtest" value="false" />
+      <define name="CONFIG::notloadtest" value="true" />
+
+      <source-path path-element="${main.src.dir}" />
+      <source-path path-element="${src-protobuf.dir}" />
+
+      <library-path dir="${main.src.dir}/bin" append="true">
+        <include name="all.swc" />
+        <include name="ChatUI.swc" />
+        <include name="SFS2X_API_AS3-1.2.swc" />
+        <include name="protoc-gen-as3-1.1.0/protobuf.swc" />
+        <include name="GZIPEncoder_Flash.swc" />
+      </library-path>
+
+      <library-path file="${aibox.dir}/aibox.swc" append="true"/>
+      <library-path file="${aibox.dir}/constants.swc" append="true"/>
+      <library-path file="${services.swc}" append="true" />
+      <library-path file="${core.actionscript.swc}" append="true" />
+
+      <default-frame-rate>40</default-frame-rate>
+      <default-size width="760" height="750" />
+
+      <incremental>${incremental}</incremental>
+      <optimize>${optimize}</optimize>
+      <keep-generated-actionscript>${keep-generated-actionscript}</keep-generated-actionscript>
+
+      <strict>true</strict>
+      <use-network>true</use-network>
+      <warnings>false</warnings>
+      <use-resource-bundle-metadata>true</use-resource-bundle-metadata>
+      <static-link-runtime-shared-libraries>true</static-link-runtime-shared-libraries>
+    </mxmlc>
+  </target>
+
+  <!-- ********************************************************************************** -->
+  <!--                            Packaging Targets                                       -->
+  <!-- ********************************************************************************** -->
+  <target name="build-client-full">	
+    <!-- Lifted from the client build.xml target of the same name, and modified for use by SIAB. --> 
+    <delete dir="${package.dir}"/>
+    <delete dir="${release.dir}"/>
+    <mkdir dir="${package.dir}"/>
+    <mkdir dir="${release.dir}"/>
+    <copy file="${versions.file}" todir="${package.dir}"/>
+  
+    <!-- These are unencrypted/unobfuscated SWFs --> 
+    <!-- NOTE: GAME.swf and gameloader-local.swf are not in the same output dir, because the latter uses the existing commonant build target. -->
+    <copy file="${output.dir}/GAME.swf" tofile="${package.dir}/game-v${build.hard.version}.v${build.soft.version}.swf"/>
+    <copy file="${build.dir}/gameloader-local.swf" tofile="${package.dir}/gameloader-v${build.gameloader.swf.version}.swf"/> 
+ 
+    <property name="new.assets.version" value="true"/>
+    <antcall target="-versionize-assets"/>
+    
+    <mkdir dir="${release.dir}"/>
+    <tar destfile="${release.dir}/release.tgz" compression="gzip">
+      <tarfileset dir="${package.dir}" dirmode="775" filemode="664">
+         <include name="**/*"/>
+      </tarfileset>
+    </tar>
+    
+    <copy file="${versions.file}" todir="${release.dir}"/>
+                    
+    <tar destfile="${build.dir}/${client.archive.name}-full.tgz" compression="gzip">
+      <tarfileset dir="${release.dir}">
+      <include name="**/*"/>
+      </tarfileset>
+    </tar>
+  </target>
+
+  <target name="build-assets-full">	
+    <!-- Lifted from the client build.xml target of the same name, and modified for use by SIAB. --> 
+    <delete dir="${package.dir}"/>
+    <delete dir="${release.dir}"/>
+    <mkdir dir="${package.dir}"/>
+    <mkdir dir="${release.dir}"/>
+    <copy file="${versions.file}" todir="${package.dir}"/>
+    
+    <copy todir="${package.dir}">
+      <fileset dir="${src.dir}/staging">
+	<include name="assets/**"/>
+	<exclude name="assets/sounds/**"/>
+	<exclude name="assets/handbook/**"/>
+	<exclude name="assets/versioned_assets.properties"/>
+      </fileset>
+    </copy>
+    
+    <mkdir dir="${package.dir}/assets/images/feeddialog"/>
+    <copy todir="${package.dir}/assets/images/feeddialog" failonerror="false">
+      <fileset dir="${package.dir}/assets/streamposts">
+	<include name="**/*"/>
+      </fileset>
+    </copy>
+    
+    <mkdir dir="${release.dir}"/>
+    <tar destfile="${release.dir}/release.tgz" compression="gzip">
+      <tarfileset dir="${package.dir}" dirmode="775" filemode="664">
+       <include name="**/*"/>
+      </tarfileset>
+    </tar>
+    
+    <copy file="${versions.file}" todir="${release.dir}"/>
+		    
+    <tar destfile="${build.dir}/${assets.archive.name}-full.tgz" compression="gzip">
+      <tarfileset dir="${release.dir}">
+      <include name="**/*"/>
+      </tarfileset>
+    </tar>
+  </target>
+
+  <target name="package" depends="compile,-set-versions-file">
+    <!-- Lifted from the client build.xml target of the same name, and modified for use by SIAB. --> 
+
+    <!-- Build the flash code -->
+    <antcall target="compile"/>
+
+    <!-- Build archives -->
+    <antcall target="build-client-full"/>
+    <antcall target="build-assets-full"/>
+    <antcall target="update-database-versions"/>
+
+    <!-- Fixup some missing files explicitly excluded by the Jenkins build above, but which we need. -->
+    <copy todir="${package.dir}">
+      <fileset dir="${src.dir}/staging">
+	<include name="assets/sounds/**"/>
+	<include name="assets/handbook/**"/>
+	<include name="assets/en.v*.txt"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="dist" depends="package">
+    <!-- Lifted from the client build.xml target of the same name, and modified for use by SIAB. --> 
+    <copy file="${versions.file}" todir="${dist.dir}"/>
+    <copy file="${build.dir}/${client.archive.name}-full.tgz" todir="${dist.dir}"/>
+    <copy file="${build.dir}/${assets.archive.name}-full.tgz" todir="${dist.dir}"/>
+  </target>
+
+<!-- ********************************************************************************** -->
+<!--							Versioning Targets										-->
+<!-- ********************************************************************************** -->
+<target name="get-client-versions" depends="-get-hard-soft-versions">
+  <!-- Lifted from the client build.xml target of the same name, and modified for use by SIAB. --> 
+  <property name="build.release.version" value="0.0.0"/>
+</target>
+
+<target name="get-base-release-versions">
+  <property file="${build.dir}/base-version.properties"/>
+</target>
+
+<target name="-get-versions" depends="get-client-versions, get-base-release-versions">
+  <!-- Lifted from the client build.xml target of the same name, and modified for use by SIAB. --> 
+  <!-- Soft version is going to be the SVN head revision number to guarantee uniqueness -->
+  <property name="build.soft.version" value="${build.svn.build.version}"/>
+  <property name="build.gameloader.swf.version" value="${build.svn.build.version}"/>
+  
+  <echo message="******** Build Properties ********"/>
+  <echo message="Release:	${build.release.version}"/>
+  <echo message="Build time:	${build.time}"/>
+  <echo message="Branch:	${build.branch.name}"/>
+  <echo message="SVN Base:	${build.svn.base.version}"/>
+  <echo message="SVN Build:	${build.svn.build.version}"/>
+  <echo message="Hard:	${build.hard.version}"/>
+  <echo message="Soft:	${build.soft.version}"/>
+  <echo message="Sound:	${sounds.version}"/>
+  <echo message="Handbook:	${handbook.version}"/>
+  <echo message="Game Loader:	${build.gameloader.swf.version}"/>
+  
+  <property name="client.archive.name" value="${product.module}-${build.time}"/>
+  <property name="assets.archive.name" value="wc-fb-assets-${build.time}"/>
+  <property name="game.swf" value="game-v${build.hard.version}.v${build.soft.version}.swf"/>
+</target>
+
+<target name="-set-versions-file">
+  <property name="versions.file" location="${build.dir}/version.properties"/>
+
+  <!-- Don't append first line, so that we overwrite existing data -->
+  <echo message="product.name=${product.name}${nl}" file="${versions.file}" append="false" />
+
+  <!-- Append everything else -->
+  <echo message="product.module=${product.module}${nl}" file="${versions.file}" append="true" />
+  <echo message="build.time=${build.time}${nl}" file="${versions.file}" append="true" />
+  <echo message="build.project=${build.project}${nl}" file="${versions.file}" append="true" />
+  <echo message="build.number=${build.number}${nl}" file="${versions.file}" append="true" />
+  <echo message="hard.version=${build.hard.version}${nl}" file="${versions.file}" append="true" />
+  <echo message="soft.version=${build.soft.version}${nl}" file="${versions.file}" append="true" />
+  <echo message="sounds.version=${sounds.version}${nl}" file="${versions.file}" append="true" />
+  <echo message="handbook.version=${handbook.version}${nl}" file="${versions.file}" append="true" />
+  <echo message="gameloader.version=${build.gameloader.swf.version}${nl}" file="${versions.file}" append="true" />
+  <echo message="branch.name=${build.branch.name}${nl}" file="${versions.file}" append="true" />
+  <echo message="svn.base.version=${build.svn.base.version}${nl}" file="${versions.file}" append="true" />
+  <echo message="svn.build.version=${build.svn.build.version}${nl}" file="${versions.file}" append="true" />
+  <echo message="package.manager=${package.manager}${nl}" file="${versions.file}" append="true" />
+</target>
+
+<!-- Populate the game DB with the verison information used by the build, because they need to agree. -->
+<!-- NOTE: this is supported only on the SIAB VM. Local ad-hoc builds on OSX won't exec this target. -->
+
+<target name="update-database-versions" if="isUnix">
+  <property name="db.sql"
+	    value="SELECT * FROM versions"/>
+  <echo message="executing SQL script: ${db.sql}" />
+
+  <exec executable="/usr/bin/mysql" dir="." failonerror="true">
+    <arg value="--batch"/>
+    <arg value="--user=${db.user}"/>
+    <arg value="--password=${db.password}"/>
+    <arg value="--database=${db.database}"/>
+    <arg value="--execute=${db.sql}"/>
+  </exec>
+</target>
+</project>

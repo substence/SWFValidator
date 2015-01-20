@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="yes"?>
+
+<MapTable>
+  <ID Old="secureSWF:Decryption" New="102,111,114,32"></ID>
+  <ID Old="gs.plugins:FramePlugin" New="115,117,112,101,114"></ID>
+  <ID Old="com.adobe.serialization.json:JSONTokenType" New="102,105,110,97,108,108,121"></ID>
+  <ID Old="com.adobe.serialization.json:JSONTokenizer" New="105,110,32"></ID>
+  <ID Old="keys" New="116,104,114,111,119"></ID>
+  <ID Old="com.adobe.utils:IntUtil" New="98,114,101,97,107"></ID>
+  <ID Old="com.adobe.serialization.json:JSONParseError" New="32,99,97,115,101"></ID>
+  <ID Old="friends_unsecure_fla:MainTimeline" New="116,114,121"></ID>
+  <ID Old="gs.plugins:TintPlugin" New="99,111,110,116,105,110,117,101"></ID>
+  <ID Old="LoadImageError" New="99,97,116,99,104"></ID>
+  <ID Old="com.adobe.serialization.json:JSONEncoder" New="100,111"></ID>
+  <ID Old="com.adobe.crypto:MD5" New="32,102,111,114"></ID>
+  <ID Old="decrypt" New="101,108,115,101"></ID>
+  <ID Old="gs.utils.tween:TweenInfo" New="105,102,32"></ID>
+  <ID Old="com.adobe.serialization.json:JSONToken" New="32,105,102"></ID>
+  <ID Old="gs.plugins:EndArrayPlugin" New="100,111,32"></ID>
+  <ID Old="gs.plugins:TweenPlugin" New="32,105,110"></ID>
+  <ID Old="gs.plugins:VolumePlugin" New="101,97,99,104"></ID>
+  <ID Old="secureSWF:Watermark" New="114,101,116,117,114,110"></ID>
+  <ID Old="gs.easing:Elastic" New="105,102"></ID>
+  <ID Old="gs.plugins:RemoveTintPlugin" New="32,116,114,121"></ID>
+  <ID Old="Decryption" New="105,110"></ID>
+  <ID Old="secureSWF" New="99,97,115,101,32"></ID>
+  <ID Old="com.adobe.serialization.json:JSONDecoder" New="32,101,97,99,104"></ID>
+  <ID Old="strings" New="101,97,99,104,32"></ID>
+  <ID Old="gs.plugins:AutoAlphaPlugin" New="32,100,111"></ID>
+  <ID Old="friends_unsecure_fla:shinybluestar_20" New="100,101,102,97,117,108,116"></ID>
+  <ID Old="addStr" New="102,111,114"></ID>
+  <ID Old="gs.utils.tween:ArrayTweenInfo" New="32,101,108,115,101"></ID>
+  <ID Old="gs.plugins:VisiblePlugin" New="116,114,121,32"></ID>
+  <ID Old="URLLoaderApi" New="101,108,115,101,32"></ID>
+  <ID Old="gs:TweenLite" New="99,97,115,101"></ID>
+  <ID Old="com.adobe.serialization.json:JSON" New="115,119,105,116,99,104"></ID>
+</MapTable>
+

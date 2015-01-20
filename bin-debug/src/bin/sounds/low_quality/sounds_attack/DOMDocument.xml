@@ -1,0 +1,405 @@
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 12.0 build 537" majorVersion="12" buildNumber="537" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false">
+     <media>
+          <DOMSoundItem name="ac130fireEQ.wav" itemID="523d0eef-00000047" linkageExportForAS="true" linkageClassName="attack_spectre" sourceExternalFilepath="./LIBRARY/ac130fireEQ.wav" sourceLastImported="1379733230" sourcePlatform="macintosh" externalFileSize="58900" href="ac130fireEQ.wav" soundDataHRef="M 62 1379733224.dat" format="44kHz 16bit Mono" sampleCount="26460" dataLength="52920"/>
+          <DOMSoundItem name="attack_mortar.wav" itemID="4e5aa32c-000001fa" linkageExportForAS="true" linkageClassName="attack_mortar" sourceExternalFilepath="../../../sounds_attack/LIBRARY/attack_mortar.wav" sourceLastImported="1379549012" externalFileCRC32="1093208714" externalFileSize="14178" href="attack_mortar.wav" soundDataHRef="M 34 1314562860.dat" format="11kHz 16bit Mono" sampleCount="6998" dataLength="13996"/>
+          <DOMSoundItem name="bfg18801_03.mp3" itemID="5390f0fd-00000291" linkageExportForAS="true" linkageClassName="attack_shellbfg" sourceExternalFilepath="./LIBRARY/bfg18801_03.mp3" sourceLastImported="1402011596" sourcePlatform="macintosh" externalFileSize="16555" href="bfg18801_03.mp3" soundDataHRef="M 64 1402007788.dat" format="22kHz 16bit Mono" sampleCount="34388"/>
+          <DOMSoundItem name="Bomb_Fall_1_quiet.wav" itemID="502c4588-00000563" linkageExportForAS="true" linkageClassName="attack_bombfall_1" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Bomb_Fall_1_quiet.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileCRC32="2407789775" externalFileSize="177276" href="Bomb_Fall_1_quiet.wav" soundDataHRef="M 37 1345078664.dat" format="44kHz 16bit Mono" sampleCount="88616" dataLength="177232"/>
+          <DOMSoundItem name="Bomb_Fall_1.wav" itemID="502c3c89-0000052b" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Bomb_Fall_1.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileCRC32="1952227104" externalFileSize="177276" href="Bomb_Fall_1.wav" soundDataHRef="M 35 1345076361.dat" format="44kHz 16bit Mono" sampleCount="88616" dataLength="177232"/>
+          <DOMSoundItem name="Bomb_Fall_2_quiet.wav" itemID="502c4588-00000567" linkageExportForAS="true" linkageClassName="attack_bombfall_2" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Bomb_Fall_2_quiet.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileCRC32="1748612745" externalFileSize="184488" href="Bomb_Fall_2_quiet.wav" soundDataHRef="M 38 1345078664.dat" format="44kHz 16bit Mono" sampleCount="92222" dataLength="184444"/>
+          <DOMSoundItem name="Bomb_Fall_2.wav" itemID="502c3c89-0000052f" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Bomb_Fall_2.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileCRC32="2290201888" externalFileSize="184488" href="Bomb_Fall_2.wav" soundDataHRef="M 36 1345076361.dat" format="44kHz 16bit Mono" sampleCount="92222" dataLength="184444"/>
+          <DOMSoundItem name="building - 1.wav" itemID="4dde98df-00000671" linkageExportForAS="true" linkageClassName="attack_missilehit_4" sourceExternalFilepath="../../../sounds_attack/LIBRARY/building - 1.wav" sourceLastImported="1379549012" externalFileCRC32="287504087" externalFileSize="133148" href="building - 1.wav" soundDataHRef="M 29 1306432871.dat" format="44kHz 16bit Mono" sampleCount="66552" exportFormat="10" dataLength="133104"/>
+          <DOMSoundItem name="building - 2.wav" itemID="4dde98df-00000670" linkageExportForAS="true" linkageClassName="attack_missilehit_5" sourceExternalFilepath="../../../sounds_attack/LIBRARY/building - 2.wav" sourceLastImported="1379549012" externalFileCRC32="1504156655" externalFileSize="123152" href="building - 2.wav" soundDataHRef="M 30 1306432872.dat" format="44kHz 16bit Mono" sampleCount="61554" exportFormat="10" dataLength="123108"/>
+          <DOMSoundItem name="building - 3.wav" itemID="4dde98df-0000066f" linkageExportForAS="true" linkageClassName="attack_missilehit_6" sourceExternalFilepath="../../../sounds_attack/LIBRARY/building - 3.wav" sourceLastImported="1379549012" externalFileCRC32="1455259044" externalFileSize="132676" href="building - 3.wav" soundDataHRef="M 31 1306432872.dat" format="44kHz 16bit Mono" sampleCount="66316" exportFormat="10" dataLength="132632"/>
+          <DOMSoundItem name="building 1.wav" itemID="4ddc3c6c-0000057a" linkageExportForAS="true" linkageClassName="attack_hit10" sourceExternalFilepath="../../../sounds_attack/LIBRARY/building 1.wav" sourceLastImported="1379549012" externalFileCRC32="698640051" externalFileSize="50780" href="building 1.wav" soundDataHRef="M 19 1306279020.dat" format="44kHz 16bit Mono" sampleCount="25368" exportFormat="10" dataLength="50736"/>
+          <DOMSoundItem name="building 2.wav" itemID="4ddc3c6c-0000057e" linkageExportForAS="true" linkageClassName="attack_hit11" sourceExternalFilepath="../../../sounds_attack/LIBRARY/building 2.wav" sourceLastImported="1379549012" externalFileCRC32="967472511" externalFileSize="52844" href="building 2.wav" soundDataHRef="M 20 1306279020.dat" format="44kHz 16bit Mono" sampleCount="26400" exportFormat="10" dataLength="52800"/>
+          <DOMSoundItem name="building 3.wav" itemID="4ddc3c6c-00000582" linkageExportForAS="true" linkageClassName="attack_hit12" sourceExternalFilepath="../../../sounds_attack/LIBRARY/building 3.wav" sourceLastImported="1379549012" externalFileCRC32="2924738499" externalFileSize="49114" href="building 3.wav" soundDataHRef="M 21 1306279020.dat" format="44kHz 16bit Mono" sampleCount="24535" exportFormat="10" dataLength="49070"/>
+          <DOMSoundItem name="dirt - 1.wav" itemID="4dde96fb-0000066e" linkageExportForAS="true" linkageClassName="attack_missilehit_1" sourceExternalFilepath="../../../sounds_attack/LIBRARY/dirt - 1.wav" sourceLastImported="1379549012" externalFileCRC32="1402212187" externalFileSize="133148" href="dirt - 1.wav" soundDataHRef="M 32 1306432872.dat" format="44kHz 16bit Mono" sampleCount="66552" exportFormat="10" dataLength="133104"/>
+          <DOMSoundItem name="dirt - 2.wav" itemID="4dde96fb-0000066d" linkageExportForAS="true" linkageClassName="attack_missilehit_2" sourceExternalFilepath="../../../sounds_attack/LIBRARY/dirt - 2.wav" sourceLastImported="1379549012" externalFileCRC32="3707819040" externalFileSize="132676" href="dirt - 2.wav" soundDataHRef="M 33 1306432872.dat" format="44kHz 16bit Mono" sampleCount="66316" exportFormat="10" dataLength="132632"/>
+          <DOMSoundItem name="dirt - 3.wav" itemID="4dde96fb-0000066c" linkageExportForAS="true" linkageClassName="attack_missilehit_3" sourceExternalFilepath="../../../sounds_attack/LIBRARY/dirt - 3.wav" sourceLastImported="1379549012" externalFileCRC32="685421515" externalFileSize="132676" href="dirt - 3.wav" soundDataHRef="M 28 1306432871.dat" format="44kHz 16bit Mono" sampleCount="66316" exportFormat="10" dataLength="132632"/>
+          <DOMSoundItem name="dirt 1.wav" itemID="4ddc3c6c-00000586" linkageExportForAS="true" linkageClassName="attack_hit1" sourceExternalFilepath="../../../sounds_attack/LIBRARY/dirt 1.wav" sourceLastImported="1379549012" externalFileCRC32="660841387" externalFileSize="87906" href="dirt 1.wav" soundDataHRef="M 22 1306279020.dat" format="44kHz 16bit Mono" sampleCount="43931" exportFormat="10" dataLength="87862"/>
+          <DOMSoundItem name="dirt 2.wav" itemID="4ddc3c6d-0000058a" linkageExportForAS="true" linkageClassName="attack_hit2" sourceExternalFilepath="../../../sounds_attack/LIBRARY/dirt 2.wav" sourceLastImported="1379549012" externalFileCRC32="3471687727" externalFileSize="85960" href="dirt 2.wav" soundDataHRef="M 23 1306279021.dat" format="44kHz 16bit Mono" sampleCount="42958" exportFormat="10" dataLength="85916"/>
+          <DOMSoundItem name="dirt 3.wav" itemID="4ddc3c6d-0000058e" linkageExportForAS="true" linkageClassName="attack_hit3" sourceExternalFilepath="../../../sounds_attack/LIBRARY/dirt 3.wav" sourceLastImported="1379549012" externalFileCRC32="2466565527" externalFileSize="86708" href="dirt 3.wav" soundDataHRef="M 24 1306279021.dat" format="44kHz 16bit Mono" sampleCount="43332" exportFormat="10" dataLength="86664"/>
+          <DOMSoundItem name="fireball_hit.wav" itemID="511404db-00000321" linkageExportForAS="true" linkageClassName="attack_fireballhit" sourceExternalFilepath="../../../sounds_attack/LIBRARY/fireball_hit.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileSize="310316" href="fireball_hit.wav" soundDataHRef="M 52 1360266400.dat" format="44kHz 16bit Mono" sampleCount="155136" exportFormat="10" dataLength="310272"/>
+          <DOMSoundItem name="fireball.wav" itemID="511404db-00000322" linkageExportForAS="true" linkageClassName="attack_fireball" sourceExternalFilepath="../../../sounds_attack/LIBRARY/fireball.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileSize="140920" href="fireball.wav" soundDataHRef="M 53 1360266400.dat" format="44kHz 16bit Mono" sampleCount="70438" exportFormat="10" dataLength="140876"/>
+          <DOMSoundItem name="flak.wav" itemID="504a8243-00000275" linkageExportForAS="true" linkageClassName="attack_flak" sourceExternalFilepath="../../../sounds_attack/LIBRARY/flak.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileCRC32="2662977182" externalFileSize="105772" href="flak.wav" soundDataHRef="M 39 1347908034.dat" format="44kHz 16bit Mono" sampleCount="52864" exportFormat="10" dataLength="105728"/>
+          <DOMSoundItem name="Flame.wav" itemID="4ddc316f-000001f6" linkageExportForAS="true" linkageClassName="attack_flame" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Flame.wav" sourceLastImported="1379549012" externalFileCRC32="266952515" externalFileSize="174666" href="Flame.wav" soundDataHRef="M 16 1305846326.dat" format="44kHz 16bit Mono" sampleCount="87296" exportFormat="14" dataLength="174592"/>
+          <DOMSoundItem name="FlameEND.wav" itemID="4ddc316f-000001f7" linkageExportForAS="true" linkageClassName="attack_flameend" sourceExternalFilepath="../../../sounds_attack/LIBRARY/FlameEND.wav" sourceLastImported="1379549012" externalFileCRC32="1453219847" externalFileSize="109598" href="FlameEND.wav" soundDataHRef="M 17 1305847873.dat" format="44kHz 16bit Mono" sampleCount="54762" exportFormat="14" dataLength="109524"/>
+          <DOMSoundItem name="Grind_1.wav" itemID="520c0217-00000433" linkageExportForAS="true" linkageClassName="attack_grind1" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Grind_1.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileSize="194378" href="Grind_1.wav" soundDataHRef="M 60 1376518613.dat" format="44kHz 16bit Mono" sampleCount="97167" dataLength="194334"/>
+          <DOMSoundItem name="Gun Tower (single).wav" itemID="4dcdaa86-000001eb" linkageExportForAS="true" linkageClassName="attack_bullet_spray" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Gun Tower (single).wav" sourceLastImported="1379549012" externalFileCRC32="3917974842" externalFileSize="45988" href="Gun Tower (single).wav" soundDataHRef="M 7 1305324166.dat" format="44kHz 16bit Mono" sampleCount="13964" exportFormat="10" dataLength="27928"/>
+          <DOMSoundItem name="iceball_hit.wav" itemID="511404db-00000323" linkageExportForAS="true" linkageClassName="attack_iceballhit" sourceExternalFilepath="../../../sounds_attack/LIBRARY/iceball_hit.wav" sourceLastImported="1360264930" sourcePlatform="macintosh" externalFileSize="264236" href="iceball_hit.wav" soundDataHRef="M 54 1360266400.dat" format="44kHz 16bit Mono" sampleCount="132096" exportFormat="10" exportBits="4" dataLength="264192"/>
+          <DOMSoundItem name="iceball.wav" itemID="511404dc-00000324" linkageExportForAS="true" linkageClassName="attack_iceball" sourceExternalFilepath="../../../sounds_attack/LIBRARY/iceball.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileSize="176768" href="iceball.wav" soundDataHRef="M 55 1360266400.dat" format="44kHz 16bit Mono" sampleCount="88362" exportFormat="10" dataLength="176724"/>
+          <DOMSoundItem name="laser-charge.wav" itemID="4f346766-00001fab" linkageExportForAS="true" linkageClassName="attack_laser_charge" sourceExternalFilepath="../../../sounds_attack/LIBRARY/laser-charge.wav" sourceLastImported="1379549012" externalFileCRC32="248600712" externalFileSize="947264" href="laser-charge.wav" soundDataHRef="M 33 1328834406.dat" format="44kHz 16bit Stereo" sampleCount="236805" exportFormat="4" dataLength="947220"/>
+          <DOMSoundItem name="laser-fire.wav" itemID="4f346766-00001faf" linkageExportForAS="true" linkageClassName="attack_laser_fire" sourceExternalFilepath="../../../sounds_attack/LIBRARY/laser-fire.wav" sourceLastImported="1379549012" externalFileCRC32="2824327142" externalFileSize="354656" href="laser-fire.wav" soundDataHRef="M 34 1328834406.dat" format="44kHz 16bit Stereo" sampleCount="88653" exportFormat="4" dataLength="354612"/>
+          <DOMSoundItem name="metal 1.wav" itemID="4ddc3c6b-0000056e" linkageExportForAS="true" linkageClassName="attack_hit7" sourceExternalFilepath="../../../sounds_attack/LIBRARY/metal 1.wav" sourceLastImported="1379549012" externalFileCRC32="1245821130" externalFileSize="99422" href="metal 1.wav" soundDataHRef="M 16 1306279019.dat" format="44kHz 16bit Mono" sampleCount="49689" exportFormat="10" dataLength="99378"/>
+          <DOMSoundItem name="metal 2.wav" itemID="4ddc3c6c-00000572" linkageExportForAS="true" linkageClassName="attack_hit8" sourceExternalFilepath="../../../sounds_attack/LIBRARY/metal 2.wav" sourceLastImported="1379549012" externalFileCRC32="1898270544" externalFileSize="88220" href="metal 2.wav" soundDataHRef="M 17 1306279020.dat" format="44kHz 16bit Mono" sampleCount="44088" exportFormat="10" dataLength="88176"/>
+          <DOMSoundItem name="metal 3.wav" itemID="4ddc3c6c-00000576" linkageExportForAS="true" linkageClassName="attack_hit9" sourceExternalFilepath="../../../sounds_attack/LIBRARY/metal 3.wav" sourceLastImported="1379549012" externalFileCRC32="734679227" externalFileSize="75626" href="metal 3.wav" soundDataHRef="M 18 1306279020.dat" format="44kHz 16bit Mono" sampleCount="37791" exportFormat="10" dataLength="75582"/>
+          <DOMSoundItem name="Missile Launcher Ver 4 - fixed.wav" itemID="4dd5619b-000001dc" linkageExportForAS="true" linkageClassName="attack_missile" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Missile Launcher Ver 4 - fixed.wav" sourceLastImported="1379549012" externalFileCRC32="3339687801" externalFileSize="98494" href="Missile Launcher Ver 4 - fixed.wav" soundDataHRef="M 9 1305829787.dat" format="44kHz 16bit Mono" sampleCount="49210" exportFormat="10" dataLength="98420"/>
+          <DOMSoundItem name="missile_1_skybolt_detonation.wav" itemID="5182d2b6-000003b7" linkageExportForAS="true" linkageClassName="attack_missile_skybolt" sourceExternalFilepath="../../../sounds_attack/LIBRARY/missile_1_skybolt_detonation.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileSize="176272" href="missile_1_skybolt_detonation.wav" soundDataHRef="M 54 1367527940.dat" format="44kHz 16bit Mono" sampleCount="88114" dataLength="176228"/>
+          <DOMSoundItem name="missile_2_griffin_detonation.wav" itemID="5182d2b6-000003b8" linkageExportForAS="true" linkageClassName="attack_missile_griffin" sourceExternalFilepath="../../../sounds_attack/LIBRARY/missile_2_griffin_detonation.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileSize="197106" href="missile_2_griffin_detonation.wav" soundDataHRef="M 55 1367527940.dat" format="44kHz 16bit Mono" sampleCount="98531" dataLength="197062"/>
+          <DOMSoundItem name="missile_3_burner_detonation.wav" itemID="5182d2b6-000003b9" linkageExportForAS="true" linkageClassName="attack_missile_burner" sourceExternalFilepath="../../../sounds_attack/LIBRARY/missile_3_burner_detonation.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileSize="396482" href="missile_3_burner_detonation.wav" soundDataHRef="M 56 1367527940.dat" format="44kHz 16bit Mono" sampleCount="198219" dataLength="396438"/>
+          <DOMSoundItem name="missile_4_peacekeeper_detonation.wav" itemID="5182d2b7-000003ba" linkageExportForAS="true" linkageClassName="attack_missile_peacekeeper" sourceExternalFilepath="../../../sounds_attack/LIBRARY/missile_4_peacekeeper_detonation.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileSize="353324" href="missile_4_peacekeeper_detonation.wav" soundDataHRef="M 57 1367527940.dat" format="44kHz 16bit Mono" sampleCount="176640" dataLength="353280"/>
+          <DOMSoundItem name="missile_5_tomahawk_detonation.wav" itemID="5182d2b7-000003bb" linkageExportForAS="true" linkageClassName="attack_missile_tomahawk" sourceExternalFilepath="../../../sounds_attack/LIBRARY/missile_5_tomahawk_detonation.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileSize="353324" href="missile_5_tomahawk_detonation.wav" soundDataHRef="M 58 1367527940.dat" format="44kHz 16bit Mono" sampleCount="176640" dataLength="353280"/>
+          <DOMSoundItem name="missile_large_launch.wav" itemID="518ad150-00000a37" linkageExportForAS="true" linkageClassName="missile_large_fire" sourceExternalFilepath="../../../sounds_attack/LIBRARY/missile_large_launch.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileSize="267308" href="missile_large_launch.wav" soundDataHRef="M 59 1368052018.dat" format="44kHz 16bit Mono" sampleCount="133632" dataLength="267264"/>
+          <DOMSoundItem name="Plasma_Fire.wav" itemID="5089a5e9-00000288" linkageExportForAS="true" linkageClassName="attack_plasma_fire" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Plasma_Fire.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileCRC32="2849143549" externalFileSize="142380" href="Plasma_Fire.wav" soundDataHRef="M 40 1351198168.dat" format="44kHz 16bit Mono" sampleCount="71168" exportFormat="10" dataLength="142336"/>
+          <DOMSoundItem name="Plasma_Loop.wav" itemID="5089bbe6-000002f7" linkageExportForAS="true" linkageClassName="attack_plasma_loop" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Plasma_Loop.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileCRC32="1081590321" externalFileSize="267446" href="Plasma_Loop.wav" soundDataHRef="M 45 1351203394.dat" format="44kHz 16bit Mono" sampleCount="133701" exportFormat="10" dataLength="267402"/>
+          <DOMSoundItem name="Rifle.wav" itemID="4e02873c-00000751" linkageExportForAS="true" linkageClassName="attack_rifle" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Rifle.wav" sourceLastImported="1379549012" externalFileCRC32="2724128476" externalFileSize="88146" href="Rifle.wav" soundDataHRef="M 15 1305846141.dat" format="44kHz 16bit Mono" sampleCount="44051" dataLength="88102"/>
+          <DOMSoundItem name="Rifle2.wav" itemID="4e028744-00000755" linkageExportForAS="true" linkageClassName="attack_rifle2" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Rifle2.wav" sourceLastImported="1379549012" externalFileCRC32="3002971395" externalFileSize="78888" href="Rifle2.wav" soundDataHRef="M 33 1308788548.dat" format="44kHz 16bit Mono" sampleCount="39422" dataLength="78844"/>
+          <DOMSoundItem name="Rifle3.wav" itemID="4e028744-00000759" linkageExportForAS="true" linkageClassName="attack_rifle3" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Rifle3.wav" sourceLastImported="1379549012" externalFileCRC32="495228773" externalFileSize="86508" href="Rifle3.wav" soundDataHRef="M 34 1308788548.dat" format="44kHz 16bit Mono" sampleCount="43232" dataLength="86464"/>
+          <DOMSoundItem name="Rocket_Barrage_Fire.wav" itemID="5089a63a-0000028e" linkageExportForAS="true" linkageClassName="attack_rocket_barrage_fire" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Rocket_Barrage_Fire.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileCRC32="2478146687" externalFileSize="221228" href="Rocket_Barrage_Fire.wav" soundDataHRef="M 43 1351198169.dat" format="44kHz 16bit Mono" sampleCount="110592" exportFormat="10" dataLength="221184"/>
+          <DOMSoundItem name="Rocket_Barrage_Hit.wav" itemID="5089a641-0000028f" linkageExportForAS="true" linkageClassName="attack_rocket_barrage_hit" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Rocket_Barrage_Hit.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileCRC32="3846946886" externalFileSize="264236" href="Rocket_Barrage_Hit.wav" soundDataHRef="M 44 1351198169.dat" format="44kHz 16bit Mono" sampleCount="132096" exportFormat="10" dataLength="264192"/>
+          <DOMSoundItem name="Shell_1.wav" itemID="4ddc4902-000005ad" linkageExportForAS="true" linkageClassName="attack_shell_1" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Shell_1.wav" sourceLastImported="1379549012" externalFileCRC32="3305505184" externalFileSize="40380" href="Shell_1.wav" soundDataHRef="M 7 1305796412.dat" format="44kHz 16bit Mono" sampleCount="20168" dataLength="40336"/>
+          <DOMSoundItem name="Shell_2.wav" itemID="4ddc4902-000005ae" linkageExportForAS="true" linkageClassName="attack_shell_2" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Shell_2.wav" sourceLastImported="1379549012" externalFileCRC32="1661379591" externalFileSize="36524" href="Shell_2.wav" soundDataHRef="M 8 1305796412.dat" format="44kHz 16bit Mono" sampleCount="18240" dataLength="36480"/>
+          <DOMSoundItem name="Shell_3.wav" itemID="4ddc4717-000005ac" linkageExportForAS="true" linkageClassName="attack_shell_3" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Shell_3.wav" sourceLastImported="1379549012" externalFileCRC32="1223737811" externalFileSize="22780" href="Shell_3.wav" soundDataHRef="M 4 1305796411.dat" format="44kHz 16bit Mono" sampleCount="11368" dataLength="22736"/>
+          <DOMSoundItem name="Shell_4.wav" itemID="4ddc4703-000005ab" linkageExportForAS="true" linkageClassName="attack_shell_4" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Shell_4.wav" sourceLastImported="1379549012" externalFileCRC32="3757522432" externalFileSize="26708" href="Shell_4.wav" soundDataHRef="M 5 1305796412.dat" format="44kHz 16bit Mono" sampleCount="13332" dataLength="26664"/>
+          <DOMSoundItem name="Shell_5.wav" itemID="4ddc4703-000005aa" linkageExportForAS="true" linkageClassName="attack_shell_5" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Shell_5.wav" sourceLastImported="1379549012" externalFileCRC32="3591692836" externalFileSize="17490" href="Shell_5.wav" soundDataHRef="M 6 1305796412.dat" format="44kHz 16bit Mono" sampleCount="8723" dataLength="17446"/>
+          <DOMSoundItem name="Shock Damage - Hit.wav" itemID="50b80f24-0000027a" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Shock Damage - Hit.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileCRC32="4105853943" externalFileSize="132140" href="Shock Damage - Hit.wav" soundDataHRef="M 44 1354239780.dat" format="44kHz 16bit Mono" sampleCount="66048" exportFormat="10" dataLength="132096"/>
+          <DOMSoundItem name="Shock Tank - Fire.wav" itemID="50b80f24-0000027e" linkageExportForAS="true" linkageClassName="attack_shock_tank" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Shock Tank - Fire.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileCRC32="2306024852" externalFileSize="202796" href="Shock Tank - Fire.wav" soundDataHRef="M 45 1354239780.dat" format="44kHz 16bit Mono" sampleCount="101376" exportFormat="10" dataLength="202752"/>
+          <DOMSoundItem name="Shock Troop - Fire.wav" itemID="50b80f24-00000282" linkageExportForAS="true" linkageClassName="attack_shock_trooper" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Shock Troop - Fire.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileCRC32="496218026" externalFileSize="88108" href="Shock Troop - Fire.wav" soundDataHRef="M 46 1354239780.dat" format="44kHz 16bit Mono" sampleCount="44032" exportFormat="10" dataLength="88064"/>
+          <DOMSoundItem name="Shock Turret - Charge up.wav" itemID="50b80f24-00000286" linkageExportForAS="true" linkageClassName="attack_shock_charge" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Shock Turret - Charge up.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileCRC32="3230439528" externalFileSize="84876" href="Shock Turret - Charge up.wav" soundDataHRef="M 47 1354239780.dat" format="44kHz 16bit Mono" sampleCount="42416" exportFormat="10" dataLength="84832"/>
+          <DOMSoundItem name="Shock Turret - Fire.wav" itemID="50b80f24-0000028a" linkageExportForAS="true" linkageClassName="attack_shock_turret" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Shock Turret - Fire.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileCRC32="578263387" externalFileSize="152620" href="Shock Turret - Fire.wav" soundDataHRef="M 48 1354239780.dat" format="44kHz 16bit Mono" sampleCount="76288" exportFormat="10" dataLength="152576"/>
+          <DOMSoundItem name="siege_chargeup_44100.wav" itemID="52548919-00000294" linkageExportForAS="true" linkageClassName="attack_siege_charge" sourceExternalFilepath="./LIBRARY/siege_chargeup_44100.wav" sourceLastImported="1381271491" sourcePlatform="macintosh" externalFileSize="820990" href="siege_chargeup_44100.wav" soundDataHRef="M 62 1381271791.dat" format="44kHz 16bit Stereo" sampleCount="205218"/>
+          <DOMSoundItem name="siege_fire_44100.wav" itemID="5254891a-00000295" linkageExportForAS="true" linkageClassName="attack_siege_fire" sourceExternalFilepath="./LIBRARY/siege_fire_44100.wav" sourceLastImported="1381271307" sourcePlatform="macintosh" externalFileSize="556374" href="siege_fire_44100.wav" soundDataHRef="M 63 1381271791.dat" format="44kHz 16bit Stereo" sampleCount="139064"/>
+          <DOMSoundItem name="snd_gun_singleshot.mp3" itemID="4dd59e7e-0000056c" linkageExportForAS="true" linkageClassName="attack_bullet_single" sourceExternalFilepath="../../../sounds_attack/LIBRARY/snd_gun_singleshot.mp3" sourceLastImported="1379549012" externalFileCRC32="2795321257" externalFileSize="6687" href="snd_gun_singleshot.mp3" soundDataHRef="M 11 1305845374.dat" format="44kHz 16bit Stereo" sampleCount="18432" exportFormat="11" exportBits="7" dataLength="6687" exportNative="true" cacheFormat="5kHz 8bit Stereo" cachedSampleCount="2304"/>
+          <DOMSoundItem name="snd_gun4_reverb.wav" itemID="4dd59f4a-00000574" linkageExportForAS="true" linkageClassName="attack_sniper2" sourceExternalFilepath="../../../sounds_attack/LIBRARY/snd_gun4_reverb.wav" sourceLastImported="1379549012" externalFileCRC32="3548047922" externalFileSize="321384" href="snd_gun4_reverb.wav" soundDataHRef="M 13 1305845578.dat" format="44kHz 16bit Stereo" sampleCount="80335" exportFormat="11" dataLength="321340"/>
+          <DOMSoundItem name="Sniper.wav" itemID="4dd56409-000001e1" linkageExportForAS="true" linkageClassName="attack_sniper" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Sniper.wav" sourceLastImported="1379549012" externalFileCRC32="2031039689" externalFileSize="163924" href="Sniper.wav" soundDataHRef="M 10 1305830409.dat" format="44kHz 16bit Mono" sampleCount="81940" exportFormat="10" dataLength="163880"/>
+          <DOMSoundItem name="Stinger_Missile_Fire_02.wav" itemID="50fdcaa9-00000281" linkageExportForAS="true" linkageClassName="attack_stinger" sourceExternalFilepath="../../../sounds_attack/LIBRARY/Stinger_Missile_Fire_02.wav" sourceLastImported="1379549012" sourcePlatform="macintosh" externalFileSize="53098" href="Stinger_Missile_Fire_02.wav" soundDataHRef="M 49 1358809750.dat" format="22kHz 16bit Mono" sampleCount="26527" dataLength="53054"/>
+          <DOMSoundItem name="tankshell1.wav" itemID="4dd5a10c-00000579" linkageExportForAS="true" linkageClassName="attack_tankshell1" sourceExternalFilepath="../../../sounds_attack/LIBRARY/tankshell1.wav" sourceLastImported="1379549012" externalFileCRC32="976542756" externalFileSize="238968" href="tankshell1.wav" soundDataHRef="M 14 1305846028.dat" format="44kHz 16bit Stereo" sampleCount="59731" exportFormat="11" dataLength="238924"/>
+     </media>
+     <timelines>
+          <DOMTimeline name="Scene 1">
+               <layers>
+                    <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timelines>
+     <swatchLists>
+          <swatchList>
+               <swatches>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#003300" hue="80" saturation="239" brightness="24"/>
+                    <SolidSwatchItem color="#006600" hue="80" saturation="239" brightness="48"/>
+                    <SolidSwatchItem color="#009900" hue="80" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#00CC00" hue="80" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#00FF00" hue="80" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#330000" saturation="239" brightness="24"/>
+                    <SolidSwatchItem color="#333300" hue="40" saturation="239" brightness="24"/>
+                    <SolidSwatchItem color="#336600" hue="60" saturation="239" brightness="48"/>
+                    <SolidSwatchItem color="#339900" hue="67" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#33CC00" hue="70" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#33FF00" hue="72" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#660000" saturation="239" brightness="48"/>
+                    <SolidSwatchItem color="#663300" hue="20" saturation="239" brightness="48"/>
+                    <SolidSwatchItem color="#666600" hue="40" saturation="239" brightness="48"/>
+                    <SolidSwatchItem color="#669900" hue="53" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#66CC00" hue="60" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#66FF00" hue="64" saturation="239" brightness="120"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#333333" brightness="48"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#000033" hue="160" saturation="239" brightness="24"/>
+                    <SolidSwatchItem color="#003333" hue="120" saturation="239" brightness="24"/>
+                    <SolidSwatchItem color="#006633" hue="100" saturation="239" brightness="48"/>
+                    <SolidSwatchItem color="#009933" hue="93" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#00CC33" hue="90" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#00FF33" hue="88" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#330033" hue="200" saturation="239" brightness="24"/>
+                    <SolidSwatchItem color="#333333" brightness="48"/>
+                    <SolidSwatchItem color="#336633" hue="80" saturation="80" brightness="72"/>
+                    <SolidSwatchItem color="#339933" hue="80" saturation="120" brightness="96"/>
+                    <SolidSwatchItem color="#33CC33" hue="80" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#33FF33" hue="80" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#660033" hue="220" saturation="239" brightness="48"/>
+                    <SolidSwatchItem color="#663333" saturation="80" brightness="72"/>
+                    <SolidSwatchItem color="#666633" hue="40" saturation="80" brightness="72"/>
+                    <SolidSwatchItem color="#669933" hue="60" saturation="120" brightness="96"/>
+                    <SolidSwatchItem color="#66CC33" hue="67" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#66FF33" hue="70" saturation="239" brightness="144"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#666666" brightness="96"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#000066" hue="160" saturation="239" brightness="48"/>
+                    <SolidSwatchItem color="#003366" hue="140" saturation="239" brightness="48"/>
+                    <SolidSwatchItem color="#006666" hue="120" saturation="239" brightness="48"/>
+                    <SolidSwatchItem color="#009966" hue="107" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#00CC66" hue="100" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#00FF66" hue="96" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#330066" hue="180" saturation="239" brightness="48"/>
+                    <SolidSwatchItem color="#333366" hue="160" saturation="80" brightness="72"/>
+                    <SolidSwatchItem color="#336666" hue="120" saturation="80" brightness="72"/>
+                    <SolidSwatchItem color="#339966" hue="100" saturation="120" brightness="96"/>
+                    <SolidSwatchItem color="#33CC66" hue="93" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#33FF66" hue="90" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#660066" hue="200" saturation="239" brightness="48"/>
+                    <SolidSwatchItem color="#663366" hue="200" saturation="80" brightness="72"/>
+                    <SolidSwatchItem color="#666666" brightness="96"/>
+                    <SolidSwatchItem color="#669966" hue="80" saturation="48" brightness="120"/>
+                    <SolidSwatchItem color="#66CC66" hue="80" saturation="120" brightness="144"/>
+                    <SolidSwatchItem color="#66FF66" hue="80" saturation="239" brightness="168"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#999999" brightness="144"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#000099" hue="160" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#003399" hue="147" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#006699" hue="133" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#009999" hue="120" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#00CC99" hue="110" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#00FF99" hue="104" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#330099" hue="173" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#333399" hue="160" saturation="120" brightness="96"/>
+                    <SolidSwatchItem color="#336699" hue="140" saturation="120" brightness="96"/>
+                    <SolidSwatchItem color="#339999" hue="120" saturation="120" brightness="96"/>
+                    <SolidSwatchItem color="#33CC99" hue="107" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#33FF99" hue="100" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#660099" hue="187" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#663399" hue="180" saturation="120" brightness="96"/>
+                    <SolidSwatchItem color="#666699" hue="160" saturation="48" brightness="120"/>
+                    <SolidSwatchItem color="#669999" hue="120" saturation="48" brightness="120"/>
+                    <SolidSwatchItem color="#66CC99" hue="100" saturation="120" brightness="144"/>
+                    <SolidSwatchItem color="#66FF99" hue="93" saturation="239" brightness="168"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#CCCCCC" brightness="192"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#0000CC" hue="160" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#0033CC" hue="150" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#0066CC" hue="140" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#0099CC" hue="130" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#00CCCC" hue="120" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#00FFCC" hue="112" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#3300CC" hue="170" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#3333CC" hue="160" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#3366CC" hue="147" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#3399CC" hue="133" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#33CCCC" hue="120" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#33FFCC" hue="110" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#6600CC" hue="180" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#6633CC" hue="173" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#6666CC" hue="160" saturation="120" brightness="144"/>
+                    <SolidSwatchItem color="#6699CC" hue="140" saturation="120" brightness="144"/>
+                    <SolidSwatchItem color="#66CCCC" hue="120" saturation="120" brightness="144"/>
+                    <SolidSwatchItem color="#66FFCC" hue="107" saturation="239" brightness="168"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#FFFFFF" brightness="240"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#0000FF" hue="160" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#0033FF" hue="152" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#0066FF" hue="144" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#0099FF" hue="136" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#00CCFF" hue="128" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#00FFFF" hue="120" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#3300FF" hue="168" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#3333FF" hue="160" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#3366FF" hue="150" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#3399FF" hue="140" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#33CCFF" hue="130" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#33FFFF" hue="120" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#6600FF" hue="176" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#6633FF" hue="170" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#6666FF" hue="160" saturation="239" brightness="168"/>
+                    <SolidSwatchItem color="#6699FF" hue="147" saturation="239" brightness="168"/>
+                    <SolidSwatchItem color="#66CCFF" hue="133" saturation="239" brightness="168"/>
+                    <SolidSwatchItem color="#66FFFF" hue="120" saturation="239" brightness="168"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#FF0000" saturation="239" brightness="120"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#990000" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#993300" hue="13" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#996600" hue="27" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#999900" hue="40" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#99CC00" hue="50" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#99FF00" hue="56" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#CC0000" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#CC3300" hue="10" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#CC6600" hue="20" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#CC9900" hue="30" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#CCCC00" hue="40" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#CCFF00" hue="48" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#FF0000" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#FF3300" hue="8" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#FF6600" hue="16" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#FF9900" hue="24" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#FFCC00" hue="32" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#FFFF00" hue="40" saturation="239" brightness="120"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#00FF00" hue="80" saturation="239" brightness="120"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#990033" hue="227" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#993333" saturation="120" brightness="96"/>
+                    <SolidSwatchItem color="#996633" hue="20" saturation="120" brightness="96"/>
+                    <SolidSwatchItem color="#999933" hue="40" saturation="120" brightness="96"/>
+                    <SolidSwatchItem color="#99CC33" hue="53" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#99FF33" hue="60" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#CC0033" hue="230" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#CC3333" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#CC6633" hue="13" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#CC9933" hue="27" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#CCCC33" hue="40" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#CCFF33" hue="50" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#FF0033" hue="232" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#FF3333" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#FF6633" hue="10" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#FF9933" hue="20" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#FFCC33" hue="30" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#FFFF33" hue="40" saturation="239" brightness="144"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#0000FF" hue="160" saturation="239" brightness="120"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#990066" hue="213" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#993366" hue="220" saturation="120" brightness="96"/>
+                    <SolidSwatchItem color="#996666" saturation="48" brightness="120"/>
+                    <SolidSwatchItem color="#999966" hue="40" saturation="48" brightness="120"/>
+                    <SolidSwatchItem color="#99CC66" hue="60" saturation="120" brightness="144"/>
+                    <SolidSwatchItem color="#99FF66" hue="67" saturation="239" brightness="168"/>
+                    <SolidSwatchItem color="#CC0066" hue="220" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#CC3366" hue="227" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#CC6666" saturation="120" brightness="144"/>
+                    <SolidSwatchItem color="#CC9966" hue="20" saturation="120" brightness="144"/>
+                    <SolidSwatchItem color="#CCCC66" hue="40" saturation="120" brightness="144"/>
+                    <SolidSwatchItem color="#CCFF66" hue="53" saturation="239" brightness="168"/>
+                    <SolidSwatchItem color="#FF0066" hue="224" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#FF3366" hue="230" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#FF6666" saturation="239" brightness="168"/>
+                    <SolidSwatchItem color="#FF9966" hue="13" saturation="239" brightness="168"/>
+                    <SolidSwatchItem color="#FFCC66" hue="27" saturation="239" brightness="168"/>
+                    <SolidSwatchItem color="#FFFF66" hue="40" saturation="239" brightness="168"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#FFFF00" hue="40" saturation="239" brightness="120"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#990099" hue="200" saturation="239" brightness="72"/>
+                    <SolidSwatchItem color="#993399" hue="200" saturation="120" brightness="96"/>
+                    <SolidSwatchItem color="#996699" hue="200" saturation="48" brightness="120"/>
+                    <SolidSwatchItem color="#999999" brightness="144"/>
+                    <SolidSwatchItem color="#99CC99" hue="80" saturation="80" brightness="168"/>
+                    <SolidSwatchItem color="#99FF99" hue="80" saturation="239" brightness="192"/>
+                    <SolidSwatchItem color="#CC0099" hue="210" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#CC3399" hue="213" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#CC6699" hue="220" saturation="120" brightness="144"/>
+                    <SolidSwatchItem color="#CC9999" saturation="80" brightness="168"/>
+                    <SolidSwatchItem color="#CCCC99" hue="40" saturation="80" brightness="168"/>
+                    <SolidSwatchItem color="#CCFF99" hue="60" saturation="239" brightness="192"/>
+                    <SolidSwatchItem color="#FF0099" hue="216" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#FF3399" hue="220" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#FF6699" hue="227" saturation="239" brightness="168"/>
+                    <SolidSwatchItem color="#FF9999" saturation="239" brightness="192"/>
+                    <SolidSwatchItem color="#FFCC99" hue="20" saturation="239" brightness="192"/>
+                    <SolidSwatchItem color="#FFFF99" hue="40" saturation="239" brightness="192"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#00FFFF" hue="120" saturation="239" brightness="120"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#9900CC" hue="190" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#9933CC" hue="187" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#9966CC" hue="180" saturation="120" brightness="144"/>
+                    <SolidSwatchItem color="#9999CC" hue="160" saturation="80" brightness="168"/>
+                    <SolidSwatchItem color="#99CCCC" hue="120" saturation="80" brightness="168"/>
+                    <SolidSwatchItem color="#99FFCC" hue="100" saturation="239" brightness="192"/>
+                    <SolidSwatchItem color="#CC00CC" hue="200" saturation="239" brightness="96"/>
+                    <SolidSwatchItem color="#CC33CC" hue="200" saturation="144" brightness="120"/>
+                    <SolidSwatchItem color="#CC66CC" hue="200" saturation="120" brightness="144"/>
+                    <SolidSwatchItem color="#CC99CC" hue="200" saturation="80" brightness="168"/>
+                    <SolidSwatchItem color="#CCCCCC" brightness="192"/>
+                    <SolidSwatchItem color="#CCFFCC" hue="80" saturation="239" brightness="216"/>
+                    <SolidSwatchItem color="#FF00CC" hue="208" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#FF33CC" hue="210" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#FF66CC" hue="213" saturation="239" brightness="168"/>
+                    <SolidSwatchItem color="#FF99CC" hue="220" saturation="239" brightness="192"/>
+                    <SolidSwatchItem color="#FFCCCC" saturation="239" brightness="216"/>
+                    <SolidSwatchItem color="#FFFFCC" hue="40" saturation="239" brightness="216"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#FF00FF" hue="200" saturation="239" brightness="120"/>
+                    <SolidSwatchItem/>
+                    <SolidSwatchItem color="#9900FF" hue="184" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#9933FF" hue="180" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#9966FF" hue="173" saturation="239" brightness="168"/>
+                    <SolidSwatchItem color="#9999FF" hue="160" saturation="239" brightness="192"/>
+                    <SolidSwatchItem color="#99CCFF" hue="140" saturation="239" brightness="192"/>
+                    <SolidSwatchItem color="#99FFFF" hue="120" saturation="239" brightness="192"/>
+                    <SolidSwatchItem color="#CC00FF" hue="192" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#CC33FF" hue="190" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#CC66FF" hue="187" saturation="239" brightness="168"/>
+                    <SolidSwatchItem color="#CC99FF" hue="180" saturation="239" brightness="192"/>
+                    <SolidSwatchItem color="#CCCCFF" hue="160" saturation="239" brightness="216"/>
+                    <SolidSwatchItem color="#CCFFFF" hue="120" saturation="239" brightness="216"/>
+                    <SolidSwatchItem color="#FF00FF" hue="200" saturation="239" brightness="120"/>
+                    <SolidSwatchItem color="#FF33FF" hue="200" saturation="239" brightness="144"/>
+                    <SolidSwatchItem color="#FF66FF" hue="200" saturation="239" brightness="168"/>
+                    <SolidSwatchItem color="#FF99FF" hue="200" saturation="239" brightness="192"/>
+                    <SolidSwatchItem color="#FFCCFF" hue="200" saturation="239" brightness="216"/>
+                    <SolidSwatchItem color="#FFFFFF" brightness="240"/>
+               </swatches>
+          </swatchList>
+     </swatchLists>
+     <extendedSwatchLists>
+          <swatchList>
+               <swatches>
+                    <LinearGradientSwatchItem>
+                         <GradientEntry color="#FFFFFF" ratio="0"/>
+                         <GradientEntry ratio="1"/>
+                    </LinearGradientSwatchItem>
+                    <RadialGradientSwatchItem>
+                         <GradientEntry color="#FFFFFF" ratio="0"/>
+                         <GradientEntry ratio="1"/>
+                    </RadialGradientSwatchItem>
+                    <RadialGradientSwatchItem>
+                         <GradientEntry color="#FF0000" ratio="0"/>
+                         <GradientEntry ratio="1"/>
+                    </RadialGradientSwatchItem>
+                    <RadialGradientSwatchItem>
+                         <GradientEntry color="#00FF00" ratio="0"/>
+                         <GradientEntry ratio="1"/>
+                    </RadialGradientSwatchItem>
+                    <RadialGradientSwatchItem>
+                         <GradientEntry color="#0000FF" ratio="0"/>
+                         <GradientEntry ratio="1"/>
+                    </RadialGradientSwatchItem>
+                    <LinearGradientSwatchItem>
+                         <GradientEntry color="#0066FD" ratio="0"/>
+                         <GradientEntry color="#FFFFFF" ratio="0.376470588235294"/>
+                         <GradientEntry color="#FFFFFF" ratio="0.47843137254902"/>
+                         <GradientEntry color="#996600" ratio="0.501960784313725"/>
+                         <GradientEntry color="#FFCC00" ratio="0.666666666666667"/>
+                         <GradientEntry color="#FFFFFF" ratio="1"/>
+                    </LinearGradientSwatchItem>
+                    <LinearGradientSwatchItem>
+                         <GradientEntry color="#FF0000" ratio="0"/>
+                         <GradientEntry color="#FFFF00" ratio="0.164705882352941"/>
+                         <GradientEntry color="#00FF00" ratio="0.364705882352941"/>
+                         <GradientEntry color="#00FFFF" ratio="0.498039215686275"/>
+                         <GradientEntry color="#0000FF" ratio="0.666666666666667"/>
+                         <GradientEntry color="#FF00FF" ratio="0.831372549019608"/>
+                         <GradientEntry color="#FF0000" ratio="1"/>
+                    </LinearGradientSwatchItem>
+               </swatches>
+          </swatchList>
+     </extendedSwatchLists>
+     <PrinterSettings platform="macintosh"/>
+     <publishHistory>
+          <PublishItem publishSize="969818" publishTime="1379733186"/>
+          <PublishItem publishSize="1124324" publishTime="1379549036"/>
+          <PublishItem publishSize="997390" publishTime="1378491189"/>
+          <PublishItem publishSize="997383" publishTime="1378491184"/>
+          <PublishItem publishSize="997356" publishTime="1378414250"/>
+          <PublishItem publishSize="589453" publishTime="1351203431"/>
+          <PublishItem publishSize="589676" publishTime="1351198497"/>
+          <PublishItem publishSize="481218" publishTime="1345076498"/>
+          <PublishItem publishSize="385220" publishTime="1314561931"/>
+          <PublishItem publishSize="383202" publishTime="1308788960"/>
+          <PublishItem publishSize="396296" publishTime="1308788577"/>
+          <PublishItem publishSize="376772" publishTime="1306433865"/>
+          <PublishItem publishSize="365789" publishTime="1306433842"/>
+          <PublishItem publishSize="365784" publishTime="1306433762"/>
+          <PublishItem publishSize="343630" publishTime="1306433282"/>
+          <PublishItem publishSize="343541" publishTime="1306432957"/>
+          <PublishItem publishSize="303201" publishTime="1306280849"/>
+          <PublishItem publishSize="314457" publishTime="1306279214"/>
+          <PublishItem publishSize="236422" publishTime="1305848709"/>
+          <PublishItem publishSize="177724" publishTime="1305848665"/>
+     </publishHistory>
+</DOMDocument>

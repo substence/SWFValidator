@@ -1,0 +1,27 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="BPChat/Scrolling/scroller" itemID="4f9b0a31-000023af" lastModified="1335560753">
+  <timeline>
+    <DOMTimeline name="scroller">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="13" objectHeight="257.6" x="0" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix d="1.2103271484375"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="6.5" y="128.8"/>
+                  </transformationPoint>
+                  <fill>
+                    <SolidColor color="#30894E"/>
+                  </fill>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

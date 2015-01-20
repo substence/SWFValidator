@@ -1,0 +1,605 @@
+<project name="WarCommander-Client" basedir="." default="build-game-debug">
+
+	<!-- DEVELOPER / ENVIRONMENT SPECIFIC VARIABLES -->
+	<property file="bamboo-build.properties"/>
+
+	<!-- BUILD PROPERTIES -->
+	<property name="FLEX_HOME" value="${flex.sdk.location}"/>
+	<property name="ant.home" value="${ant.location}"/>
+	<property name="enyo.dir" value="${enyo.location}"/>
+	<property name="secureswf.dir" value="${basedir}/obfuscation"/>
+	<property name="src.dir" value="src" />
+	<property name="bin.dir" value="${src.dir}/bin"/>
+	<property name="build.dir" value="${src.dir}/staging/"/>
+	<property name="scripts.dir" value="scripts"/>
+	<property name="servicelib.propfile.name" value="servicelib.properties"/>
+
+	<property name="swf.version" value="15" />
+	<property name="bitdamage.location" value="1024"/>
+	<property name="frame.rate" value="40"/>
+	<property name="swf.game.name" value="GAME.swf"/>
+	<property name="swf.loader.name" value="gameloader.swf"/>
+
+	<property name="root.dir" location="."/>
+	<property name="src.dir" location="src" />
+	<property name="scripts.dir" location="scripts" />
+	<property name="build.dir" location="build" />
+	<property name="build.bin.dir" value="commonant/booty" />
+	<property name="dist.dir" location="dist" />
+	<property name="package.dir" location="${build.dir}/package"/>
+	<property name="release.dir" location="${build.dir}/release"/>
+
+	<property name="versions.file" value="bamboo-build.properties"/>
+
+	<!-- LOG FILES -->
+	<property name="obfuscation.loader.log" value="obfuscation.loader.log"/>
+	<property name="obfuscation.game.log" value="obfuscation.game.log"/>
+
+	<!-- SCRIPTS -->
+	<property name="script.telemetry" location="${scripts.dir}/enable_telemetry.py"/>
+
+	<!-- TASK DEFS -->
+	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+	<taskdef resource="secureSWF/ui/ant/resources/task.properties" classpath="${secureswf.dir}/secureSWF.jar"/>
+
+	<!--		      -->
+	<!-- HOUSEKEEPING -->
+	<!--		      -->
+	<target name="clean">
+		<delete file="${build.dir}/${swf.game.name}" />
+		<delete file="${build.dir}/${swf.loader.name}" />
+		<delete file="${build.dir}/obfuscated.${swf.game.name}" />
+		<delete file="${build.dir}/obfuscated.${swf.loader.name}" />
+		<delete file="${build.dir}/obfuscation.loader.log" />
+		<delete file="${build.dir}/obfuscation.game.log" />
+		<delete file="${bin.dir}/${servicelib.propfile.name}" />
+	</target>
+
+	<target name="build-setup">
+		<mkdir dir="${basedir}/${build.dir}" />
+		<property name="build.soft.version" value="${build.svn.build.version}"/>
+		<property name="build.gameloader.swf.version" value="${build.svn.build.version}"/>
+
+		<echo message="******** Build Properties ********"/>
+		<echo message="Release:	${build.release.version}"/>
+		<echo message="Build time:	${build.time}"/>
+		<echo message="Branch:	${build.branch.name}"/>
+		<echo message="SVN Base:	${build.svn.base.version}"/>
+		<echo message="SVN Build:	${build.svn.build.version}"/>
+		<echo message="Hard:	${build.hard.version}"/>
+		<echo message="Soft:	${build.soft.version}"/>
+		<echo message="Sound:	${sounds.version}"/>
+		<echo message="Handbook:	${handbook.version}"/>
+		<echo message="Game Loader:	${build.gameloader.swf.version}"/>
+
+		<property name="client.archive.name" value="${product.module}-${build.time}"/>
+		<property name="assets.archive.name" value="wc-fb-assets-${build.time}"/>
+		<property name="game.swf" value="game-v${build.hard.version}.v${build.soft.version}.swf"/>
+	</target>
+
+
+	<!--		       -->
+	<!-- BUILD TARGETS -->
+	<!--		       -->
+
+	<!-- DEBUG -->
+	<target name="build-game-debug" depends="clean, build-setup, generate-servicelib-number">
+
+		<!-- BUILD DEBUG GAME -->
+		<antcall target="compile-game">
+			<param name="compile.debug" value="true"/>
+			<param name="compile.release" value="false"/>
+			<param name="compile.local" value="true"/>
+			<param name="compile.loadtest" value="false"/>
+			<param name="compile.notloadtest" value="true"/>
+			<param name="compile.service.lib.swc" value="kixeye-services-lib-v${service.swc.number}.debug.swc"/>
+		</antcall>
+
+                <!-- CLIENT AND ASSET PAYLOADS -->
+                <antcall target="build-client-full"/>
+                <antcall target="build-assets-full"/>
+
+	</target>
+
+	<target name="build-game-debug-with-telemetry" depends="build-game-debug">
+
+		<antcall target="enable-telemetry" />
+
+	</target>
+
+	<!-- RELEASE -->
+	<target name="build-game-release" depends="clean, build-setup, generate-servicelib-number">
+
+		<!-- BUILD RELEASE LOADER -->
+		<antcall target="compile-loader">
+			<param name="compile.debug" value="false"/>
+			<param name="compile.release" value="true"/>
+			<param name="compile.local" value="false"/>
+			<param name="compile.loadtest" value="false"/>
+			<param name="compile.notloadtest" value="true"/>
+			<param name="compile.service.lib.swc" value="kixeye-services-lib-v${service.swc.number}.swc"/>
+			<param name="compile.debugconsole" value="false"/>
+		</antcall>
+
+		<!-- BUILD RELEASE GAME -->
+		<antcall target="compile-game">
+			<param name="compile.debug" value="false"/>
+			<param name="compile.release" value="true"/>
+			<param name="compile.local" value="false"/>
+			<param name="compile.loadtest" value="false"/>
+			<param name="compile.notloadtest" value="true"/>
+			<param name="compile.service.lib.swc" value="kixeye-services-lib-v${service.swc.number}.swc"/>
+		</antcall>
+
+		<!-- OBFUSCATION -->
+		<antcall target="obfuscate-loader"/>
+		<antcall target="obfuscate-game"/>
+
+		<!-- CLIENT AND ASSET PAYLOADS -->
+		<antcall target="build-client-full"/>
+		<antcall target="build-assets-full"/>
+
+	</target>
+
+
+	<target name="compile-game">
+
+		<echo message="compile.debug: ${compile.debug}"/>
+		<echo message="compile.release: ${compile.release}"/>
+		<echo message="compile.local: ${compile.local}"/>
+		<echo message="compile.loadtest: ${compile.loadtest}"/>
+		<echo message="compile.notloadtest: ${compile.notloadtest}"/>
+		<echo message="compile.service.lib.swc: ${compile.service.lib.swc}"/>
+
+		<mxmlc output="${build.dir}/${swf.game.name}" file="${src.dir}/GAME.as" swf-version="${swf.version}" debug="${compile.debug}" verbose-stacktraces="${compile.debug}" fork="true" maxmemory="${mxmlc.jvm.memory}">
+
+			<define name="CONFIG::debug" value="${compile.debug}" />
+			<define name="CONFIG::release" value="${compile.release}" />
+			<define name="CONFIG::local" value="${compile.local}" />
+			<define name="CONFIG::loadtest" value="${compile.loadtest}" />
+			<define name="CONFIG::notloadtest" value="${compile.notloadtest}" />
+			<define name="CONFIG::scriptingenabled" value="${compile.debug}" />
+
+			<source-path path-element="${src.dir}" />
+
+			<library-path dir="${bin.dir}" append="true">
+				<include name="all.swc" />
+				<include name="ChatUI.swc" />
+				<include name="SFS2X_API_AS3.swc" />
+				<include name="protoc-gen-as3-1.1.0/protobuf.swc" />
+				<include name="GZIPEncoder_Flash.swc" />
+				<include name="kixeye-core.swc" />
+				<include name="${compile.service.lib.swc}" />
+				<include name="protoc-gen-as3-1.1.0/protobuf.swc" />
+			</library-path>
+
+			<library-path dir="${enyo.dir}/compile" append="true">
+				<include name="aibox.swc" />
+				<include name="constants.swc" />
+			</library-path>
+
+			<default-frame-rate>${frame.rate}</default-frame-rate>
+			<default-size width="760" height="750" />
+
+			<optimize>true</optimize>
+			<strict>true</strict>
+			<use-network>true</use-network>
+			<warnings>false</warnings>
+			<use-resource-bundle-metadata>true</use-resource-bundle-metadata>
+			<static-link-runtime-shared-libraries>true</static-link-runtime-shared-libraries>
+		</mxmlc>
+	</target>
+
+	<target name="compile-loader">
+
+		<echo message="compile.debug: ${compile.debug}"/>
+		<echo message="compile.release: ${compile.release}"/>
+		<echo message="compile.local: ${compile.local}"/>
+		<echo message="compile.loadtest: ${compile.loadtest}"/>
+		<echo message="compile.notloadtest: ${compile.notloadtest}"/>
+		<echo message="compile.service.lib.swc: ${compile.service.lib.swc}"/>
+		<echo message="compile.debugconsole: ${compile.debugconsole}"/>
+
+		<mxmlc output="${build.dir}/${swf.loader.name}" file="${src.dir}/GAMELOADER.as" swf-version="${swf.version}" debug="${compile.debug}" verbose-stacktraces="${compile.debug}" fork="true" maxmemory="${mxmlc.jvm.memory}">
+
+			<define name="CONFIG::debug" value="${compile.debug}" />
+			<define name="CONFIG::release" value="${compile.release}" />
+			<define name="CONFIG::local" value="${compile.local}" />
+			<define name="CONFIG::bitdamagelocation" value="${bitdamage.location}" />
+			<define name="CONFIG::debugconsole" value="${compile.debugconsole}" />
+			<define name="CONFIG::loadtest" value="${compile.loadtest}" />
+			<define name="CONFIG::notloadtest" value="${compile.notloadtest}" />
+
+			<source-path path-element="${src.dir}" />
+
+			<library-path dir="${bin.dir}" append="true">
+				<include name="Console.swc" />
+				<include name="gameloader.swc" />
+				<include name="${compile.service.lib.swc}" />
+				<include name="kixeye-core.swc" />
+			</library-path>
+
+			<default-frame-rate>${frame.rate}</default-frame-rate>
+			<default-size width="760" height="750" />
+
+			<optimize>true</optimize>
+			<strict>true</strict>
+			<use-network>true</use-network>
+			<warnings>false</warnings>
+			<use-resource-bundle-metadata>true</use-resource-bundle-metadata>
+			<static-link-runtime-shared-libraries>true</static-link-runtime-shared-libraries>
+		</mxmlc>
+	</target>
+
+
+	<!--		   -->
+	<!-- UTILITIES -->
+	<!--		   -->
+	<target name="enable-telemetry">
+
+		<exec dir="${basedir}" executable="${shell}">
+			<arg value="-c"/>
+			<arg value="python ${scripts.dir}/enable_telemetry.py ${build.dir}${swf.loader.name}"/>
+		</exec>
+
+		<exec dir="${basedir}" executable="${shell}">
+			<arg value="-c"/>
+			<arg value="python ${scripts.dir}/enable_telemetry.py ${build.dir}${swf.game.name}"/>
+		</exec>
+
+	</target>
+
+	<!-- This target enables us to not hard-code in the service lib swc number ( and update it constantly ).  It
+		 First creates a text file with the name of the servicelib swc, then formats the file into an ant property
+		 file for inclusion within this script.  The ant variable it creates is: service.swc.number -->
+	<target name="generate-servicelib-number">
+
+		<!-- Extract service lib name into property file -->
+		<exec dir="${bin.dir}" executable="${shell}" failonerror="true">
+			<arg value="-c"/>
+			<arg value="ls kixeye-services-lib-v*.swc | grep -v debug | sed 's/\([a-z\-]*\)\([0-9]*\).*/service.swc.number=\2/' > ${servicelib.propfile.name}"/>
+		</exec>
+
+		<!-- include .property file for build consumption of servicelib number without having to hard-code it! -->
+		<property file="${bin.dir}/${servicelib.propfile.name}"/>
+	</target>
+
+
+	<!--		     -->
+	<!-- OBFUSCATION -->
+	<!--		     -->
+	<target name="obfuscate-loader">
+
+		<!-- LOG FILES -->
+		<touch file="${build.dir}/${obfuscation.loader.log}" />
+
+		<!-- OBFUSCATE GAMELOADER -->
+		<protect
+			Timestamp="false"
+			logFile="${build.dir}/${obfuscation.loader.log}"
+			Certificate=""
+			Encrypt="false"
+			ExportIntermediate="false"
+			NewDebugFilesName=""
+			NewDebugLinesNumber="0"
+			OutputMethod=""
+			OutputValue=""
+			Password=""
+			RandomSeed="5333821"
+			RenamingMode="long"
+			RenamingPrefix=""
+			DomainLockEncryptionType="AES"
+			DomainLocksEncryptionLevel="9"
+			FinalizeClasses="true"
+			FinalizeMethods="true"
+			FontOptimization="0"
+			ImageOptimization="true"
+			ImageRecompression="7"
+			InlineConstants="true"
+			LiteralsEncryptionLevel="9"
+			LiteralsEncryptionType="AES"
+			MakeReadOnlyFieldsConstants="false"
+			MergeCodeBlocks="true"
+			MergeCodeLinkage="true"
+			MergeLines="1"
+			OptimizeImports="true"
+			OptimizeIntegerArithmetics="true"
+			OptimizePushInstructions="true"
+			PreventLocalExecution="false"
+			PrivatizeFields="true"
+			PrivatizeMethods="true"
+			Randomize="false"
+			RemoveDeadcode="true"
+			RemoveDebugInfo="true"
+			RemoveFrameLabels="true"
+			RemoveMetadata="true"
+			RemoveMethodParametersNames="true"
+			RemoveTraceCalls="true"
+			RemoveUnusedFonts="true"
+			RemoveUnusedImages="true"
+			RemoveUnusedSounds="true"
+			RemoveUnusedSpritesAndShapes="true"
+			RemoveUnusedVideos="true"
+			RemoveWriteOnlyFields="true"
+			RenameLocalVariables="false"
+			ReplaceDebugFiles="false"
+			ReplaceDebugLines="false"
+			ShapeOptimization="2"
+			SortCPool="true"
+			StaticizeMethods="true"
+			SuperCompression="true"
+			TrimFontsData="true"
+			TrimShapesData="true"
+			TrimSwfTags="true"
+			UseAsKeywords="false"
+			rename="true"
+			slr="3"
+			controlFlow="100"
+			codeWrapping="3"
+			integerObfuscation="true"
+			renamingLevel="6"
+			postBuildCheck="true"
+			applicationPath="${basedir}">
+
+			<InputFile filePath="${build.dir}/${swf.loader.name}" outputPath="${build.dir}/obfuscated.${swf.loader.name}"/>
+            <rule filter="wrap::wrapper/Data" rename="false" renamingLevel="0" postBuildCheck="true"/>
+            <rule filter="wrap::wrapper/_loader" rename="false" renamingLevel="0" postBuildCheck="true"/>
+            <rule filter="wrap::wrapper/_obj" rename="false" renamingLevel="0" postBuildCheck="true"/>
+            <rule filter="wrap::wrapper/_completed" rename="false" renamingLevel="0" postBuildCheck="true"/>
+			<rule filter="::GAMELOADER/_mcLoading" rename="false" renamingLevel="0" postBuildCheck="true"/>
+		</protect>
+	</target>
+
+	<target name="obfuscate-game">
+
+		<!-- LOG FILES -->
+		<touch file="${build.dir}/${obfuscation.game.log}" />
+
+			<!-- OBFUSCATE GAME -->
+			<protect
+				Timestamp="false"
+	            Certificate=""
+	            logFile="${build.dir}/${obfuscation.game.log}"
+				Encrypt="false"
+				ExportIntermediate="false"
+				NewDebugFilesName=""
+				NewDebugLinesNumber="1"
+				OutputMethod=""
+				OutputValue=""
+				Password=""
+				RandomSeed="5333821"
+				RenamingMode="binary"
+				RenamingPrefix=""
+				DomainLockEncryptionType="AES"
+				DomainLocksEncryptionLevel="9"
+				FinalizeClasses="false"
+				FinalizeMethods="false"
+				FontOptimization="0"
+				ImageOptimization="false"
+				ImageRecompression="0"
+				InlineConstants="true"
+				LiteralsEncryptionLevel="1"
+				LiteralsEncryptionType="RC4"
+				MakeReadOnlyFieldsConstants="false"
+				MergeCodeBlocks="false"
+				MergeCodeLinkage="false"
+				MergeLines="0"
+				OptimizeImports="true"
+				OptimizeIntegerArithmetics="true"
+				OptimizePushInstructions="true"
+				PreventLocalExecution="false"
+				PrivatizeFields="false"
+				PrivatizeMethods="false"
+				Randomize="false"
+				RemoveDeadcode="true"
+				RemoveDebugInfo="true"
+				RemoveFrameLabels="false"
+				RemoveMetadata="false"
+				RemoveMethodParametersNames="true"
+				RemoveTraceCalls="true"
+				RemoveUnusedFonts="true"
+				RemoveUnusedImages="true"
+				RemoveUnusedSounds="true"
+				RemoveUnusedSpritesAndShapes="true"
+				RemoveUnusedVideos="true"
+				RemoveWriteOnlyFields="false"
+				RenameLocalVariables="false"
+				ReplaceDebugFiles="false"
+				ReplaceDebugLines="false"
+				ShapeOptimization="0"
+				SortCPool="true"
+				StaticizeMethods="false"
+				SuperCompression="true"
+				TrimFontsData="true"
+				TrimShapesData="true"
+				TrimSwfTags="true"
+				UseAsKeywords="false"
+				rename="true"
+				slr="0"
+				controlFlow="0"
+				codeWrapping="2"
+				integerObfuscation="false"
+				renamingLevel="1"
+				postBuildCheck="true"
+				applicationPath="${basedir}" >
+
+				<!-- files input/output -->
+     			<InputFile filePath="${build.dir}/${swf.game.name}" outputPath="${build.dir}/obfuscated.${swf.game.name}"/>
+
+				<!-- domain lock settings -->
+				<!-- <domainLock value="*.kixeye.com"/> -->
+                <literalString value="A" match="contains"/>
+                <literalString value="B" match="contains"/>
+                <literalString value="C" match="contains"/>
+                <literalString value="D" match="contains"/>
+                <literalString value="E" match="contains"/>
+                <literalString value="F" match="contains"/>
+                <literalString value="G" match="contains"/>
+                <literalString value="H" match="contains"/>
+                <literalString value="I" match="contains"/>
+                <literalString value="J" match="contains"/>
+                <literalString value="K" match="contains"/>
+                <literalString value="L" match="contains"/>
+                <literalString value="M" match="contains"/>
+                <literalString value="N" match="contains"/>
+                <literalString value="O" match="contains"/>
+                <literalString value="P" match="contains"/>
+                <literalString value="Q" match="contains"/>
+                <literalString value="R" match="contains"/>
+                <literalString value="S" match="contains"/>
+                <literalString value="T" match="contains"/>
+                <literalString value="U" match="contains"/>
+                <literalString value="V" match="contains"/>
+                <literalString value="W" match="contains"/>
+                <literalString value="X" match="contains"/>
+                <literalString value="Y" match="contains"/>
+                <literalString value="Z" match="contains"/>
+                <literalString value="a" match="contains"/>
+                <literalString value="b" match="contains"/>
+                <literalString value="c" match="contains"/>
+                <literalString value="d" match="contains"/>
+                <literalString value="e" match="contains"/>
+                <literalString value="f" match="contains"/>
+                <literalString value="g" match="contains"/>
+                <literalString value="h" match="contains"/>
+                <literalString value="i" match="contains"/>
+                <literalString value="j" match="contains"/>
+                <literalString value="k" match="contains"/>
+                <literalString value="l" match="contains"/>
+                <literalString value="m" match="contains"/>
+                <literalString value="n" match="contains"/>
+                <literalString value="o" match="contains"/>
+                <literalString value="p" match="contains"/>
+                <literalString value="q" match="contains"/>
+                <literalString value="r" match="contains"/>
+                <literalString value="s" match="contains"/>
+                <literalString value="t" match="contains"/>
+				<!-- no u -->
+                <literalString value="v" match="contains"/>
+                <literalString value="w" match="contains"/>
+                <literalString value="x" match="contains"/>
+                <literalString value="y" match="contains"/>
+                <literalString value="z" match="contains"/>
+                <literalString value="0" match="contains"/>
+                <literalString value="1" match="contains"/>
+                <literalString value="2" match="contains"/>
+                <literalString value="3" match="contains"/>
+                <literalString value="4" match="contains"/>
+                <literalString value="5" match="contains"/>
+                <literalString value="6" match="contains"/>
+                <literalString value="7" match="contains"/>
+                <literalString value="8" match="contains"/>
+                <literalString value="9" match="contains"/>
+
+				<!-- rules generated by identifiers selection -->
+				<rule filter="::URLLoaderApi" renamingLevel="3" slr="3" controlFlow="100" codeWrapping="3" integerObfuscation="true" postBuildCheck="false"/>
+				<rule filter="::URLLoaderApi/*" renamingLevel="3" slr="3" controlFlow="100" codeWrapping="3" integerObfuscation="true" postBuildCheck="false"/>
+				<rule filter="::LOGIN" renamingLevel="3" slr="3" controlFlow="100" codeWrapping="3" integerObfuscation="true" postBuildCheck="false"/>
+				<rule filter="::LOGIN/*" renamingLevel="3" slr="3" controlFlow="100" codeWrapping="3" integerObfuscation="true" postBuildCheck="false"/>
+				<rule filter="::GLOBAL" renamingLevel="3" postBuildCheck="false"/>
+
+				<rule filter="com.cc.utils::*" renamingLevel="3" slr="3" controlFlow="100" codeWrapping="3" integerObfuscation="true" postBuildCheck="true"/>
+				<!-- user set rules -->
+	             <rule filter="::GAME" rename="false" renamingLevel="0"/>
+	             <rule filter="::GAME/Data" rename="false" renamingLevel="0"/>
+
+	             <rule filter="::Main" rename="false" renamingLevel="0"/>
+	             <rule filter="::Main/Data" rename="false" renamingLevel="0"/>
+
+				<!-- Alchemy -->
+				<rule filter="M__*" rename="false" slr="0" controlFlow="0" codeWrapping="0" integerObfuscation="false" postBuildCheck="false"/>
+
+				<!-- pattern matching has been buggy. Both lines should do the same. -->
+				<rule filter="global/C_Ru*" rename="false" slr="0" controlFlow="0" codeWrapping="0" integerObfuscation="false" postBuildCheck="false"/>
+				<rule filter="*C_Ru*" rename="false" slr="0" controlFlow="0" codeWrapping="0" integerObfuscation="false" postBuildCheck="false"/>
+			</protect>
+	</target>
+
+	<target name="build-client-full">
+		<delete dir="${package.dir}"/>
+		<delete dir="${release.dir}"/>
+		<mkdir dir="${package.dir}"/>
+		<mkdir dir="${release.dir}"/>
+		<copy file="${versions.file}" todir="${package.dir}"/>
+
+		<!--
+		<copy file="${build.bin.dir}/wrapped-secure.debug.swf" tofile="${package.dir}/game-v${build.hard.version}.v${build.soft.version}.debug.swf"/>
+		<copy file="${build.bin.dir}/wrapped-secure.release.swf" tofile="${package.dir}/game-v${build.hard.version}.v${build.soft.version}.swf"/>
+		<copy file="${build.bin.dir}/secure.gameloader.swf" tofile="${package.dir}/gameloader-v${build.gameloader.swf.version}.swf"/>
+		-->
+
+		<copy file="src/staging/GAME.swf" tofile="${package.dir}/game-v${build.hard.version}.v${build.soft.version}.debug.swf"/>
+		<copy file="src/staging/GAME.swf" tofile="${package.dir}/game-v${build.hard.version}.v${build.soft.version}.swf"/>
+		<copy file="src/bin/gameloader.swf" tofile="${package.dir}/gameloader-v${build.gameloader.swf.version}.swf"/>
+
+		<!--
+		<antcall target="package-wrapped-swfs"/>
+		-->
+
+		<!-- Package the unobfscated test SWFs -->
+		<!--
+		<antcall target="package-test-swfs"/>
+		-->
+
+		<!--
+		<property name="new.assets.version" value="true"/>
+		<antcall target="-versionize-assets"/>
+		-->
+
+		<mkdir dir="${release.dir}"/>
+		<tar destfile="${release.dir}/release.tgz" compression="gzip">
+			<tarfileset dir="${package.dir}" dirmode="775" filemode="664">
+				   <include name="**/*"/>
+			</tarfileset>
+		</tar>
+
+		<copy file="${versions.file}" todir="${release.dir}"/>
+
+		<tar destfile="${build.dir}/${client.archive.name}-full.tgz" compression="gzip">
+			<tarfileset dir="${release.dir}">
+		    	<include name="**/*"/>
+			</tarfileset>
+		</tar>
+	</target>
+
+
+	<target name="build-assets-full">
+		<delete dir="${package.dir}"/>
+		<delete dir="${release.dir}"/>
+		<mkdir dir="${package.dir}"/>
+		<mkdir dir="${release.dir}"/>
+		<copy file="${versions.file}" todir="${package.dir}"/>
+
+		<copy todir="${package.dir}">
+			<fileset dir="${src.dir}/staging">
+				<include name="assets/**"/>
+				<exclude name="assets/handbook/**"/>
+				<exclude name="assets/en.v*.txt"/>
+				<exclude name="assets/versioned_assets.properties"/>
+			</fileset>
+		</copy>
+
+		<mkdir dir="${package.dir}/assets/images/feeddialog"/>
+		<copy todir="${package.dir}/assets/images/feeddialog" failonerror="false">
+			<fileset dir="${package.dir}/assets/streamposts">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+
+		<mkdir dir="${release.dir}"/>
+		<tar destfile="${release.dir}/release.tgz" compression="gzip">
+			<tarfileset dir="${package.dir}" dirmode="775" filemode="664">
+				   <include name="**/*"/>
+			</tarfileset>
+		</tar>
+
+		<copy file="${versions.file}" todir="${release.dir}"/>
+
+		<tar destfile="${build.dir}/${assets.archive.name}-full.tgz" compression="gzip">
+			<tarfileset dir="${release.dir}">
+		    	<include name="**/*"/>
+			</tarfileset>
+		</tar>
+	</target>
+
+</project>

@@ -1,0 +1,227 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="ChatBox_ignoreBtn" itemID="4e14afa0-000001f2" lastModified="1313794659">
+  <timeline>
+    <DOMTimeline name="ChatBox_ignoreBtn" currentFrame="1">
+      <layers>
+        <DOMLayer name="slash_bg" color="#FF800A" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0195465087890625" d="0.0115509033203125" tx="7.4" ty="8.75"/>
+                        </matrix>
+                        <GradientEntry color="#880000" ratio="0.301960784313725"/>
+                        <GradientEntry color="#FF6666" ratio="0.682352941176471"/>
+                        <GradientEntry color="#FF6666" ratio="0.737254901960784"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!245 84[243 74 237 66!237 66[228 59 218 59!218 59[209 58 202 65!202 65|66 201!66 201[59 208 59 218!59 218[60 227 66 235!66 235[74 243 84 243!84 243[95 242 101 236!101 236|236 101!236 101[243 94 245 84"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0195465087890625" d="0.0115509033203125" tx="7.4" ty="8.75"/>
+                        </matrix>
+                        <GradientEntry color="#00FF00" ratio="0"/>
+                        <GradientEntry ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!237 66[228 59 218 59!218 59[209 58 202 65!202 65|66 201!66 201[59 208 59 218!59 218[60 227 66 235!66 235[74 243 84 243!84 243[95 242 101 236!101 236|236 101!236 101[243 94 245 84!245 84[243 74 237 66"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="circ_bg" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0195465087890625" d="0.0115509033203125" tx="7.4" ty="8.75"/>
+                        </matrix>
+                        <GradientEntry color="#880000" ratio="0.301960784313725"/>
+                        <GradientEntry color="#FF6666" ratio="0.682352941176471"/>
+                        <GradientEntry color="#FF6666" ratio="0.737254901960784"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="0.5">
+                        <fill>
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0.00946044921875" d="0.00946044921875" tx="7.5" ty="7.5"/>
+                            </matrix>
+                            <GradientEntry color="#880000" ratio="0.301960784313725"/>
+                            <GradientEntry color="#FF6666" ratio="0.682352941176471"/>
+                            <GradientEntry color="#FF6666" ratio="0.737254901960784"/>
+                          </LinearGradient>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!250 150[250 192 221 220!221 220[192 250 150 250!150 250[109 250 79 220!79 220[50 192 50 150!50 150[50 109 79 79!79 79[109 50 150 50!150 50[192 50 221 79!221 79[250 109 250 150"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!300 150[300 212 256 256!256 256[212 300 150 300!150 300[88 300 44 256!44 256[0 212 0 150!0 150[0 89 44 45!44 45[88 0 150 0!150 0[212 0 256 45!256 45[300 89 300 150"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0195465087890625" d="0.0115509033203125" tx="7.4" ty="8.75"/>
+                        </matrix>
+                        <GradientEntry color="#00FF00" ratio="0"/>
+                        <GradientEntry ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="0.5">
+                        <fill>
+                          <RadialGradient>
+                            <matrix>
+                              <Matrix a="0.03070068359375" b="0.0063018798828125" c="-0.0026092529296875" d="0.01263427734375" tx="7.5" ty="7.5"/>
+                            </matrix>
+                            <GradientEntry color="#00FF00" ratio="0"/>
+                            <GradientEntry ratio="1"/>
+                          </RadialGradient>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!221 220[192 250 150 250!150 250[109 250 79 220!79 220[50 192 50 150!50 150[50 109 79 79!79 79[109 50 150 50!150 50[192 50 221 79!221 79[250 109 250 150!250 150[250 192 221 220"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!300 150[300 212 256 256!256 256[212 300 150 300!150 300[88 300 44 256!44 256[0 212 0 150!0 150[0 89 44 45!44 45[88 0 150 0!150 0[212 0 256 45!256 45[300 89 300 150"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="hit_bg" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#006699" alpha="0"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!254 0|46 0!46 0[0 0 0 52!0 52|0 249!0 249[0 300 46 300!46 300|254 300!254 300[300 300 300 249!300 249|300 52!300 52[300 0 254 0"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#006699" alpha="0"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!254 0|46 0!46 0[0 0 0 52!0 52|0 249!0 249[0 300 46 300!46 300|254 300!254 300[300 300 300 249!300 249|300 52!300 52[300 0 254 0"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" visible="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0203704833984375" c="-1.52587890625e-05" d="0.0214080810546875" tx="7.55" ty="7.55"/>
+                        </matrix>
+                        <GradientEntry color="#880000" ratio="0.301960784313725"/>
+                        <GradientEntry color="#FF6666" ratio="0.682352941176471"/>
+                        <GradientEntry color="#FF6666" ratio="0.737254901960784"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#999999"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="!42 300S5|258 300!258 300[300 300 300 258!300 258|300 42!300 42[300 0 258 0!258 0|42 0!42 0[0 0 0 42!0 42|0 258!0 258[0 300 42 300"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0203704833984375" c="-1.52587890625e-05" d="0.0214080810546875" tx="7.55" ty="7.55"/>
+                        </matrix>
+                        <GradientEntry color="#880000" ratio="0.301960784313725"/>
+                        <GradientEntry color="#FF6666" ratio="0.682352941176471"/>
+                        <GradientEntry color="#FF6666" ratio="0.737254901960784"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#999999"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="!258 300[300 300 300 258!300 258|300 42!300 42[300 0 258 0!258 0|42 0!42 0[0 0 0 42!0 42|0 258!0 258[0 300 42 300!42 300|258 300"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

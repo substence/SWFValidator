@@ -1,0 +1,215 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Operations/DominationEvent/check_clip" itemID="4fbd70ef-00000282" linkageExportForAS="true" linkageClassName="AnimatedCheckBox_CLIP" lastModified="1354577681" lastUniqueIdentifier="8">
+  <timeline>
+    <DOMTimeline name="check_clip">
+      <layers>
+        <DOMLayer name="Layer 5" color="#4FFFFF" locked="true" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="38" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="39" duration="10" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/DominationEvent/check_shape_white" centerPoint3DX="10.95" centerPoint3DY="9.4">
+                  <matrix>
+                    <Matrix tx="-1.4" ty="-0.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="12.35" y="9.9"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#FFFFFF" strength="5"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="49" duration="10" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/DominationEvent/check_shape_white" centerPoint3DX="10.95" centerPoint3DY="9.4">
+                  <matrix>
+                    <Matrix tx="-1.4" ty="-0.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="12.35" y="9.9"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#FFFFFF" strength="5"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0.80078125"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="59" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop()]]></script>
+              </Actionscript>
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/DominationEvent/check_shape_white" centerPoint3DX="10.95" centerPoint3DY="9.4">
+                  <matrix>
+                    <Matrix tx="-1.4" ty="-0.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="12.35" y="9.9"/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter color="#FFFFFF" strength="5"/>
+                  </filters>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="29" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="29" duration="15" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/DominationEvent/check_stroke" centerPoint3DX="10.95" centerPoint3DY="9.4">
+                  <matrix>
+                    <Matrix tx="-1.4" ty="-0.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="12.35" y="9.9"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="44" duration="6" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/DominationEvent/check_stroke" centerPoint3DX="10.95" centerPoint3DY="9.4">
+                  <matrix>
+                    <Matrix tx="-1.4" ty="-0.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="12.35" y="9.9"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="50" duration="10" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true" autoNamed="false" layerType="mask">
+          <frames>
+            <DOMFrame index="0" duration="19" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/DominationEvent/check_mask" centerPoint3DX="11.2" centerPoint3DY="7.65">
+                  <matrix>
+                    <Matrix d="-0.915557861328125" tx="-2.6" ty="39.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="13.8" y="11.25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" duration="31" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/DominationEvent/check_mask" centerPoint3DX="11.2" centerPoint3DY="-11.35">
+                  <matrix>
+                    <Matrix d="-0.915557861328125" tx="-2.6" ty="20.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="13.8" y="11.25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="50" duration="10" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" parentLayerIndex="2" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="50" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/DominationEvent/check01" centerPoint3DX="8.5" centerPoint3DY="18.45">
+                  <matrix>
+                    <Matrix tx="8.05" ty="18"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.45" y="0.45"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="50" duration="10" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FF800A" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="19" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="19" duration="20" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/DominationEvent/check_shape" centerPoint3DX="10.95" centerPoint3DY="9.4">
+                  <matrix>
+                    <Matrix tx="-1.4" ty="-0.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="12.35" y="9.9"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="39" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Operations/DominationEvent/check_shape" centerPoint3DX="10.95" centerPoint3DY="9.4">
+                  <matrix>
+                    <Matrix tx="-1.4" ty="-0.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="12.35" y="9.9"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="50" duration="10" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="49" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="49" duration="131" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="Operations/DominationEvent/check_art.png">
+                  <matrix>
+                    <Matrix tx="-4.95" ty="-3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

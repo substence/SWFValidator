@@ -1,0 +1,30 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Buildings/Hits/building40hit" itemID="4e0df3fd-0000057e" linkageExportForAS="true" linkageClassName="building40hit" lastModified="1355858951" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="building40hit">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!1400 380|599 -20!599 -20|-200 380!-200 380|599 780!599 780|1400 380"/>
+                    <Edge cubics="!-200 380(;-200,380 599,780 599,780q-200 380 599 780);"/>
+                    <Edge cubics="!599 780(;599,780 1400,380 1400,380q599 780 1400 380);"/>
+                    <Edge cubics="!-200 380(;-200,380 599,-20 599,-20q-200 380 599 -20);"/>
+                    <Edge cubics="!599 -20(;599,-20 1400,380 1400,380q599 -20 1400 380);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

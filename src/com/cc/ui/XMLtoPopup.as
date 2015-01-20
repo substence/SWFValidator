@@ -1,7 +1,7 @@
 package com.cc.ui
 {
 	import com.cc.messenger.Message;
-	import com.cc.ui.messages.XMLPopupCreatedMessage;
+	import com.cc.ui.messages.XMLPopupRequest;
 	import com.cc.ui.properties.Property;
 	import com.cc.ui.properties.PropertyTextfield;
 	
@@ -16,7 +16,7 @@ package com.cc.ui
 		public function XMLtoPopup(name:String)
 		{
 			_name = name;
-			Message.messenger.dispatch(new XMLPopupCreatedMessage(this));
+			Message.messenger.dispatch(new XMLPopupRequest(name));
 		}
 		
 		protected function getTextfield(name:String):TextField

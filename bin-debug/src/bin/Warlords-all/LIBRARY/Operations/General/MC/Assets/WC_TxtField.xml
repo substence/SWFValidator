@@ -1,0 +1,33 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Operations/General/MC/Assets/WC_TxtField" itemID="50bd2299-000003e0" lastModified="1369959180">
+  <timeline>
+    <DOMTimeline name="WC_TxtField">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="tXP" selected="true" width="480.95" height="97.5" includeOutlines="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-225.95" ty="-24.5"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>9,999 +0000</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="40" bitmapSize="800" face="KoratakiRg-Regular" fillColor="#E7BA5F"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="8" blurY="8" color="#FFFF00" inner="true" strength="1.28"/>
+                    <DropShadowFilter angle="33" blurX="1" blurY="1" distance="1"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

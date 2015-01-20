@@ -22,7 +22,7 @@ package
 	{
 		private static const _DEFAULT_XML:String = "TestXML.xml";
 		private var _loadedXML:XML;
-		private var _loadedSWF:*;
+		private var _loadedSWF:MovieClip;
 		private var _interpeter:XMLtoSWFInterpreter;
 		private var _view:XMLValidatorView;
 		
@@ -79,7 +79,7 @@ package
 		
 		protected function completeHandler(event:Event):void
 		{
-			_loadedSWF = event.target.content;
+			_loadedSWF = MovieClip(event.target.content);
 			addChild(_loadedSWF);
 			_interpeter.getPopups(_loadedSWF, _loadedXML);
 			//showOutput("Success!");

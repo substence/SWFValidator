@@ -1,0 +1,107 @@
+{
+	//////////////////////////////////
+	//		Preferences				//
+	//////////////////////////////////
+
+	"musicEnabled" :	false,
+	"soundEnabled" :	false,
+
+	// Disable to turn off obnoxious RF attacks
+	"enableRFAttacks" :	false,
+	
+	"enableSaving" :	true,
+	"assertLoadTimes" :	true,
+
+	// Manually set what tutorial stage the client thinks it's at before it receives the first base load
+	// for the purposes of retrieving CDN data. Accepted values:
+	// 0: Force the tutorial to start from scratch.
+	// 		WARNING: This just makes BASE.wipeBaseData get called on load.
+	// 		This is NOT the same as creating a new user,
+	// 		and shouldn't be relied on new user testing.
+	// 1 - 999: Client assumes it's mid-tutorial, so doesn't request all data.
+	// 		Doesn't actually set what stage of the tutorial you're on.
+	// 1000: Client assumes the tutorial is complete, so requests all data.
+	"tutorialStage" : 1000,
+	
+	// In order to load as someone on Live, you must switch this to true.
+	// NOTE: enableSaving is hard-coded to always be false for the Live config
+	"allowLive" :		false,
+
+
+	// Allows the client to play replays from an enyo checkout
+	// "playlogPath": "/Full/path/to/enyo/playlogs",
+
+	// Expect/process signed (checksum) Framework replies
+	"fwRepliesUseChecksums": true,
+
+	// Expect/process encrypted Framework replies
+	"fwRepliesUseEncryption": false,
+	
+	//////////////////////////////////
+	//		Env Configs				//
+	//////////////////////////////////
+
+	// Change this to switch environments
+	"environment":		"dev1",			
+
+	// Populate this with fbData from the Facebook apps
+	"fbData":		
+	{
+		// Your actual fbData will look roughly like what is shown below (though this fake fbData won't load the game properly)
+		"dev1":
+			{"signed_request":"blahblahblahbunchofrandomcharacters934fn349n3fgd4emoc9j4.34f3co43","PHPSESSID":"morerandomcharactersn948gn340340g"},
+
+		"dev2":
+			"PASTE DEV2 FBDATA HERE",
+
+		"dev3":
+			"PASTE DEV3 FBDATA HERE",
+
+		"dev4":
+			"PASTE DEV4 FBDATA HERE",
+
+		"dev5":
+			"PASTE DEV5 FBDATA HERE",
+
+		"dev6":
+			"PASTE DEV6 FBDATA HERE",
+		
+		"dev7":
+			"PASTE DEV7 FBDATA HERE",
+			
+		"dev8":
+			"PASTE DEV8 FBDATA HERE",
+			
+		"dev9":
+			"PASTE DEV9 FBDATA HERE",
+
+		"dev10":
+			"PASTE DEV10 FBDATA HERE",
+			
+		"dev11":
+			"PASTE DEV11 FBDATA HERE",
+			
+		"qatest":
+			"PASTE QATEST FBDATA HERE",
+		
+		"preview":
+			"PASTE QATEST FBDATA HERE",
+					
+		"live":
+			"PASTE LIVE FBDATA HERE"
+	},
+
+	"saltData":
+	{
+		"dev":	
+		{ 
+			"salt" : "VV2Y852V07XU1Z76U9U65270YWYZ8999", 		// This salt never changes
+			"encoded" : true
+		},
+		"nondev": // qatest, stage, loadtest, preview, live
+		{ 
+			"salt" : "a396dbec6e7de6d6be513a5bf5de7304", 		// Changes each release. Obtain this from Admin Panels -> [environment] -> Set Versions -> api_hash
+			"encoded" : false 
+		}
+	}
+}

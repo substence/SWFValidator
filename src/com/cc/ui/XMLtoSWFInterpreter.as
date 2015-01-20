@@ -29,7 +29,7 @@ package com.cc.ui
 			var popups:Vector.<XMLtoPopup> = new Vector.<XMLtoPopup>();
 			for each (var popupXML:XML in xml.popup) 
 			{
-				var path:String = popupXML.@path;
+				const path:String = popupXML.@path;
 				if (path)
 				{
 					if (swf.loaderInfo.applicationDomain.hasDefinition(path))

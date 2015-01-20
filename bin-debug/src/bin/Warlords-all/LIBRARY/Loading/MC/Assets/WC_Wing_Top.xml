@@ -1,0 +1,34 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Loading/MC/Assets/WC_Wing_Top" itemID="510318db-00000f59" lastModified="1357668786">
+  <timeline>
+    <DOMTimeline name="WC_Wing_Top">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="Loading/PNG/Wing_Top.png">
+                  <matrix>
+                    <Matrix a="-0.99945068359375" b="0.0312042236328125" c="0.0312042236328125" d="0.99945068359375" tx="125.05" ty="-92.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true" visible="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="Loading/PNG/_Wing_Top.png">
+                  <matrix>
+                    <Matrix tx="-100.65" ty="-122.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

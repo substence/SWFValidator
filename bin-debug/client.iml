@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="GAME">
+    <configurations>
+      <configuration name="GAME" pure-as="true" main-class="GAME" output-file="GAME.swf" output-folder="$MODULE_DIR$/src/staging">
+        <dependencies target-player="10.2">
+          <entries>
+            <entry library-id="5ba302b7-29da-4595-ac9d-cf88405663cf">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="ee8a809c-492b-4f20-bd2b-edb3949cb677">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="d267d04c-023e-44df-b6cd-bf6ed62fd218">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="6a2d3033-cb84-41a1-aca6-0b818d6198c7">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="187b63e8-72f4-4215-9c65-6a00993dad5d">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="b3c6618f-84d9-49be-959f-fcabae9b6f1a">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="flex_4.5.1" />
+        </dependencies>
+        <compiler-options>
+          <map>
+            <entry key="compiler.locale" value="en_US" />
+          </map>
+          <option name="additionalOptions" value="-define+=CONFIG::debug,true -define+=CONFIG::local,true -define+=CONFIG::release,false -define+=CONFIG::loadtest,false -define+=CONFIG::notloadtest,!CONFIG::loadtest" />
+        </compiler-options>
+        <packaging-air-desktop />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/src/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/src/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/src/staging" />
+    </content>
+    <orderEntry type="jdk" jdkName="flex_4.5.1" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="5ba302b7-29da-4595-ac9d-cf88405663cf" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/bin/all.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="ee8a809c-492b-4f20-bd2b-edb3949cb677" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/bin/ChatUI.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="d267d04c-023e-44df-b6cd-bf6ed62fd218" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/bin/SFS2X_API_AS3.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="6a2d3033-cb84-41a1-aca6-0b818d6198c7" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/bin/protoc-gen-as3-1.1.0/protobuf.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="187b63e8-72f4-4215-9c65-6a00993dad5d" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../enyo/build/aibox.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="b3c6618f-84d9-49be-959f-fcabae9b6f1a" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/bin/kixeye-services-lib-v7373.debug.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+

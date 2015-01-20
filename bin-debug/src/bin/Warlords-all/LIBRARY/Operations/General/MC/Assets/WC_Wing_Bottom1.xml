@@ -1,0 +1,24 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Operations/General/MC/Assets/WC_Wing_Bottom1" itemID="50b93a95-00000e67" lastModified="1354316437">
+  <timeline>
+    <DOMTimeline name="WC_Wing_Bottom1">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="Operations/General/PNG/_Wing_Bottom_01.png">
+                  <matrix>
+                    <Matrix a="0.939743041992188" b="0.34185791015625" c="-0.34185791015625" d="0.939743041992188" tx="-118.05" ty="-143.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-3.85" y="158.4"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,40 @@
+﻿gameloader.swf Movie Report
+----------------------------
+
+Metadata
+--------
+Bytes         Value
+----------    -----
+      1141    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash Professional CS5</xmp:CreatorTool> <xmp:CreateDate>2010-10-25T09:49:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2013-05-13T19:46:45-07:00</xmp:MetadataDate> <xmp:ModifyDate>2013-05-13T19:46:45-07:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:InstanceID>xmp.iid:F87F11740720681183D1D3C608C3334B</xmpMM:InstanceID> <xmpMM:DocumentID>xmp.did:F87F11740720681183D1D3C608C3334B</xmpMM:DocumentID> <xmpMM:OriginalDocumentID>xmp.did:F77F1174072068118083A6F6D004D98E</xmpMM:OriginalDocumentID> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:F77F11740720681183D1D3C608C3334B</stRef:instanceID> <stRef:documentID>xmp.did:F77F117407206811822AA078274FF043</stRef:documentID> <stRef:originalDocumentID>xmp.did:F77F1174072068118083A6F6D004D98E</stRef:originalDocumentID> </xmpMM:DerivedFrom> </rdf:Description> </rdf:RDF> 
+
+Frame #    Frame Bytes    Total Bytes    Scene
+-------    -----------    -----------    -----
+      1          43955          43955    Scene 1 (AS 3.0 Classes Export Frame)
+
+Scene      Shape Bytes    Text Bytes    ActionScript Bytes
+-------    -----------    ----------    ------------------
+Scene 1              0             0                   504
+
+Symbol              Shape Bytes    Text Bytes    ActionScript Bytes
+----------------    -----------    ----------    ------------------
+blank                        37             0                     0
+loadingScreen                 0           397                     0
+progresbar                   76             0                     0
+Symbol 7                      0             0                     0
+levelProgressBar             49             0                     0
+
+Font Name             Bytes         Characters
+------------------    ----------    ----------
+KoratakiRg-Regular          3505     %.0123456789ABCDEFGIKLNOSTv 
+
+ActionScript Bytes    Location
+------------------    --------
+               504    Scene 1:Frame 1:loadingScreen
+
+Bitmap               Compressed    Original      Compression
+-----------------    ----------    ----------    -----------
+splash screen.jpg         37858       1702400    Imported JPEG=102
+
+
+
+

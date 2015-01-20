@@ -1,0 +1,33 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Operations/General/MC/Assets/WC_BonusTxtField" itemID="5156223d-000005be" lastModified="1364600473">
+  <timeline>
+    <DOMTimeline name="WC_BonusTxtField">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="tXP" selected="true" width="211.25" height="48" includeOutlines="true">
+                  <matrix>
+                    <Matrix tx="-96.2" ty="-24.5"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>9,999</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="40" bitmapSize="800" face="KoratakiRg-Regular" fillColor="#0099FF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                  <filters>
+                    <GlowFilter blurX="8" blurY="8" color="#FFFFFF" inner="true" strength="1.28"/>
+                    <DropShadowFilter angle="33" blurX="1" blurY="1" distance="1"/>
+                  </filters>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
