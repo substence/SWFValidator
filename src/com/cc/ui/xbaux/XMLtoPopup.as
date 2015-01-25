@@ -1,9 +1,9 @@
-package com.cc.ui
+package com.cc.ui.xbaux
 {
 	import com.cc.messenger.Message;
-	import com.cc.ui.messages.XMLPopupRequest;
-	import com.cc.ui.properties.Property;
-	import com.cc.ui.properties.PropertyTextfield;
+	import com.cc.ui.xbaux.messages.XMLPopupRequest;
+	import com.cc.ui.xbaux.properties.Property;
+	import com.cc.ui.xbaux.properties.PropertyTextfield;
 	
 	import flash.text.TextField;
 

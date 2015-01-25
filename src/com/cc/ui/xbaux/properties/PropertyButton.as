@@ -1,4 +1,4 @@
-package com.cc.ui.properties
+package com.cc.ui.xbaux.properties
 {
 	import flash.display.DisplayObjectContainer;
 

@@ -1,4 +1,4 @@
-package com.cc.ui
+package com.cc.ui.xbaux
 {
 	import flash.display.Loader;
 	import flash.display.MovieClip;
@@ -11,7 +11,7 @@ package com.cc.ui
 	
 	import org.osflash.signals.Signal;
 	
-	class XMLtoPopupLoader
+	class XBAUXLoader
 	{
 		public static const LOADED_XML:String = "loadedXML";
 		public static const LOADED_SWF:String = "loadedSWF";
@@ -22,19 +22,24 @@ package com.cc.ui
 		private var _swf:MovieClip;
 		private var _signalLoaded:Signal;
 		
-		public function XMLtoPopupLoader(contractURL:String)
+		public function XBAUXLoader(contractURL:String)
 		{
 			_signalLoaded = new Signal(String);
 			_contractURL = _CONTRACT_DIRECTORY + contractURL;
 			loadXML();
 		}
 		
+		public function get swf():MovieClip
+		{
+			return _swf;
+		}
+
 		public function get xml():XML
 		{
 			return _xml;
 		}
 		
-		private function loadXML():void
+		public function loadXML():void
 		{
 			var loader:URLLoader = new URLLoader();
 			loader.addEventListener(Event.COMPLETE, loadedXML);
@@ -48,7 +53,7 @@ package com.cc.ui
 			signalLoaded.dispatch(LOADED_XML);
 		}
 		
-		private function loadSWF(url:String):void
+		public function loadSWF(url:String):void
 		{
 			var loader:Loader = new Loader(); 
 			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, loadedSWF); 

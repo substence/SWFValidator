@@ -1,6 +1,6 @@
 package
 {
-	import com.cc.ui.XMLtoSWFInterpreter;
+	import com.cc.ui.xbaux.XMLtoSWFInterpreter;
 	
 	import flash.display.Loader;
 	import flash.display.MovieClip;
