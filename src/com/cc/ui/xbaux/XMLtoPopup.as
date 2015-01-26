@@ -1,7 +1,9 @@
 package com.cc.ui.xbaux
 {
 	import com.cc.messenger.Message;
-	import com.cc.ui.xbaux.messages.XMLPopupRequest;
+	import com.cc.ui.xbaux.messages.ContractLoaded;
+	import com.cc.ui.xbaux.messages.ContractRequest;
+	import com.cc.ui.xbaux.messages.SymbolRequest;
 	import com.cc.ui.xbaux.properties.Property;
 	import com.cc.ui.xbaux.properties.PropertyTextfield;
 	
@@ -11,12 +13,31 @@ package com.cc.ui.xbaux
 	{
 		//lets make this a dictionary for easy lookup
 		private var _properties:Vector.<Property>;
-		private var _name:String;
+		private var _contract:Contract;
+		private var _symbol:Whatever;
 		
-		public function XMLtoPopup(name:String)
+		public function XMLtoPopup(contractName:String, symbolName:String =)
 		{
-			_name = name;
-			Message.messenger.dispatch(new XMLPopupRequest(name));
+			//listen for the desired symbol to be loaded
+			Message.messenger.add(ContractLoaded, loadedSymbol);
+			
+			//request the desired symbol
+			Message.messenger.dispatch(new SymbolRequest(contractName, symbolName));
+		}
+		
+		private function loadedSymbol(message:SymbolRequest):void
+		{
+			if (message.contract.name == _name)
+			{
+				_contract = message.contract;
+				Message.messenger.remove(ContractLoaded, loadedSymbol);
+				onLoadedContract();
+			}
+		}
+		
+		protected function onLoadedContract():void
+		{
+			
 		}
 		
 		protected function getTextfield(name:String):TextField
@@ -34,20 +55,6 @@ package com.cc.ui.xbaux
 				}
 			}
 			return null;
-		}
-		
-		protected function onDataLoaded():void
-		{
-			// TODO Auto Generated method stub
-		}
-
-		internal function set properties(value:Vector.<Property>):void
-		{
-			if (value && value !=_properties)
-			{
-				_properties = value;
-				onDataLoaded();
-			}
 		}
 		
 		public function get name():String

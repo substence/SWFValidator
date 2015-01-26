@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <swf path="XP_Earned_Animations.swf">
-	<popup title="" path="XPEarnedBracket">
+	<symbol title="" path="XPEarnedBracket">
 		<property type="text"	path="btnCollect.bBuild.label"	key="text_key"></property>
 		<property type="button"	path="btnCollect" 				onClick="hidePopup"></property>
-	</popup>
+	</symbol>
 </swf>

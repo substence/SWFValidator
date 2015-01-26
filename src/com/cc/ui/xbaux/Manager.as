@@ -2,7 +2,7 @@ package com.cc.ui.xbaux
 {
 	import com.cc.messenger.Message;
 	import com.cc.messenger.Messenger;
-	import com.cc.ui.xbaux.messages.XMLPopupRequest;
+	import com.cc.ui.xbaux.messages.ContractRequest;
 	import com.cc.ui.xbaux.properties.Property;
 	
 	import flash.utils.Dictionary;
@@ -17,12 +17,12 @@ package com.cc.ui.xbaux
 		{
 			_requests = new Dictionary();
 			_contracts = new Dictionary();
-			Message.messenger.add(XMLPopupRequest, onDataRequested);
+			Message.messenger.add(ContractRequest, onDataRequested);
 		}
 		
-		private function onDataRequested(request:XMLPopupRequest):void
+		private function onDataRequested(request:ContractRequest):void
 		{
-			var name:String = request.name;
+			var name:String = request.callbackName;
 			if (_contracts[name])
 			{
 				request.callback(_contracts[name]);
@@ -31,7 +31,7 @@ package com.cc.ui.xbaux
 			{
 				if (!_requests[name])
 				{
-					var interpreter:Interpreter = new Interpreter(request.name);
+					var interpreter:Interpreter = new Interpreter(request.callbackName);
 					interpreter.signalInterpretationComplete.addOnce(intetpretedXML);
 					_requests[name] = request;
 					interpreter.startInterpretation();
@@ -42,7 +42,7 @@ package com.cc.ui.xbaux
 		private function intetpretedXML(interpreter:Interpreter):void
 		{
 			_contracts[interpreter.name] = interpreter.contract;
-			var request:XMLPopupRequest = _requests[interpreter.name];
+			var request:ContractRequest = _requests[interpreter.name];
 			if (request)
 			{
 				request.callback(interpreter.contract);

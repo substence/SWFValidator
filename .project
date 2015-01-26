@@ -20,11 +20,4 @@
 		<nature>com.adobe.flexbuilder.project.apollonature</nature>
 		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>[source path] warlords-trunk-rlyprestine</name>
-			<type>2</type>
-			<location>C:/Users/omartinez/Documents/workspace/warlords-trunk-rlyprestine</location>
-		</link>
-	</linkedResources>
 </projectDescription>
