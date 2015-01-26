@@ -14,6 +14,7 @@ package
 	public class Main extends Sprite
 	{
 		private static const _DEFAULT_XML:String = "TestXML.xml";
+		private static const _DEFAULT_SYMBOL:String = "XPEarnedBracket";
 		private var _view:XMLValidatorView;
 		
 		public function Main()
@@ -21,18 +22,17 @@ package
 			new Manager();
 			_view = new XMLValidatorView();
 			_view.defaultXMLPath = _DEFAULT_XML;
+			_view.defaultSymbolPath = _DEFAULT_SYMBOL;
 			_view.addEventListener(Event.CHANGE, updatedViewInfo);
 			addChild(_view);
 		}
 		
 		protected function updatedViewInfo(event:Event):void
 		{
-			new XMLtoPopup(_view.xmlPath, "XPEarnedBracket");
-		}
-		
-		private function showOutput(message:String):void
-		{
-			_view.output = message + "\n";
+			var symbol:XMLtoPopup = new XMLtoPopup(_view.xmlPath, _view.symbolPath);
+			symbol.x = stage.stageWidth * .5;
+			symbol.y = stage.stageHeight * .5;
+			addChild(symbol);
 		}
 	}
 }

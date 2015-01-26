@@ -13,16 +13,17 @@ package
 	public class XMLValidatorView extends Sprite
 	{
 		private var _actionButton:Button;
-		private var _swfTextfield:TextField;
+		private var _symbolTextfield:TextField;
 		private var _xmlTextfield:TextField;
 		private var _defaultXMLPath:String;
+		private var _defaultSymbolPath:String;
 		private var _outputText:TextField;
 		
 		public function XMLValidatorView()
 		{
 			addChild(_xmlTextfield = getInputTextfield());
 			
-			addChild(_swfTextfield = getInputTextfield());
+			addChild(_symbolTextfield = getInputTextfield());
 			
 			_actionButton = new Button();
 			_actionButton.label = "Submit";
@@ -56,8 +57,8 @@ package
 		
 		private function addedToStage(event:Event):void
 		{
-			_swfTextfield.y = _xmlTextfield.height;
-			_actionButton.y = _swfTextfield.y + _swfTextfield.height;
+			_symbolTextfield.y = _xmlTextfield.height;
+			_actionButton.y = _symbolTextfield.y + _symbolTextfield.height;
 			_outputText.y = _actionButton.y + _actionButton.height;
 			_outputText.width = this.stage.stageWidth;
 		}
@@ -73,6 +74,20 @@ package
 			if (!_xmlTextfield.text)
 			{
 				_xmlTextfield.text = _defaultXMLPath;
+			}
+		}
+		
+		public function get symbolPath():String
+		{
+			return _symbolTextfield.text;
+		}
+		
+		public function set defaultSymbolPath(value:String):void
+		{
+			_defaultSymbolPath = value;
+			if (!_symbolTextfield.text)
+			{
+				_symbolTextfield.text = _defaultSymbolPath;
 			}
 		}
 		

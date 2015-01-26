@@ -78,7 +78,7 @@ package com.cc.ui.xbaux
 			var symbols:Vector.<XBAUXSymbol> = new Vector.<XBAUXSymbol>();
 			for each (var symbolXML:XML in symbolsList) 
 			{
-				var symbol:XBAUXSymbol = new XBAUXSymbol(symbolXML);
+				var symbol:XBAUXSymbol = new XBAUXSymbol();
 				symbol.path = symbolXML.@path;
 				if (symbol.path)
 				{
@@ -86,6 +86,7 @@ package com.cc.ui.xbaux
 					{
 						var mcClass:Class = _loader.swf.loaderInfo.applicationDomain.getDefinition(symbol.path) as Class;
 						var mc:MovieClip = new mcClass() as MovieClip;
+						symbol.displayObject = mc;
 						symbol.properties = interpretProperties(symbolXML.property, mc);
 						symbols.push(symbol);
 					}
@@ -96,7 +97,7 @@ package com.cc.ui.xbaux
 				}
 				else
 				{
-					throwError("Symobl has no path.");
+					throwError("Symbol has no path.");
 					return null;
 				}
 			}

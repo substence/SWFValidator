@@ -1,16 +1,15 @@
 package com.cc.ui.xbaux
 {
 	import com.cc.messenger.Message;
-	import com.cc.ui.xbaux.messages.ContractLoaded;
-	import com.cc.ui.xbaux.messages.ContractRequest;
 	import com.cc.ui.xbaux.messages.SymbolLoaded;
 	import com.cc.ui.xbaux.messages.SymbolRequest;
 	import com.cc.ui.xbaux.properties.Property;
 	import com.cc.ui.xbaux.properties.PropertyTextfield;
 	
+	import flash.display.Sprite;
 	import flash.text.TextField;
 
-	public class XMLtoPopup
+	public class XMLtoPopup extends Sprite
 	{
 		//lets make this a dictionary for easy lookup
 		private var _properties:Vector.<Property>;
@@ -22,7 +21,7 @@ package com.cc.ui.xbaux
 		{
 			_symbolName = symbolName;
 			
-			//listen for the desired symbol to be loaded
+			//listen for the desired symbol we're about to load
 			Message.messenger.add(SymbolLoaded, loadedSymbol);
 			
 			//request the desired symbol
@@ -34,6 +33,7 @@ package com.cc.ui.xbaux
 			if (message.symbol.path == _symbolName)
 			{
 				_symbol = message.symbol;
+				addChild(_symbol.displayObject);
 				Message.messenger.remove(SymbolLoaded, loadedSymbol);
 				onLoadedContract();
 			}

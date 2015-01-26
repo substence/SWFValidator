@@ -14,10 +14,10 @@ package com.cc.ui.xbaux
 		public function Manager()
 		{
 			_contracts = new Dictionary();
-			Message.messenger.add(SymbolRequest, onDataRequested);
+			Message.messenger.add(SymbolRequest, onSymbolRequested);
 		}
 		
-		private function onDataRequested(request:SymbolRequest):void
+		private function onSymbolRequested(request:SymbolRequest):void
 		{
 			var contract:Contract = _contracts[request.contractName];
 			if (contract)
