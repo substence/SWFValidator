@@ -1,53 +1,50 @@
 package com.cc.ui.xbaux
 {
 	import com.cc.messenger.Message;
-	import com.cc.messenger.Messenger;
-	import com.cc.ui.xbaux.messages.ContractRequest;
-	import com.cc.ui.xbaux.properties.Property;
+	import com.cc.ui.xbaux.messages.ContractLoaded;
+	import com.cc.ui.xbaux.messages.SymbolLoaded;
+	import com.cc.ui.xbaux.messages.SymbolRequest;
 	
 	import flash.utils.Dictionary;
 
 	public class Manager
 	{
 		private var _contracts:Dictionary;
-		private var _loader:XBAUXLoader;
-		private var _requests:Dictionary;
 		
 		public function Manager()
 		{
-			_requests = new Dictionary();
 			_contracts = new Dictionary();
-			Message.messenger.add(ContractRequest, onDataRequested);
+			Message.messenger.add(SymbolRequest, onDataRequested);
 		}
 		
-		private function onDataRequested(request:ContractRequest):void
+		private function onDataRequested(request:SymbolRequest):void
 		{
-			var name:String = request.callbackName;
-			if (_contracts[name])
+			var contract:Contract = _contracts[request.contractName];
+			if (contract)
 			{
-				request.callback(_contracts[name]);
+				var symbol:XBAUXSymbol = contract.getSymbolByName(request.symbolName);
+				if (symbol)
+				{
+					Message.messenger.dispatch(new SymbolLoaded(symbol));
+				}
 			}
 			else
 			{
-				if (!_requests[name])
-				{
-					var interpreter:Interpreter = new Interpreter(request.callbackName);
-					interpreter.signalInterpretationComplete.addOnce(intetpretedXML);
-					_requests[name] = request;
-					interpreter.startInterpretation();
-				}
+				var interpreter:Interpreter = new Interpreter(request.contractName);
+				interpreter.signalInterpretationComplete.addOnce(intetpretedXML);
+				interpreter.startInterpretation();
 			}
 		}
 		
 		private function intetpretedXML(interpreter:Interpreter):void
 		{
-			_contracts[interpreter.name] = interpreter.contract;
-			var request:ContractRequest = _requests[interpreter.name];
-			if (request)
+			var contract:Contract = interpreter.contract;
+			_contracts[interpreter.name] = contract;
+			Message.messenger.dispatch(new ContractLoaded(contract));
+			for each (var symbol:XBAUXSymbol in contract.symbols) 
 			{
-				request.callback(interpreter.contract);
+				Message.messenger.dispatch(new SymbolLoaded(symbol));
 			}
-			delete _requests[interpreter.name];
 		}
 	}
 }

@@ -4,12 +4,12 @@ package com.cc.ui.xbaux
 	{
 		private var _xml:XML;
 		public var swfPath:String;
-		public var symbols:Vector.<XMLtoPopupSymbol>;
+		public var symbols:Vector.<XBAUXSymbol>;
 		public var name:String;
 		
-		public function getSymbolByName(name:String):XMLtoPopupSymbol
+		public function getSymbolByName(name:String):XBAUXSymbol
 		{
-			for each (var symbol:XMLtoPopupSymbol in symbols) 
+			for each (var symbol:XBAUXSymbol in symbols) 
 			{
 				if (symbol.path == name)
 				{
@@ -18,13 +18,5 @@ package com.cc.ui.xbaux
 			}
 			return null;
 		}
-	}
-}
-class XMLtoPopupSymbol
-{
-	public var path:String;
-	
-	public function XMLtoPopupSymbol(xml:XML)
-	{
 	}
 }

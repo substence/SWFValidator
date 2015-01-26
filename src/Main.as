@@ -1,7 +1,10 @@
 package
 {
 	import com.cc.messenger.Message;
+	import com.cc.ui.xbaux.Manager;
+	import com.cc.ui.xbaux.XMLtoPopup;
 	import com.cc.ui.xbaux.messages.ContractRequest;
+	import com.cc.ui.xbaux.messages.SymbolRequest;
 	
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -15,6 +18,7 @@ package
 		
 		public function Main()
 		{
+			new Manager();
 			_view = new XMLValidatorView();
 			_view.defaultXMLPath = _DEFAULT_XML;
 			_view.addEventListener(Event.CHANGE, updatedViewInfo);
@@ -23,7 +27,7 @@ package
 		
 		protected function updatedViewInfo(event:Event):void
 		{
-			Message.messenger.dispatch(new ContractRequest(_view.xmlPath));
+			new XMLtoPopup(_view.xmlPath, "XPEarnedBracket");
 		}
 		
 		private function showOutput(message:String):void

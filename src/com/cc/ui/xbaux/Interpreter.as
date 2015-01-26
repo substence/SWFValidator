@@ -4,6 +4,8 @@ package com.cc.ui.xbaux
 	import com.cc.ui.xbaux.properties.PropertyFactory;
 	
 	import flash.display.MovieClip;
+	
+	import org.osflash.signals.Signal;
 
 	internal class Interpreter
 	{
@@ -53,28 +55,28 @@ package com.cc.ui.xbaux
 			_contract.swfPath = _xml.@path;
 			if (_contract.swfPath)
 			{
-				_loader.loadSWF(_contract.swfPath);
 				_loader.signalLoaded.addOnce(loadedSWF);
+				_loader.loadSWF(_contract.swfPath);
 			}
 			else
 			{
-				error("no swf path");
+				throwError("no swf path");
 			}
 		}
 		
-		private function loadedSWF():void
+		private function loadedSWF(loaded:String):void
 		{
 			if (_loader.swf)
 			{
 				_contract.symbols = interpretSymbols(_xml.symbol);
-				_signalInterpretationComplete.dispatch();
+				_signalInterpretationComplete.dispatch(this);
 			}
 		}
 		
-		private function interpretSymbols(symbols:XMLList):Vector.<XBAUXSymbol> 
+		private function interpretSymbols(symbolsList:XMLList):Vector.<XBAUXSymbol> 
 		{
 			var symbols:Vector.<XBAUXSymbol> = new Vector.<XBAUXSymbol>();
-			for each (var symbolXML:XML in symbols) 
+			for each (var symbolXML:XML in symbolsList) 
 			{
 				var symbol:XBAUXSymbol = new XBAUXSymbol(symbolXML);
 				symbol.path = symbolXML.@path;
@@ -89,22 +91,22 @@ package com.cc.ui.xbaux
 					}
 					else
 					{
-						error("Symbol could not find in the library");
+						throwError("Symbol could not find in the library");
 					}
 				}
 				else
 				{
-					error("Symobl has no path.");
-					return;
+					throwError("Symobl has no path.");
+					return null;
 				}
 			}
 			return symbols;
 		}
 		
-		private function interpretProperties(properties:XMLList, movieClip:MovieClip):Vector.<Property> 
+		private function interpretProperties(propertiesList:XMLList, movieClip:MovieClip):Vector.<Property> 
 		{
 			var properties:Vector.<Property> = new Vector.<Property>();
-			for each (var propertyXML:XML in properties.property) 
+			for each (var propertyXML:XML in propertiesList.property) 
 			{
 				var typeString:String = propertyXML.@type;
 				var type:Class = _propertyFactory.getTypeFromTypeString(typeString);
@@ -115,19 +117,19 @@ package com.cc.ui.xbaux
 					var error:Error = property.validate(movieClip, propertyXML);
 					if (error)
 					{
-						error(error.message);
+						throwError(error.message);
 					}
 					properties.push(property);
 				}
 				else
 				{
-					error("Unknown property type '" + typeString + "'");
+					throwError("Unknown property type '" + typeString + "'");
 				}
 			}
 			return properties;
 		}
 		
-		private function error(message:String):void
+		private function throwError(message:String):void
 		{
 			
 		}

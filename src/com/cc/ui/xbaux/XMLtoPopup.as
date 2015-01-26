@@ -3,6 +3,7 @@ package com.cc.ui.xbaux
 	import com.cc.messenger.Message;
 	import com.cc.ui.xbaux.messages.ContractLoaded;
 	import com.cc.ui.xbaux.messages.ContractRequest;
+	import com.cc.ui.xbaux.messages.SymbolLoaded;
 	import com.cc.ui.xbaux.messages.SymbolRequest;
 	import com.cc.ui.xbaux.properties.Property;
 	import com.cc.ui.xbaux.properties.PropertyTextfield;
@@ -13,24 +14,27 @@ package com.cc.ui.xbaux
 	{
 		//lets make this a dictionary for easy lookup
 		private var _properties:Vector.<Property>;
-		private var _contract:Contract;
-		private var _symbol:Whatever;
+		//private var _contract:Contract;
+		private var _symbol:XBAUXSymbol;
+		private var _symbolName:String;
 		
-		public function XMLtoPopup(contractName:String, symbolName:String =)
+		public function XMLtoPopup(contractName:String, symbolName:String)
 		{
+			_symbolName = symbolName;
+			
 			//listen for the desired symbol to be loaded
-			Message.messenger.add(ContractLoaded, loadedSymbol);
+			Message.messenger.add(SymbolLoaded, loadedSymbol);
 			
 			//request the desired symbol
 			Message.messenger.dispatch(new SymbolRequest(contractName, symbolName));
 		}
 		
-		private function loadedSymbol(message:SymbolRequest):void
+		private function loadedSymbol(message:SymbolLoaded):void
 		{
-			if (message.contract.name == _name)
+			if (message.symbol.path == _symbolName)
 			{
-				_contract = message.contract;
-				Message.messenger.remove(ContractLoaded, loadedSymbol);
+				_symbol = message.symbol;
+				Message.messenger.remove(SymbolLoaded, loadedSymbol);
 				onLoadedContract();
 			}
 		}
@@ -55,11 +59,6 @@ package com.cc.ui.xbaux
 				}
 			}
 			return null;
-		}
-		
-		public function get name():String
-		{
-			return _name;
 		}
 	}
 }
