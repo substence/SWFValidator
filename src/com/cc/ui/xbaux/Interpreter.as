@@ -113,9 +113,9 @@ package com.cc.ui.xbaux
 				var type:Class = _propertyFactory.getTypeFromTypeString(typeString);
 				if (type)
 				{
-					//todo: im assuming this is of type Property
 					var property:Property = new type() as Property;
 					var error:Error = property.validate(movieClip, propertyXML);
+					property.implement();	//we may not want to implement in non-warlords builds
 					if (error)
 					{
 						throwError(error.message);

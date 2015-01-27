@@ -11,7 +11,8 @@ package com.cc.ui.xbaux
 	
 	import org.osflash.signals.Signal;
 	
-	public class XBAUXLoader
+	//loads and stores the raw XML and SWF for a contract
+	internal class XBAUXLoader
 	{
 		public static const LOADED_XML:String = "loadedXML";
 		public static const LOADED_SWF:String = "loadedSWF";
@@ -40,7 +41,6 @@ package com.cc.ui.xbaux
 		
 		public function loadXML():void
 		{
-			trace("loading xml");
 			var loader:URLLoader = new URLLoader();
 			loader.addEventListener(Event.COMPLETE, loadedXML);
 			loader.addEventListener(IOErrorEvent.IO_ERROR, onLoadError);
@@ -49,7 +49,6 @@ package com.cc.ui.xbaux
 		
 		protected function loadedXML(event:Event):void
 		{
-			trace("loaded xml");
 			_xml = new XML(event.target.data);
 			signalLoaded.dispatch(LOADED_XML);
 		}

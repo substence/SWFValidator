@@ -20,6 +20,7 @@ package
 		public function Main()
 		{
 			new Manager();
+			
 			_view = new XMLValidatorView();
 			_view.defaultXMLPath = _DEFAULT_XML;
 			_view.defaultSymbolPath = _DEFAULT_SYMBOL;
