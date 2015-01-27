@@ -3,6 +3,7 @@ package com.cc.ui.xbaux
 	import com.cc.messenger.Message;
 	import com.cc.ui.xbaux.messages.ContractLoaded;
 	import com.cc.ui.xbaux.messages.ContractRequest;
+	import com.cc.ui.xbaux.messages.LogRequest;
 	import com.cc.ui.xbaux.messages.SymbolLoaded;
 	import com.cc.ui.xbaux.messages.SymbolRequest;
 	
@@ -15,6 +16,8 @@ package com.cc.ui.xbaux
 		
 		public function Manager()
 		{
+			new XBAUXLogger();
+			
 			_contracts = new Dictionary();
 			Message.messenger.add(SymbolRequest, onSymbolRequested);
 			Message.messenger.add(Contract, onContractRequest);
@@ -35,6 +38,7 @@ package com.cc.ui.xbaux
 		
 		private function onSymbolRequested(request:SymbolRequest):void
 		{
+			Message.messenger.dispatch(new LogRequest("Requestd Symbol", XBAUXLogger.VERBOSE));
 			var contract:Contract = _contracts[request.contractName];
 			if (contract)
 			{
