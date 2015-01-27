@@ -107,7 +107,7 @@ package com.cc.ui.xbaux
 		private function interpretProperties(propertiesList:XMLList, movieClip:MovieClip):Vector.<Property> 
 		{
 			var properties:Vector.<Property> = new Vector.<Property>();
-			for each (var propertyXML:XML in propertiesList.property) 
+			for each (var propertyXML:XML in propertiesList) 
 			{
 				var typeString:String = propertyXML.@type;
 				var type:Class = _propertyFactory.getTypeFromTypeString(typeString);

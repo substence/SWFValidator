@@ -17,13 +17,20 @@ package com.cc.ui.xbaux.properties
 				{
 					return new Error("poperty is not a textfield");
 				}
-				var key:String = xml.@key;
+			}
+			return null;
+		}
+		
+		override public function implement():void
+		{
+			if (_xml)
+			{
+				var key:String = _xml.@key;
 				if (key)
 				{
 					textField.htmlText = key;
 				}
 			}
-			return null;
 		}
 	}
 }

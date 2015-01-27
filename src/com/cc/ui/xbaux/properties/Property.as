@@ -7,6 +7,7 @@ package com.cc.ui.xbaux.properties
 	
 	public class Property
 	{
+		protected var _xml:XML;
 		protected var _property:DisplayObject;
 		private var _name:String;
 		
@@ -17,8 +18,9 @@ package com.cc.ui.xbaux.properties
 
 		public function validate(container:DisplayObjectContainer, xml:XML):Error
 		{
-			_name = xml.@name;
-			var path:String = xml.@path;
+			_xml = xml;
+			_name = _xml.@name;
+			var path:String = _xml.@path;
 			if (path)
 			{
 				_property = GraphicUtils.getNestedChild(container, path);
@@ -32,6 +34,11 @@ package com.cc.ui.xbaux.properties
 				return new Error("property has no path");
 			}
 			return null;
+		}
+		
+		virtual public function implement():void
+		{
+			
 		}
 	}
 }

@@ -17,9 +17,20 @@ package com.cc.ui.xbaux.properties
 				{
 					return new Error("Property is not a valid button");
 				}
-				onClickScript = xml.@onClick
 			}
 			return null;
+		}
+		
+		override public function implement():void
+		{
+			if (_xml)
+			{
+				var clickScript:String = _xml.@onClick;
+				if (clickScript)
+				{
+					onClickScript = clickScript;
+				}
+			}
 		}
 	}
 }
