@@ -8,24 +8,26 @@ package com.cc.ui.xbaux
 	import com.cc.ui.xbaux.messages.SymbolRequest;
 	
 	import flash.utils.Dictionary;
+	import com.cc.ui.xbaux.model.XBAUXContract;
+	import com.cc.ui.xbaux.model.XBAUXSymbol;
 
 	//Listens for requests and dispatches that information when interpretation is complete.
-	public class Manager
+	public class XBAUXManager
 	{
 		private var _contracts:Dictionary;
 		
-		public function Manager()
+		public function XBAUXManager()
 		{
 			new XBAUXLogger();
 			
 			_contracts = new Dictionary();
 			Message.messenger.add(SymbolRequest, onSymbolRequested);
-			Message.messenger.add(Contract, onContractRequest);
+			Message.messenger.add(XBAUXContract, onContractRequest);
 		}
 		
 		private function onContractRequest(request:ContractRequest):void
 		{
-			var contract:Contract = _contracts[request.contractName];
+			var contract:XBAUXContract = _contracts[request.contractName];
 			if (contract)
 			{
 				Message.messenger.dispatch(new ContractLoaded(contract));
@@ -38,8 +40,7 @@ package com.cc.ui.xbaux
 		
 		private function onSymbolRequested(request:SymbolRequest):void
 		{
-			Message.messenger.dispatch(new LogRequest("Requestd Symbol", XBAUXLogger.VERBOSE));
-			var contract:Contract = _contracts[request.contractName];
+			var contract:XBAUXContract = _contracts[request.contractName];
 			if (contract)
 			{
 				var symbol:XBAUXSymbol = contract.getSymbolByName(request.symbolName);
@@ -56,14 +57,14 @@ package com.cc.ui.xbaux
 		
 		private function loadContract(contractName:String):void
 		{
-			var interpreter:Interpreter = new Interpreter(contractName);
+			var interpreter:XBAUXInterpreter = new XBAUXInterpreter(contractName);
 			interpreter.signalInterpretationComplete.addOnce(onInterpretationComplete);
 			interpreter.startInterpretation();
 		}
 		
-		private function onInterpretationComplete(interpreter:Interpreter):void
+		private function onInterpretationComplete(interpreter:XBAUXInterpreter):void
 		{
-			var contract:Contract = interpreter.contract;
+			var contract:XBAUXContract = interpreter.contract;
 			_contracts[interpreter.name] = contract;
 			
 			Message.messenger.dispatch(new ContractLoaded(contract));

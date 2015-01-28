@@ -1,4 +1,4 @@
-package com.cc.ui.xbaux.properties
+package com.cc.ui.xbaux.model.properties
 {
 	import flash.display.DisplayObjectContainer;
 	import flash.text.TextField;

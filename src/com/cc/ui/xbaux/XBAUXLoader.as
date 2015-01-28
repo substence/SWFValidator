@@ -1,7 +1,11 @@
 package com.cc.ui.xbaux
 {
+	import com.cc.messenger.Message;
+	import com.cc.ui.xbaux.messages.LogRequest;
+	
 	import flash.display.Loader;
 	import flash.display.MovieClip;
+	import flash.events.ErrorEvent;
 	import flash.events.Event;
 	import flash.events.IOErrorEvent;
 	import flash.net.URLLoader;
@@ -29,16 +33,6 @@ package com.cc.ui.xbaux
 			_contractURL = _CONTRACT_DIRECTORY + contractURL;
 		}
 		
-		public function get swf():MovieClip
-		{
-			return _swf;
-		}
-
-		public function get xml():XML
-		{
-			return _xml;
-		}
-		
 		public function loadXML():void
 		{
 			var loader:URLLoader = new URLLoader();
@@ -49,7 +43,14 @@ package com.cc.ui.xbaux
 		
 		protected function loadedXML(event:Event):void
 		{
-			_xml = new XML(event.target.data);
+			try
+			{
+				_xml = new XML(event.target.data);
+			}
+			catch(error:Error)
+			{
+				throwError(error.message);
+			}
 			signalLoaded.dispatch(LOADED_XML);
 		}
 		
@@ -67,9 +68,24 @@ package com.cc.ui.xbaux
 			_signalLoaded.dispatch(LOADED_SWF);
 		}
 		
-		protected function onLoadError(event:Event):void
+		protected function onLoadError(event:ErrorEvent):void
 		{
-			// TODO Auto-generated method stub
+			throwError(event.text);
+		}
+		
+		private function throwError(error:String):void
+		{
+			Message.messenger.dispatch(new LogRequest("XBAUXLoader - " + error, XBAUXLogger.ERROR));
+		}
+		
+		public function get swf():MovieClip
+		{
+			return _swf;
+		}
+		
+		public function get xml():XML
+		{
+			return _xml;
 		}
 		
 		public function get signalLoaded():Signal

@@ -91,9 +91,9 @@ package
 			}
 		}
 		
-		public function set output(value:String):void
+		public function showLog(value:String):void
 		{
-			_outputText.text = value;
+			_outputText.appendText(value + "\n");
 		}
 	}
 }

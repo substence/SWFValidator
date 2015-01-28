@@ -1,7 +1,7 @@
 package com.cc.ui.xbaux.messages
 {
 	import com.cc.messenger.Message;
-	import com.cc.ui.xbaux.XMLtoPopup;
+	import com.cc.ui.xbaux.model.XBAUXSymbol;
 	
 	public class ContractRequest extends Message
 	{

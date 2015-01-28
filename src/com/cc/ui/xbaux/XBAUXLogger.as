@@ -4,7 +4,7 @@ package com.cc.ui.xbaux
 	import com.cc.ui.xbaux.messages.LogDisplay;
 	import com.cc.ui.xbaux.messages.LogRequest;
 
-	public class XBAUXLogger
+	internal class XBAUXLogger
 	{
 		public static const ERROR:uint = 5;
 		public static const WARNING:uint = 3;
@@ -27,8 +27,7 @@ package com.cc.ui.xbaux
 			_log.push(request);
 			if (isMessageAppropiate(request))
 			{
-				//Message.messenger.dispatch(new LogDisplay(request));
-				trace(request.timeStamp + " : XBAUXLogger - " + request.message)
+				Message.messenger.dispatch(new LogDisplay(request));
 			}
 		}
 		

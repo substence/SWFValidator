@@ -1,9 +1,8 @@
-package com.cc.ui.xbaux
+package com.cc.ui.xbaux.model
 {
-	public class Contract
+	public class XBAUXContract
 	{
-		private var _xml:XML;
-		public var swfPath:String;
+		public var path:String;
 		public var symbols:Vector.<XBAUXSymbol>;
 		public var name:String;
 		

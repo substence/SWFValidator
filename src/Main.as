@@ -1,10 +1,13 @@
 package
 {
 	import com.cc.messenger.Message;
-	import com.cc.ui.xbaux.Manager;
-	import com.cc.ui.xbaux.XMLtoPopup;
+	import com.cc.ui.xbaux.XBAUXManager;
+	import com.cc.ui.xbaux.XBAUXSymbolImplementation;
 	import com.cc.ui.xbaux.messages.ContractRequest;
+	import com.cc.ui.xbaux.messages.LogDisplay;
+	import com.cc.ui.xbaux.messages.LogRequest;
 	import com.cc.ui.xbaux.messages.SymbolRequest;
+	import com.cc.ui.xbaux.model.XBAUXSymbol;
 	
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -19,7 +22,9 @@ package
 		
 		public function Main()
 		{
-			new Manager();
+			new XBAUXManager();
+			
+			Message.messenger.add(LogDisplay, onLogDisplay);
 			
 			_view = new XMLValidatorView();
 			_view.defaultXMLPath = _DEFAULT_XML;
@@ -28,9 +33,15 @@ package
 			addChild(_view);
 		}
 		
+		private function onLogDisplay(message:LogDisplay):void
+		{
+			var messageLog:LogRequest = message.message;
+			_view.showLog(messageLog.timeStamp + " : " + messageLog.message); 
+		}
+		
 		protected function updatedViewInfo(event:Event):void
 		{
-			var symbol:XMLtoPopup = new XMLtoPopup(_view.xmlPath, _view.symbolPath);
+			var symbol:XBAUXSymbolImplementation = new XBAUXSymbolImplementation(_view.xmlPath, _view.symbolPath);
 			symbol.x = stage.stageWidth * .5;
 			symbol.y = stage.stageHeight * .5;
 			addChild(symbol);

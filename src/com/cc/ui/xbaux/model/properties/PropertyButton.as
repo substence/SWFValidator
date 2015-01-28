@@ -1,4 +1,4 @@
-package com.cc.ui.xbaux.properties
+package com.cc.ui.xbaux.model.properties
 {
 	import flash.display.DisplayObjectContainer;
 
@@ -12,11 +12,11 @@ package com.cc.ui.xbaux.properties
 			super.validate(container, xml);
 			if (_property)
 			{
-				button = _property as UIButton;
-				if (!button)
-				{
-					return new Error("Property is not a valid button");
-				}
+//				button = _property as UIButton;
+//				if (!button)
+//				{
+//					return new Error("Property is not a valid button");
+//				}
 			}
 			return null;
 		}

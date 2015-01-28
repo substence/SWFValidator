@@ -1,7 +1,6 @@
 package com.cc.ui.xbaux.messages
 {
 	import com.cc.messenger.Message;
-	import com.cc.ui.xbaux.XBAUXLogger;
 	
 	import flash.utils.getTimer;
 	
@@ -11,7 +10,7 @@ package com.cc.ui.xbaux.messages
 		private var _message:String;
 		private var _level:int;
 		
-		public function LogRequest(message:String, level:int = XBAUXLogger.DEBUG)
+		public function LogRequest(message:String, level:int)
 		{
 			_message = message;
 			_level = level;
