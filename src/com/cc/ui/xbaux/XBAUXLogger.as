@@ -4,7 +4,7 @@ package com.cc.ui.xbaux
 	import com.cc.ui.xbaux.messages.LogDisplay;
 	import com.cc.ui.xbaux.messages.LogRequest;
 
-	internal class XBAUXLogger
+	public class XBAUXLogger
 	{
 		public static const ERROR:uint = 5;
 		public static const WARNING:uint = 3;

@@ -59,8 +59,9 @@ package com.cc.ui.xbaux
 			}
 			else
 			{
-				throwError("no swf path");
+				throwError("Contract '" + _name + "' doesn't contain a swf path.");
 			}
+			
 		}
 		
 		private function loadedSWF(loaded:String):void

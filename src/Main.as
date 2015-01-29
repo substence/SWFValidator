@@ -11,6 +11,7 @@ package
 	
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.filesystem.File;
 	
 	[SWF(backgroundColor="0xFFFFFF", width="760" , height="750", frameRate="40")]
 	
@@ -30,21 +31,35 @@ package
 			_view.defaultXMLPath = _DEFAULT_XML;
 			_view.defaultSymbolPath = _DEFAULT_SYMBOL;
 			_view.addEventListener(Event.CHANGE, updatedViewInfo);
+			_view.signalScanDriectory.add(clickedValidateDirectory);
+			_view.signalScanDriectory.add(clickedValidateFiles);
 			addChild(_view);
 		}
 		
-		private function onLogDisplay(message:LogDisplay):void
+		private function clickedValidateDirectory():void
 		{
-			var messageLog:LogRequest = message.message;
-			_view.showLog(messageLog.timeStamp + " : " + messageLog.message); 
+			new ValidateXMLInDirectory();
 		}
 		
-		protected function updatedViewInfo(event:Event):void
+		private function clickedValidateFiles():void
+		{
+			new ValidateXMLFiles();
+		}
+		
+		private function updatedViewInfo(event:Event):void
 		{
 			var symbol:XBAUXSymbolImplementation = new XBAUXSymbolImplementation(_view.xmlPath, _view.symbolPath);
 			symbol.x = stage.stageWidth * .5;
 			symbol.y = stage.stageHeight * .5;
 			addChild(symbol);
+		}
+		
+		private function onLogDisplay(message:LogDisplay):void
+		{
+			var messageLog:LogRequest = message.message;
+			var constructedMessage:String = messageLog.timeStamp + " : " + messageLog.message;
+			_view.showLog(constructedMessage); 
+			trace(constructedMessage);
 		}
 	}
 }

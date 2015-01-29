@@ -16,7 +16,7 @@ package com.cc.ui.xbaux
 			_propertyTypes = new Dictionary();
 			_propertyTypes["text"] = PropertyTextfield;
 			_propertyTypes["button"] = PropertyButton;
-			_propertyTypes["movie"] = PropertyMovieClip;
+			_propertyTypes["mc"] = PropertyMovieClip;
 		}
 		
 		public function getTypeFromTypeString(typeString:String):*

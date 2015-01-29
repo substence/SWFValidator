@@ -3,12 +3,12 @@ package com.cc.ui.xbaux
 	import com.cc.messenger.Message;
 	import com.cc.ui.xbaux.messages.SymbolLoaded;
 	import com.cc.ui.xbaux.messages.SymbolRequest;
+	import com.cc.ui.xbaux.model.XBAUXSymbol;
 	import com.cc.ui.xbaux.model.properties.Property;
 	import com.cc.ui.xbaux.model.properties.PropertyTextfield;
 	
 	import flash.display.Sprite;
 	import flash.text.TextField;
-	import com.cc.ui.xbaux.model.XBAUXSymbol;
 	
 	public class XBAUXSymbolImplementation extends Sprite
 	{

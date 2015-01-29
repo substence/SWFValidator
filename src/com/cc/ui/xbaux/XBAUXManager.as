@@ -3,13 +3,12 @@ package com.cc.ui.xbaux
 	import com.cc.messenger.Message;
 	import com.cc.ui.xbaux.messages.ContractLoaded;
 	import com.cc.ui.xbaux.messages.ContractRequest;
-	import com.cc.ui.xbaux.messages.LogRequest;
 	import com.cc.ui.xbaux.messages.SymbolLoaded;
 	import com.cc.ui.xbaux.messages.SymbolRequest;
-	
-	import flash.utils.Dictionary;
 	import com.cc.ui.xbaux.model.XBAUXContract;
 	import com.cc.ui.xbaux.model.XBAUXSymbol;
+	
+	import flash.utils.Dictionary;
 
 	//Listens for requests and dispatches that information when interpretation is complete.
 	public class XBAUXManager
@@ -22,7 +21,7 @@ package com.cc.ui.xbaux
 			
 			_contracts = new Dictionary();
 			Message.messenger.add(SymbolRequest, onSymbolRequested);
-			Message.messenger.add(XBAUXContract, onContractRequest);
+			Message.messenger.add(ContractRequest, onContractRequest);
 		}
 		
 		private function onContractRequest(request:ContractRequest):void
