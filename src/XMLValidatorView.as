@@ -1,14 +1,20 @@
 package
 {
+	import com.cc.messenger.Message;
+	import com.cc.ui.xbaux.XBAUXLogger;
+	import com.cc.ui.xbaux.messages.LogRequest;
+	
 	import fl.controls.Button;
 	
 	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
 	import flash.text.TextFieldType;
+	import flash.ui.Keyboard;
 	
 	import org.osflash.signals.Signal;
 
@@ -26,13 +32,15 @@ package
 		private var _signalValidateDirectory:Signal;
 		private var _signalValidateFiles:Signal;
 		private var _outputContainer:Sprite;
+		private var _signalValidateSymbol:Signal;
 		
 		public function XMLValidatorView()
 		{
-			_xmlTextfield = getInputTextfield()
+			_xmlTextfield = getInputTextfield();
 			//addChild(_xmlTextfield);
 			
-			_symbolTextfield = getInputTextfield()
+			_symbolTextfield = getInputTextfield();
+			_symbolTextfield.addEventListener(KeyboardEvent.KEY_UP, onKeyPressOnSymbolName);
 			addChild(_symbolTextfield);
 			
 			_actionButton = new Button();
@@ -40,6 +48,7 @@ package
 			_actionButton.buttonMode = true;
 			_actionButton.addEventListener(MouseEvent.CLICK, clickedSubmit);
 			addChild(_actionButton);
+			_signalValidateSymbol = new Signal();
 			
 			_directoryScan = new Button();
 			_directoryScan.label = "Validate Folder";
@@ -66,14 +75,19 @@ package
 			}
 			addChild(_outputContainer);
 			
+			_outputText.text = "or Drag an XML file here";
+			
 			addEventListener(Event.ADDED_TO_STAGE, addedToStage);
 		}
-
-		public function get outputContainer():Sprite
+		
+		protected function onKeyPressOnSymbolName(event:KeyboardEvent):void
 		{
-			return _outputContainer;
+			if (event.keyCode == Keyboard.ENTER)
+			{
+				clickedSubmit();
+			}
 		}
-
+		
 		protected function clickedValidateFiles(event:MouseEvent):void
 		{
 			_signalValidateFiles.dispatch();
@@ -84,9 +98,16 @@ package
 			_signalValidateDirectory.dispatch();
 		}
 		
-		protected function clickedSubmit(event:Event):void
+		protected function clickedSubmit(event:Event = null):void
 		{
-			dispatchEvent(new Event(Event.CHANGE));
+			if (symbolPath)
+			{
+				_signalValidateSymbol.dispatch();
+			}
+			else
+			{
+				Message.messenger.dispatch(new LogRequest("No symbol name specified", XBAUXLogger.ERROR));
+			}
 		}
 		
 		private function getInputTextfield(defaultText:String = ""):TextField
@@ -142,7 +163,7 @@ package
 		
 		public function get symbolPath():String
 		{
-			return _symbolTextfield.text;
+			return _symbolTextfield.text != _defaultSymbolPath ? _symbolTextfield.text : "";
 		}
 		
 		public function set defaultSymbolPath(value:String):void
@@ -162,6 +183,16 @@ package
 		public function get signalValidateFiles():Signal
 		{
 			return _signalValidateFiles;
+		}
+		
+		public function get signalValidateSymbol():Signal
+		{
+			return _signalValidateSymbol;
+		}
+		
+		public function get outputContainer():Sprite
+		{
+			return _outputContainer;
 		}
 	}
 }

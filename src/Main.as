@@ -31,20 +31,14 @@ package
 			Message.messenger.add(LogDisplay, onLogDisplay);
 			
 			_view = new XMLValidatorView();
-			//_view.defaultXMLPath = _DEFAULT_XML;
 			_view.defaultSymbolPath = _DEFAULT_SYMBOL;
-			//_view.addEventListener(Event.CHANGE, updatedViewInfo);
 			_view.signalScanDriectory.add(clickedValidateDirectory);
-			_view.signalScanDriectory.add(clickedValidateFiles);
+			_view.signalValidateFiles.add(clickedValidateFiles);
+			_view.signalValidateSymbol.add(clickedValidateSymbol);
 			_view.scaleX = 2;
 			_view.scaleY = 2;
 			addChild(_view);			
 			
-			var dragAndDropTarget:Sprite = new Sprite();
-			dragAndDropTarget.graphics.beginFill(0, 0);
-			dragAndDropTarget.graphics.drawRect(0,0,stage.stageWidth,stage.stageHeight);
-			dragAndDropTarget.graphics.endFill();
-			//addChild(dragAndDropTarget);
 			new ValidateXMLonDnD(_view.outputContainer);
 			
 			Message.messenger.add(SymbolLoaded, onSymbolLoaded);
@@ -53,7 +47,7 @@ package
 		private function onSymbolLoaded(message:SymbolLoaded):void
 		{
 			//show whatever symbol is loaded only if there isn't one specified
-			if (true)//!_view.symbolPath || _view.symbolPath == message.symbol.path)
+			if (!_view.symbolPath || _view.symbolPath == message.symbol.path)
 			{
 				if (_testSymbol)
 				{
@@ -78,9 +72,9 @@ package
 			new ValidateXMLFiles();
 		}
 		
-		private function clickedValidateSymbol(event:Event):void
+		private function clickedValidateSymbol():void
 		{
-			Message.messenger.dispatch(new SymbolRequest(_view.symbolPath));			
+			Message.messenger.dispatch(new SymbolRequest(_view.symbolPath));
 		}
 		
 		private function onLogDisplay(message:LogDisplay):void
