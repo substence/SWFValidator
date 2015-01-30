@@ -75,7 +75,7 @@ package
 			}
 			addChild(_outputContainer);
 			
-			_outputText.text = "or Drag an XML file here";
+			_outputText.text = "or Drag file(s) here to Validate\n";
 			
 			addEventListener(Event.ADDED_TO_STAGE, addedToStage);
 		}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swf path="XP_Earned_Animations.swf">
+	<symbol title="" path="XPEarnedBracket">
+		<property type="text" path="btnCollect.bBuild.label" lockey="text_key"/>
+		<property type="button" path="btnCollect" onClick="hidePopup"/>
+		<property type="movieclip" path="progressMC"/>
+		<property type="image" path="bracketText.label"/>
+	</symbol>
+</swf>

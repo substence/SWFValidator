@@ -2,18 +2,17 @@ package
 {
 	import com.cc.messenger.Message;
 	import com.cc.ui.xbaux.XBAUXManager;
-	import com.cc.ui.xbaux.XBAUXSymbolImplementation;
-	import com.cc.ui.xbaux.messages.ContractRequest;
 	import com.cc.ui.xbaux.messages.LogDisplay;
 	import com.cc.ui.xbaux.messages.LogRequest;
 	import com.cc.ui.xbaux.messages.SymbolLoaded;
 	import com.cc.ui.xbaux.messages.SymbolRequest;
-	import com.cc.ui.xbaux.model.XBAUXSymbol;
+	
+	import commands.ValidateXMLFiles;
+	import commands.ValidateXMLInDirectory;
+	import commands.ValidateXMLonDnD;
 	
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
-	import flash.events.Event;
-	import flash.filesystem.File;
 	
 	[SWF(backgroundColor="0xFFFFFF", width="760" , height="750", frameRate="40")]
 	
