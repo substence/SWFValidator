@@ -116,14 +116,17 @@ package com.cc.ui.xbaux
 				if (type)
 				{
 					var property:Property = new type() as Property;
-					property
 					var error:Error = property.validate(movieClip, propertyXML);
-					property.implement();	//we may not want to implement in non-warlords builds
+					
 					if (error)
 					{
 						throwError(error.message);
 					}
-					properties.push(property);
+					else
+					{
+						property.implement();	//we may not want to implement in non-warlords builds
+						properties.push(property);
+					}						
 				}
 				else
 				{

@@ -9,16 +9,25 @@ package com.cc.ui.xbaux.model.properties
 		
 		override public function validate(container:DisplayObjectContainer, xml:XML):Error
 		{
-			super.validate(container, xml);
-			if (_property)
+			var error:Error = super.validate(container, xml);
+			
+			if (error)
+			{
+				return error;
+			}
+			else if (_property)
 			{
 				textField = _property as TextField;
+
 				if (!textField)
 				{
 					return new Error("poperty is not a textfield");
 				}
+				else
+					return null;
 			}
-			return null;
+			else
+				return new Error("TextField failed to initialize");
 		}
 		
 		override public function implement():void

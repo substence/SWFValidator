@@ -9,16 +9,23 @@ package com.cc.ui.xbaux.model.properties
 		
 		override public function validate(container:DisplayObjectContainer, xml:XML):Error
 		{
-			super.validate(container, xml);
-			if (_property)
+			var error:Error = super.validate(container, xml);
+			
+			if (error)
+			{
+				return error;
+			}
+			else if (_property)
 			{
 //				button = _property as UIButton;
 //				if (!button)
 //				{
 //					return new Error("Property is not a valid button");
 //				}
+				return null; // now let's assume everything's Ok
 			}
-			return null;
+			else
+				return new Error("Image failed to initialize");
 		}
 		
 		override public function implement():void

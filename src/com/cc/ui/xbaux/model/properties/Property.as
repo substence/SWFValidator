@@ -21,18 +21,26 @@ package com.cc.ui.xbaux.model.properties
 			_xml = xml;
 			_name = _xml.@name;
 			var path:String = _xml.@path;
-			if (path)
+			
+			if (!path)
 			{
-				_property = GraphicUtils.getNestedChild(container, path);
+				return new Error("property has no path");
+			}
+			else
+			{
 				if (!_name)
 				{
 					_name = path;
 				}
+				
+				_property = GraphicUtils.getNestedChild(container, path);
+			
+				if (!_property)
+				{
+					return new Error("No path '" + path + "' found");
+				}
 			}
-			else
-			{
-				return new Error("property has no path");
-			}
+
 			return null;
 		}
 		
