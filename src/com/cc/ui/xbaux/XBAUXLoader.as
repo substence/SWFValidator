@@ -78,6 +78,13 @@ package com.cc.ui.xbaux
 			Message.messenger.dispatch(new LogRequest("XBAUXLoader - " + error, XBAUXLogger.ERROR));
 		}
 		
+		public function cleanUp():void
+		{
+			_xml = null;
+			_swf = null;
+			_signalLoaded = null;
+		}
+		
 		public function get swf():MovieClip
 		{
 			return _swf;

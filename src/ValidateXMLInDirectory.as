@@ -54,7 +54,8 @@ package
 				{
 					requestContract(file.name);
 				}
-			} 
+			}
+			_targetDirectory = null;
 		}
 		
 		private function requestContract(contractName:String):void

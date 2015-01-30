@@ -14,6 +14,7 @@ package com.cc.ui.xbaux
 	//Listens for requests and dispatches that information when interpretation is complete.
 	public class XBAUXManager
 	{
+		//todo clean this up?
 		private var _contracts:Dictionary;
 		
 		public function XBAUXManager()
@@ -88,6 +89,7 @@ package com.cc.ui.xbaux
 		
 		private function loadContract(contractName:String):void
 		{
+			//todo does this guy get cleaned up on it's own?
 			var interpreter:XBAUXInterpreter = new XBAUXInterpreter(contractName);
 			interpreter.signalInterpretationComplete.addOnce(onInterpretationComplete);
 			interpreter.startInterpretation();

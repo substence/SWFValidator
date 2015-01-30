@@ -38,6 +38,7 @@ package
 				var fileName:String = event.files[i].name;
 				requestContract(fileName);
 			}
+			_targetDirectory = null;
 		}
 		
 		private function requestContract(contractName:String):void

@@ -2,13 +2,13 @@ package com.cc.ui.xbaux
 {
 	import com.cc.messenger.Message;
 	import com.cc.ui.xbaux.messages.LogRequest;
+	import com.cc.ui.xbaux.model.XBAUXContract;
+	import com.cc.ui.xbaux.model.XBAUXSymbol;
 	import com.cc.ui.xbaux.model.properties.Property;
 	
 	import flash.display.MovieClip;
 	
 	import org.osflash.signals.Signal;
-	import com.cc.ui.xbaux.model.XBAUXContract;
-	import com.cc.ui.xbaux.model.XBAUXSymbol;
 
 	internal class XBAUXInterpreter
 	{
@@ -17,10 +17,10 @@ package com.cc.ui.xbaux
 		private static const _ATTRIBUTE_NAME:String = "name";
 		private static const _NODE_SYMBOL:String = "symbol";
 		private static const _NODE_PROPERTY:String = "property";
-		private static var _propertyFactory:XBAUXPropertyFactory;
-		private var _contract:XBAUXContract;
-		private var _xml:XML;
+		private static var _propertyFactory:XBAUXPropertyFactory = new XBAUXPropertyFactory();
 		private var _name:String;
+		private var _xml:XML;
+		private var _contract:XBAUXContract;
 		private var _loader:XBAUXLoader;
 		private var _signalInterpretationComplete:Signal;
 		
@@ -29,7 +29,6 @@ package com.cc.ui.xbaux
 			_name = name;
 			_loader = new XBAUXLoader(name);
 			_loader.signalLoaded.addOnce(loadedXML);
-			_propertyFactory = new XBAUXPropertyFactory();
 			_signalInterpretationComplete = new Signal();
 		}
 		
@@ -72,6 +71,7 @@ package com.cc.ui.xbaux
 				Message.messenger.dispatch(new LogRequest("Interpretation Finished", XBAUXLogger.DEBUG));
 				_signalInterpretationComplete.dispatch(this);
 			}
+			cleanUp();
 		}
 		
 		private function interpretSymbols(symbolsList:XMLList):Vector.<XBAUXSymbol> 
@@ -139,6 +139,16 @@ package com.cc.ui.xbaux
 		private function throwError(message:String):void
 		{
 			Message.messenger.dispatch(new LogRequest("Interpreter error - " + message, XBAUXLogger.ERROR));
+		}
+		
+		//todo actually destroy these guys 
+		private function cleanUp():void
+		{
+			_loader.cleanUp();
+			_loader = null;
+			_signalInterpretationComplete = null;
+			_contract = null;
+			_xml = null;
 		}
 		
 		public function get contract():XBAUXContract
