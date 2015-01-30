@@ -6,9 +6,11 @@ package
 	import com.cc.ui.xbaux.messages.ContractRequest;
 	import com.cc.ui.xbaux.messages.LogDisplay;
 	import com.cc.ui.xbaux.messages.LogRequest;
+	import com.cc.ui.xbaux.messages.SymbolLoaded;
 	import com.cc.ui.xbaux.messages.SymbolRequest;
 	import com.cc.ui.xbaux.model.XBAUXSymbol;
 	
+	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.filesystem.File;
@@ -18,8 +20,9 @@ package
 	public class Main extends Sprite
 	{
 		private static const _DEFAULT_XML:String = "TestXML.xml";
-		private static const _DEFAULT_SYMBOL:String = "XPEarnedBracket";
+		private static const _DEFAULT_SYMBOL:String = "Symbol Name";
 		private var _view:XMLValidatorView;
+		private var _testSymbol:DisplayObject;
 		
 		public function Main()
 		{
@@ -28,12 +31,41 @@ package
 			Message.messenger.add(LogDisplay, onLogDisplay);
 			
 			_view = new XMLValidatorView();
-			_view.defaultXMLPath = _DEFAULT_XML;
+			//_view.defaultXMLPath = _DEFAULT_XML;
 			_view.defaultSymbolPath = _DEFAULT_SYMBOL;
-			_view.addEventListener(Event.CHANGE, updatedViewInfo);
+			//_view.addEventListener(Event.CHANGE, updatedViewInfo);
 			_view.signalScanDriectory.add(clickedValidateDirectory);
 			_view.signalScanDriectory.add(clickedValidateFiles);
-			addChild(_view);
+			_view.scaleX = 2;
+			_view.scaleY = 2;
+			addChild(_view);			
+			
+			var dragAndDropTarget:Sprite = new Sprite();
+			dragAndDropTarget.graphics.beginFill(0, 0);
+			dragAndDropTarget.graphics.drawRect(0,0,stage.stageWidth,stage.stageHeight);
+			dragAndDropTarget.graphics.endFill();
+			//addChild(dragAndDropTarget);
+			new ValidateXMLonDnD(_view.outputContainer);
+			
+			Message.messenger.add(SymbolLoaded, onSymbolLoaded);
+		}
+		
+		private function onSymbolLoaded(message:SymbolLoaded):void
+		{
+			//show whatever symbol is loaded only if there isn't one specified
+			if (true)//!_view.symbolPath || _view.symbolPath == message.symbol.path)
+			{
+				if (_testSymbol)
+				{
+					removeChild(_testSymbol);
+				}
+				_testSymbol = message.symbol.displayObject;
+				_testSymbol.x = stage.stageWidth * .5;
+				_testSymbol.y = stage.stageHeight * .5;
+				addChild(_testSymbol);
+				
+				Message.messenger.remove(SymbolLoaded, onSymbolLoaded);
+			}
 		}
 		
 		private function clickedValidateDirectory():void
@@ -46,12 +78,9 @@ package
 			new ValidateXMLFiles();
 		}
 		
-		private function updatedViewInfo(event:Event):void
+		private function clickedValidateSymbol(event:Event):void
 		{
-			var symbol:XBAUXSymbolImplementation = new XBAUXSymbolImplementation(_view.xmlPath, _view.symbolPath);
-			symbol.x = stage.stageWidth * .5;
-			symbol.y = stage.stageHeight * .5;
-			addChild(symbol);
+			Message.messenger.dispatch(new SymbolRequest(_view.symbolPath));			
 		}
 		
 		private function onLogDisplay(message:LogDisplay):void

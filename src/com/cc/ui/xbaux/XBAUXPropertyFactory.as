@@ -1,6 +1,8 @@
 package com.cc.ui.xbaux
 {
+	import com.cc.ui.xbaux.model.properties.Property;
 	import com.cc.ui.xbaux.model.properties.PropertyButton;
+	import com.cc.ui.xbaux.model.properties.PropertyImage;
 	import com.cc.ui.xbaux.model.properties.PropertyMovieClip;
 	import com.cc.ui.xbaux.model.properties.PropertyTextfield;
 	
@@ -16,7 +18,8 @@ package com.cc.ui.xbaux
 			_propertyTypes = new Dictionary();
 			_propertyTypes["text"] = PropertyTextfield;
 			_propertyTypes["button"] = PropertyButton;
-			_propertyTypes["mc"] = PropertyMovieClip;
+			_propertyTypes["movieclip"] = PropertyMovieClip;
+			_propertyTypes["image"] = PropertyImage;
 		}
 		
 		public function getTypeFromTypeString(typeString:String):*

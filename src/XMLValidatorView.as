@@ -14,6 +14,7 @@ package
 
 	public class XMLValidatorView extends Sprite
 	{
+		private static const _BUFFER:int = 5;
 		private var _actionButton:Button;
 		private var _directoryScan:Button;
 		private var _fileScan:Button;
@@ -24,6 +25,7 @@ package
 		private var _outputText:TextField;
 		private var _signalValidateDirectory:Signal;
 		private var _signalValidateFiles:Signal;
+		private var _outputContainer:Sprite;
 		
 		public function XMLValidatorView()
 		{
@@ -31,16 +33,16 @@ package
 			//addChild(_xmlTextfield);
 			
 			_symbolTextfield = getInputTextfield()
-			//addChild(_symbolTextfield);
+			addChild(_symbolTextfield);
 			
 			_actionButton = new Button();
-			_actionButton.label = "Submit";
+			_actionButton.label = "Show Symbol";
 			_actionButton.buttonMode = true;
 			_actionButton.addEventListener(MouseEvent.CLICK, clickedSubmit);
-			//addChild(_actionButton);
+			addChild(_actionButton);
 			
 			_directoryScan = new Button();
-			_directoryScan.label = "Validate Directory";
+			_directoryScan.label = "Validate Folder";
 			_directoryScan.buttonMode = true;
 			_directoryScan.addEventListener(MouseEvent.CLICK, clickedScanDirectory);
 			addChild(_directoryScan);
@@ -53,12 +55,23 @@ package
 			addChild(_fileScan);
 			_signalValidateFiles = new Signal();
 			
-			_outputText = new TextField();
-			_outputText.multiline = true;
-			_outputText.wordWrap = true;
-			addChild(_outputText);
+			_outputContainer = new Sprite();
+			{
+				_outputText = new TextField();
+				_outputText.multiline = true;
+				_outputText.borderColor = 0x808080;
+				_outputText.border = true;
+				_outputText.wordWrap = true;
+				_outputContainer.addChild(_outputText);
+			}
+			addChild(_outputContainer);
 			
 			addEventListener(Event.ADDED_TO_STAGE, addedToStage);
+		}
+
+		public function get outputContainer():Sprite
+		{
+			return _outputContainer;
 		}
 
 		protected function clickedValidateFiles(event:MouseEvent):void
@@ -80,22 +93,32 @@ package
 		{
 			var inputTextfield:TextField = new TextField();
 			inputTextfield.type = TextFieldType.INPUT;
-			inputTextfield.autoSize = TextFieldAutoSize.LEFT;
+			//inputTextfield.autoSize = TextFieldAutoSize.LEFT;
 			inputTextfield.border = true;
 			inputTextfield.borderColor = 0;
+			inputTextfield.textColor = 0x808080;
 			inputTextfield.text = defaultText;
 			return inputTextfield;
 		}
 		
 		private function addedToStage(event:Event):void
 		{
-			var y:Number = _directoryScan.height;
-			var x:Number = _directoryScan.width;
+			var y:Number = _directoryScan.height + _BUFFER;
+			var x:Number = _directoryScan.width + _BUFFER;
+			
 			_fileScan.x = x;			
-			//_symbolTextfield.y = _xmlTextfield.height;
-			//_actionButton.y = _symbolTextfield.y + _symbolTextfield.height;
-			_outputText.y = y;
+			_symbolTextfield.y = y;
+			
+			_actionButton.y = y;
+			
+			_symbolTextfield.x = _actionButton.width + _BUFFER;
+			_symbolTextfield.height = _actionButton.height;
+			
+			y += _actionButton.height;
+			
+			_outputContainer.y = y;
 			_outputText.width = this.stage.stageWidth;
+			_outputText.height = this.stage.stageHeight - _outputContainer.y;
 		}
 		
 		public function showLog(value:String):void

@@ -4,7 +4,7 @@ package com.cc.ui.xbaux.messages
 	{
 		private var _symbolName:String;
 		
-		public function SymbolRequest(contractName:String, symbolName:String)
+		public function SymbolRequest(symbolName:String, contractName:String = "")
 		{
 			super(contractName)
 			_symbolName = symbolName;

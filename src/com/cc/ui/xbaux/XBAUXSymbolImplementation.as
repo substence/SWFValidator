@@ -15,7 +15,7 @@ package com.cc.ui.xbaux
 		private var _symbol:XBAUXSymbol;
 		private var _symbolName:String;
 		
-		public function XBAUXSymbolImplementation(contractName:String, symbolName:String)
+		public function XBAUXSymbolImplementation(symbolName:String, contractName:String = "")
 		{
 			_symbolName = symbolName;
 			
@@ -23,7 +23,7 @@ package com.cc.ui.xbaux
 			Message.messenger.add(SymbolLoaded, loadedSymbol);
 			
 			//request the desired symbol
-			Message.messenger.dispatch(new SymbolRequest(contractName, symbolName));
+			Message.messenger.dispatch(new SymbolRequest(symbolName, contractName));
 		}
 		
 		private function loadedSymbol(message:SymbolLoaded):void
