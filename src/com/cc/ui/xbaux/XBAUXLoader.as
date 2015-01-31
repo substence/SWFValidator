@@ -8,6 +8,9 @@ package com.cc.ui.xbaux
 	import flash.events.ErrorEvent;
 	import flash.events.Event;
 	import flash.events.IOErrorEvent;
+	import flash.filesystem.File;
+	import flash.filesystem.FileMode;
+	import flash.filesystem.FileStream;
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	import flash.system.ApplicationDomain;
@@ -33,15 +36,26 @@ package com.cc.ui.xbaux
 			_contractURL = _CONTRACT_DIRECTORY + contractURL;
 		}
 		
-		public function loadXML():void
+//		public function loadXML():void
+//		{
+//			var loader:URLLoader = new URLLoader();
+//			loader.addEventListener(Event.COMPLETE, loadedXML);
+//			loader.addEventListener(IOErrorEvent.IO_ERROR, onLoadError);
+//			loader.load(new URLRequest(_contractURL));
+//		}
+		
+		public  function loadXML():void
 		{
-			var loader:URLLoader = new URLLoader();
-			loader.addEventListener(Event.COMPLETE, loadedXML);
-			loader.addEventListener(IOErrorEvent.IO_ERROR, onLoadError);
-			loader.load(new URLRequest(_contractURL));
+			var file:File = new File(_contractURL) 
+			var fileStream:FileStream = new FileStream(); 
+			fileStream.open(file, FileMode.READ); 
+			var prefsXML:XML = XML(fileStream.readUTFBytes(fileStream.bytesAvailable)); 
+			fileStream.close();
+			_xml = prefsXML;
+			finishedXML();
 		}
 		
-		protected function loadedXML(event:Event):void
+		public function loadedXML(event:Event = null):void
 		{
 			try
 			{
@@ -51,6 +65,11 @@ package com.cc.ui.xbaux
 			{
 				throwError(error.message);
 			}
+			finishedXML();
+		}
+		
+		private function finishedXML():void
+		{
 			signalLoaded.dispatch(LOADED_XML);
 		}
 		

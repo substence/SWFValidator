@@ -27,7 +27,7 @@ package commands
 			var files:Array = event.clipboard.getData(ClipboardFormats.FILE_LIST_FORMAT) as Array;
 			for each (var file:File in files) 
 			{
-				requestContract(file.name);
+				requestContract(file.nativePath);
 			}
 		}
 		

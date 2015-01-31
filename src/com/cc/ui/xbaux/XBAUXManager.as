@@ -16,6 +16,7 @@ package com.cc.ui.xbaux
 	{
 		//todo clean this up?
 		private var _contracts:Dictionary;
+		public namespace desktop;
 		
 		public function XBAUXManager()
 		{

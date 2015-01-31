@@ -7,23 +7,26 @@ package commands
 	
 	import flash.events.Event;
 	import flash.filesystem.File;
+	
+	import messages.SaveDirectory;
 
 	//goes through a directory and tries to load all the XML files
 	public class ValidateXMLInDirectory
 	{
 		private var _targetDirectory:File;
 		
-		public function ValidateXMLInDirectory(directory:String = null)
+		public function ValidateXMLInDirectory(directory:File = null)
 		{
-			_targetDirectory = new File(); 
+			_targetDirectory = directory; 
 
 			if (directory != null)
 			{
-				_targetDirectory.nativePath = directory;
+				//_targetDirectory = _targetDirectory.resolvePath(_
 				selectedDirectory();
 			}
 			else
 			{
+				_targetDirectory = new File();
 				try
 				{
 					_targetDirectory.addEventListener(Event.SELECT, selectedDirectory); 
@@ -41,19 +44,27 @@ package commands
 		{
 			Message.messenger.dispatch(new LogRequest("ValidateXMLInDirectory - Selecting directory : " + _targetDirectory.nativePath, XBAUXLogger.DEBUG));
 			
+			Message.messenger.dispatch(new SaveDirectory(_targetDirectory.nativePath));
+
 			scanDirectory(_targetDirectory);
 		}
 		
 		private function scanDirectory(directory:File):void
 		{
-			var contents:Array = directory.getDirectoryListing();  
+			var contents:Array = directory.getDirectoryListing(); 
+			var didFindFiles:Boolean;
 			for (var i:uint = 0; i < contents.length; i++)  
 			{ 
 				var file:File = contents[i];
 				if (file.extension == "xml")
 				{
 					requestContract(file.name);
+					didFindFiles = true;
 				}
+			}
+			if (!didFindFiles)
+			{
+				Message.messenger.dispatch(new LogRequest("ValidateXMLInDirectory - Couldn't find any valid XML files in '" + _targetDirectory.nativePath + "'", XBAUXLogger.WARNING));
 			}
 			_targetDirectory = null;
 		}
