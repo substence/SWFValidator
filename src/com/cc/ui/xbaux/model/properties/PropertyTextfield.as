@@ -7,27 +7,16 @@ package com.cc.ui.xbaux.model.properties
 	{
 		public var textField:TextField;
 		
-		override public function validate(container:DisplayObjectContainer, xml:XML):Error
+		override public function initialize(container:DisplayObjectContainer, xml:XML):void
 		{
-			var error:Error = super.validate(container, xml);
+			super.initialize(container, xml);
 			
-			if (error)
-			{
-				return error;
-			}
-			else if (_property)
-			{
-				textField = _property as TextField;
+			textField = _property as TextField;
 
-				if (!textField)
-				{
-					return new Error("poperty is not a textfield");
-				}
-				else
-					return null;
+			if (!textField)
+			{
+				throw new ContractError("property '" + name + "' is not actually a TextField");
 			}
-			else
-				return new Error("TextField failed to initialize");
 		}
 		
 		override public function implement():void

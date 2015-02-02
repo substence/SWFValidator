@@ -3,7 +3,9 @@ package com.cc.ui.xbaux
 	import com.cc.messenger.Message;
 	import com.cc.ui.xbaux.messages.LogRequest;
 	import com.cc.ui.xbaux.model.XBAUXContract;
+	import com.cc.ui.xbaux.model.XBAUXError;
 	import com.cc.ui.xbaux.model.XBAUXSymbol;
+	import com.cc.ui.xbaux.model.properties.ContractError;
 	import com.cc.ui.xbaux.model.properties.Property;
 	
 	import flash.display.MovieClip;
@@ -77,6 +79,7 @@ package com.cc.ui.xbaux
 		private function interpretSymbols(symbolsList:XMLList):Vector.<XBAUXSymbol> 
 		{
 			var symbols:Vector.<XBAUXSymbol> = new Vector.<XBAUXSymbol>();
+			
 			for each (var symbolXML:XML in symbolsList) 
 			{
 				var symbol:XBAUXSymbol = new XBAUXSymbol();
@@ -89,8 +92,21 @@ package com.cc.ui.xbaux
 						var mcClass:Class = _loader.swf.loaderInfo.applicationDomain.getDefinition(symbol.path) as Class;
 						var mc:MovieClip = new mcClass() as MovieClip;
 						symbol.displayObject = mc;
-						symbol.properties = interpretProperties(symbolXML.child(_NODE_PROPERTY), mc);
-						symbols.push(symbol);
+						try
+						{
+							symbol.properties = interpretProperties(symbolXML.child(_NODE_PROPERTY), mc);
+							symbols.push(symbol);
+						}
+						catch (error:XBAUXError)
+						{
+							var messages:String = "Symbol '" + symbol.name + "' has the following issues:";
+							for each (var message:String in error.messageList)
+							{
+								messages += "\n" + message;
+							}
+							
+							throwError(messages);
+						}
 					}
 					else
 					{
@@ -103,12 +119,14 @@ package com.cc.ui.xbaux
 					return null;
 				}
 			}
+			
 			return symbols;
 		}
 		
-		private function interpretProperties(propertiesList:XMLList, movieClip:MovieClip):Vector.<Property> 
+		private function interpretProperties(propertiesList:XMLList, movieClip:MovieClip):Vector.<Property> // throws XBAUXError
 		{
 			var properties:Vector.<Property> = new Vector.<Property>();
+			var errors:XBAUXError = new XBAUXError();
 			for each (var propertyXML:XML in propertiesList) 
 			{
 				var typeString:String = propertyXML.attribute(_ATTRIBUTE_PROPERTY_TYPE);
@@ -116,24 +134,29 @@ package com.cc.ui.xbaux
 				if (type)
 				{
 					var property:Property = new type() as Property;
-					var error:Error = property.validate(movieClip, propertyXML);
 					
-					if (error)
+					try
 					{
-						throwError(error.message);
-					}
-					else
-					{
-						property.implement();	//we may not want to implement in non-warlords builds
+						property.initialize(movieClip, propertyXML);
+						property.implement(); //we may not want to implement in non-warlords builds
 						properties.push(property);
-					}						
+					}
+					catch (error:ContractError)
+					{
+						errors.appendErrorMessage(error.message); // accumulating the errors			
+					}
 				}
 				else
 				{
 					throwError("Unknown property type '" + typeString + "'");
 				}
 			}
-			return properties;
+			
+			if (errors.messageList.length > 0)
+				// got errors?
+				throw errors;
+			else
+				return properties;
 		}
 		
 		private function throwError(message:String):void

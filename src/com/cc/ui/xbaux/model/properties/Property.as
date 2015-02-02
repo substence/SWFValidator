@@ -16,7 +16,7 @@ package com.cc.ui.xbaux.model.properties
 			return _name;
 		}
 
-		public function validate(container:DisplayObjectContainer, xml:XML):Error
+		public function initialize(container:DisplayObjectContainer, xml:XML):void // throws ContractError
 		{
 			_xml = xml;
 			_name = _xml.@name;
@@ -24,7 +24,7 @@ package com.cc.ui.xbaux.model.properties
 			
 			if (!path)
 			{
-				return new Error("property has no path");
+				throw new ContractError("path is empty for control '" + _name + "'");
 			}
 			else
 			{
@@ -37,14 +37,12 @@ package com.cc.ui.xbaux.model.properties
 			
 				if (!_property)
 				{
-					return new Error("No path '" + path + "' found");
+					throw new ContractError("no path '" + path + "' found in the correponding .swf file for control '" + _name + "'");
 				}
 			}
-
-			return null;
 		}
 		
-		virtual public function implement():void
+		public function implement():void
 		{
 			
 		}

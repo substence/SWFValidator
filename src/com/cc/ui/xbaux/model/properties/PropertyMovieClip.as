@@ -7,27 +7,16 @@ package com.cc.ui.xbaux.model.properties
 	{
 		public var movieClip:MovieClip;
 		
-		override public function validate(container:DisplayObjectContainer, xml:XML):Error
+		override public function initialize(container:DisplayObjectContainer, xml:XML):void
 		{
-			var error:Error = super.validate(container, xml);
+			super.initialize(container, xml);
 			
-			if (error)
-			{
-				return error;
-			}
-			else if (_property)
-			{
-				movieClip = _property as MovieClip;
+			movieClip = _property as MovieClip;
 				
-				if (!movieClip)
-				{
-					return new Error("poperty is not a movieclip");
-				}
-				else
-					return null;
+			if (!movieClip)
+			{
+				throw new ContractError("property + '" + name + "' is not actualy a MovieClip");
 			}
-			else
-				return new Error("MovieClip failed to initialize");
 		}
 	}
 }

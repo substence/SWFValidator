@@ -99,7 +99,7 @@ package com.cc.ui.xbaux
 		private function onInterpretationComplete(interpreter:XBAUXInterpreter):void
 		{
 			var contract:XBAUXContract = interpreter.contract;
-			_contracts[interpreter.name] = contract;
+			//_contracts[interpreter.name] = contract; [this disables undesired caching]
 			
 			Message.messenger.dispatch(new ContractLoaded(contract));
 			for each (var symbol:XBAUXSymbol in contract.symbols) 
