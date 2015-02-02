@@ -57,7 +57,7 @@ package
 		
 		private function scanLastKnownDirectory():void
 		{
-			if (_config.lastKnownDirectory)
+			if (false)//_config.lastKnownDirectory)
 			{
 				Message.messenger.dispatch(new LogRequest("Found a saved XML directory, running validation on it.", XBAUXLogger.DEBUG));
 				new ValidateXMLInDirectory(new File(_config.lastKnownDirectory));

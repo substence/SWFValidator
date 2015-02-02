@@ -29,9 +29,14 @@ package commands
 			var files:Array = event.clipboard.getData(ClipboardFormats.FILE_LIST_FORMAT) as Array;
 			for each (var file:File in files) 
 			{
-				requestContract(file.nativePath);
+				requestContract(file.url);
 			}
-			Message.messenger.dispatch(new SaveDirectory(file.nativePath));
+			if (file)
+			{
+				//get the directory of the last file and send it out to be saved
+				const directory:String = file.nativePath.replace(file.name, "");
+				Message.messenger.dispatch(new SaveDirectory(directory));
+			}
 		}
 		
 		protected function onDragIn(event:NativeDragEvent):void

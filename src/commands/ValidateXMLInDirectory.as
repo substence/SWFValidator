@@ -58,7 +58,7 @@ package commands
 				var file:File = contents[i];
 				if (file.extension == "xml")
 				{
-					requestContract(file.name);
+					requestContract(file.url);
 					didFindFiles = true;
 				}
 			}

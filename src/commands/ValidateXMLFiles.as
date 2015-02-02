@@ -9,6 +9,8 @@ package commands
 	import flash.events.FileListEvent;
 	import flash.filesystem.File;
 	import flash.net.FileFilter;
+	
+	import messages.SaveDirectory;
 
 	public class ValidateXMLFiles
 	{
@@ -33,12 +35,17 @@ package commands
 		
 		protected function selectedFiles(event:FileListEvent):void
 		{
-			for (var i:uint = 0; i < event.files.length; i++) 
+			for each (var file:File in event.files) 
 			{
-				var fileName:String = event.files[i].name;
-				requestContract(fileName);
+				requestContract(file.url);
 			}
 			_targetDirectory = null;
+			if (file)
+			{
+				//get the directory of the last file and send it out to be saved
+				const directory:String = file.nativePath.replace(file.name, "");
+				Message.messenger.dispatch(new SaveDirectory(directory));
+			}
 		}
 		
 		private function requestContract(contractName:String):void
