@@ -7,18 +7,16 @@ package
 	import com.cc.ui.xbaux.messages.LogRequest;
 	import com.cc.ui.xbaux.messages.SymbolLoaded;
 	import com.cc.ui.xbaux.messages.SymbolRequest;
-	import com.cc.ui.xbaux.xbaux_air;
 	
 	import commands.ValidateXMLFiles;
 	import commands.ValidateXMLInDirectory;
 	import commands.ValidateXMLonDnD;
 	
-	import flash.display.DisplayObject;
+	import flash.display.DisplayObjectContainer;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.filesystem.File;
-	import flash.system.Capabilities;
 	
 	[SWF(backgroundColor="0xFFFFFF", width="760" , height="750", frameRate="40")]
 	
@@ -28,7 +26,7 @@ package
 		private static const _DEFAULT_SYMBOL:String = "Symbol Name";
 		public static var activeNamepace:Namespace; 
 		private var _view:XMLValidatorView;
-		private var _testSymbol:DisplayObject;
+		private var _testSymbol:DisplayObjectContainer;
 		private var _config:ConfigManager;
 		
 		public function Main()
@@ -57,7 +55,7 @@ package
 		
 		private function scanLastKnownDirectory():void
 		{
-			if (false)//_config.lastKnownDirectory)
+			if (_config.lastKnownDirectory)
 			{
 				Message.messenger.dispatch(new LogRequest("Found a saved XML directory, running validation on it.", XBAUXLogger.DEBUG));
 				new ValidateXMLInDirectory(new File(_config.lastKnownDirectory));
@@ -73,7 +71,9 @@ package
 				{
 					removeChild(_testSymbol);
 				}
-				_testSymbol = message.symbol.displayObject;
+				_testSymbol = new Sprite();
+				_testSymbol.addChild(message.symbol.displayObject);
+				_testSymbol.mouseChildren = false;
 				_testSymbol.x = stage.stageWidth * .5;
 				_testSymbol.y = stage.stageHeight * .5;
 				_testSymbol.addEventListener(MouseEvent.CLICK, clickedTestSymbol, false, 0, true);
