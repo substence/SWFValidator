@@ -10,6 +10,8 @@ package commands
 	import flash.display.Sprite;
 	import flash.events.NativeDragEvent;
 	import flash.filesystem.File;
+	
+	import messages.SaveDirectory;
 
 	public class ValidateXMLonDnD
 	{
@@ -29,6 +31,7 @@ package commands
 			{
 				requestContract(file.nativePath);
 			}
+			Message.messenger.dispatch(new SaveDirectory(file.nativePath));
 		}
 		
 		protected function onDragIn(event:NativeDragEvent):void

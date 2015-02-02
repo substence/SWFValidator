@@ -75,8 +75,6 @@ package
 			}
 			addChild(_outputContainer);
 			
-			_outputText.text = "or Drag file(s) here to Validate\n";
-			
 			addEventListener(Event.ADDED_TO_STAGE, addedToStage);
 		}
 		
@@ -137,9 +135,9 @@ package
 			
 			y += _actionButton.height;
 			
-			_outputContainer.y = y;
-			_outputText.width = this.stage.stageWidth;
-			_outputText.height = this.stage.stageHeight - _outputContainer.y;
+			_outputContainer.y = y + _BUFFER;
+			_outputText.width = this.stage.stageWidth - 2;
+			_outputText.height = this.stage.stageHeight - _outputContainer.y - 2;
 		}
 		
 		public function showLog(value:String):void

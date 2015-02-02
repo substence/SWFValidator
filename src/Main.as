@@ -1,6 +1,7 @@
 package
 {
 	import com.cc.messenger.Message;
+	import com.cc.ui.xbaux.XBAUXLogger;
 	import com.cc.ui.xbaux.XBAUXManager;
 	import com.cc.ui.xbaux.messages.LogDisplay;
 	import com.cc.ui.xbaux.messages.LogRequest;
@@ -58,6 +59,7 @@ package
 		{
 			if (_config.lastKnownDirectory)
 			{
+				Message.messenger.dispatch(new LogRequest("Found a saved XML directory, running validation on it.", XBAUXLogger.DEBUG));
 				new ValidateXMLInDirectory(new File(_config.lastKnownDirectory));
 			}
 		}
