@@ -14,10 +14,8 @@ package com.cc.ui.xbaux
 	import flash.net.URLRequest;
 	import flash.system.ApplicationDomain;
 	import flash.system.LoaderContext;
-	import flash.system.SecurityDomain;
 	
 	import org.osflash.signals.Signal;
-	import org.osmf.elements.SWFLoader;
 	
 	//loads and stores the raw XML and SWF for a contract
 	internal class XBAUXLoader
@@ -77,7 +75,6 @@ package com.cc.ui.xbaux
 		
 		public function loadSWF(url:String):void
 		{
-			SWFLoader
 			var loader:Loader = new Loader(); 
 			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, loadedSWF); 
 			loader.addEventListener(IOErrorEvent.IO_ERROR, onLoadError);

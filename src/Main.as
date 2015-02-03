@@ -86,10 +86,8 @@ package
 				_testSymbol.y = stage.stageHeight * .5;
 				_testSymbol.addEventListener(MouseEvent.CLICK, clickedTestSymbol, false, 0, true);
 				addChild(_testSymbol);
-				
-				Message.messenger.remove(SymbolLoaded, onSymbolLoaded);
 			}
-			_view.showSymbolButton();
+			_view.showLog("Validation Sucess!"); 
 		}
 		
 		protected function clickedTestSymbol(event:Event):void
@@ -112,9 +110,13 @@ package
 			{
 				Message.messenger.dispatch(new SymbolRequest(_view.symbolPath));
 			}
-			else
+			else if (_directoryToScan)
 			{
 				new ValidateXMLInDirectory(new File(_directoryToScan));
+			}
+			else
+			{
+				new ValidateXMLInDirectory();
 			}
 		}
 		

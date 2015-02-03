@@ -32,7 +32,7 @@ package com.cc.ui.xbaux
 			var contract:XBAUXContract = _contracts[request.contractName];
 			if (contract)
 			{
-				Message.messenger.dispatch(new ContractLoaded(contract));
+				dispatchLoadedContract(contract);
 			}
 			else
 			{
@@ -99,8 +99,13 @@ package com.cc.ui.xbaux
 		private function onInterpretationComplete(interpreter:XBAUXInterpreter):void
 		{
 			var contract:XBAUXContract = interpreter.contract;
-			//_contracts[interpreter.name] = contract; [this disables undesired caching]
+			_contracts[interpreter.name] = contract;
 			
+			dispatchLoadedContract(contract);
+		}
+		
+		private function dispatchLoadedContract(contract:XBAUXContract):void
+		{
 			Message.messenger.dispatch(new ContractLoaded(contract));
 			for each (var symbol:XBAUXSymbol in contract.symbols) 
 			{
