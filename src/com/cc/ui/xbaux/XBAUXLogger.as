@@ -3,6 +3,8 @@ package com.cc.ui.xbaux
 	import com.cc.messenger.Message;
 	import com.cc.ui.xbaux.messages.LogDisplay;
 	import com.cc.ui.xbaux.messages.LogRequest;
+	
+	import flash.system.Capabilities;
 
 	public class XBAUXLogger
 	{
@@ -16,7 +18,14 @@ package com.cc.ui.xbaux
 		
 		public function XBAUXLogger()
 		{
-			_level = VERBOSE;
+			if (Capabilities.isDebugger)
+			{
+				_level = VERBOSE;
+			}
+			else
+			{
+				_level = WARNING;
+			}
 			_log = new Vector.<LogRequest>(_LOG_LIMIT);
 			Message.messenger.add(LogRequest, onLogRequest);
 		}

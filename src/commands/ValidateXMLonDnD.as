@@ -3,6 +3,7 @@ package commands
 	import com.cc.messenger.Message;
 	import com.cc.ui.xbaux.XBAUXLogger;
 	import com.cc.ui.xbaux.messages.ContractRequest;
+	import com.cc.ui.xbaux.messages.LogDisplay;
 	import com.cc.ui.xbaux.messages.LogRequest;
 	
 	import flash.desktop.ClipboardFormats;
@@ -19,6 +20,8 @@ package commands
 		
 		public function ValidateXMLonDnD(target:Sprite)
 		{
+			Message.messenger.dispatch(new LogDisplay(new LogRequest("You can drag an XML Contract in this box", XBAUXLogger.DEBUG)));
+
 			_target = target;
 			_target.addEventListener(NativeDragEvent.NATIVE_DRAG_ENTER,onDragIn);
 			_target.addEventListener(NativeDragEvent.NATIVE_DRAG_DROP,onDrop);
@@ -52,7 +55,7 @@ package commands
 					}
 					else
 					{
-						Message.messenger.dispatch(new LogRequest("ValidateXMLonDnD - " + file.name + " is not a valid XML contract", XBAUXLogger.ERROR));
+						Message.messenger.dispatch(new LogRequest(file.name + " is not a valid XML contract", XBAUXLogger.ERROR));
 					}
 				}
 			}	
@@ -60,7 +63,7 @@ package commands
 		
 		private function requestContract(contractName:String):void
 		{
-			Message.messenger.dispatch(new LogRequest("ValidateXMLonDnD - Attemping to load : " + contractName, XBAUXLogger.DEBUG));
+			Message.messenger.dispatch(new LogRequest("Attemping to load : " + contractName, XBAUXLogger.DEBUG));
 			Message.messenger.dispatch(new ContractRequest(contractName));
 		}
 	}

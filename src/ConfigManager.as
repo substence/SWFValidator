@@ -13,7 +13,7 @@ package
 	//right now we only save one property, if we need more, we'll save an XML file instead
 	public class ConfigManager
 	{
-		private static const CONFIG_FILE_NAME:String = "ValidatorConfig.xml";
+		private static const CONFIG_FILE_NAME:String = "NewValidatorConfig.xml";
 		private var _configFile:File;
 		private var _configXML:XML;
 		private var _lastKnownDirectory:String = "";

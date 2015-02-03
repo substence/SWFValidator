@@ -14,6 +14,7 @@ package
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
 	import flash.text.TextFieldType;
+	import flash.text.TextFormat;
 	import flash.ui.Keyboard;
 	
 	import org.osflash.signals.Signal;
@@ -72,6 +73,8 @@ package
 			_outputContainer = new Sprite();
 			{
 				_outputText = new TextField();
+				_outputText.mouseEnabled = false;
+				_outputText.defaultTextFormat = new TextFormat(null, 16);
 				_outputText.multiline = true;
 				_outputText.borderColor = 0x808080;
 				_outputText.border = true;
@@ -170,7 +173,12 @@ package
 		
 		public function showLog(value:String):void
 		{
-			_outputText.appendText(value + "\n");
+			_outputText.htmlText += value + "\n";
+		}
+		
+		public function clearLog():void
+		{
+			_outputText.text = "";
 		}
 		
 		public function get symbolPath():String

@@ -14,7 +14,7 @@ package com.cc.ui.xbaux.messages
 		{
 			_message = message;
 			_level = level;
-			_timeStamp = getTimer();
+			_timeStamp = getTimer() / 100;
 		}
 
 		public function get timeStamp():uint

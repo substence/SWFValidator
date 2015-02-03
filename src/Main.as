@@ -43,13 +43,13 @@ package
 			_view.directoryToScan = _config.lastKnownDirectory;
 			addChild(_view);				
 			
-			new ValidateXMLonDnD(_view.outputContainer);
-			
 			Message.messenger.add(SymbolLoaded, onSymbolLoaded);
 			
 			Message.messenger.add(LogDisplay, onLogDisplay);
 
 			Message.messenger.add(SaveDirectory, onDirectoryChange);
+			
+			new ValidateXMLonDnD(_view.outputContainer);
 			
 			scanLastKnownDirectory();
 		}
@@ -57,7 +57,7 @@ package
 		private function onDirectoryChange(message:SaveDirectory):void
 		{
 			_directoryToScan = message.directory;
-			_view.directoryToScan = _directoryToScan;
+			_view.directoryToScan =  _directoryToScan;
 			_config.lastKnownDirectory = _directoryToScan;
 		}
 		
@@ -65,7 +65,9 @@ package
 		{
 			if (_config.lastKnownDirectory)
 			{
-				Message.messenger.dispatch(new LogRequest("Found a saved XML directory, running validation on it.", XBAUXLogger.DEBUG));
+				_view.clearLog();
+				const message:String = "Found a saved XML directory, automatically running validation on '" + _config.lastKnownDirectory + "'";
+				Message.messenger.dispatch(new LogRequest(message, XBAUXLogger.DEBUG));
 				new ValidateXMLInDirectory(new File(_config.lastKnownDirectory));
 			}
 		}
@@ -87,7 +89,8 @@ package
 				_testSymbol.addEventListener(MouseEvent.CLICK, clickedTestSymbol, false, 0, true);
 				addChild(_testSymbol);
 			}
-			_view.showLog("Validation Sucess!"); 
+			Message.messenger.dispatch(new LogDisplay(new LogRequest("Symbol '" + message.symbol.name + "' is Valid!", XBAUXLogger.DEBUG)));
+			_view.showSymbolButton();
 		}
 		
 		protected function clickedTestSymbol(event:Event):void
@@ -106,6 +109,7 @@ package
 		
 		private function clickedValidate():void
 		{
+			_view.clearLog();
 			if (_view.symbolPath)
 			{
 				Message.messenger.dispatch(new SymbolRequest(_view.symbolPath));
@@ -124,6 +128,14 @@ package
 		{
 			var messageLog:LogRequest = message.message;
 			var constructedMessage:String = messageLog.timeStamp + " : " + messageLog.message;
+			if (messageLog.level == XBAUXLogger.ERROR)
+			{
+				constructedMessage = "<font color='#FF0000'>" + constructedMessage + "</font>";
+			}
+			else if (messageLog.level == XBAUXLogger.WARNING)
+			{
+				constructedMessage = "<font color='#ffff00'>" + constructedMessage + "</font>";
+			}
 			_view.showLog(constructedMessage); 
 			trace(constructedMessage);
 		}
