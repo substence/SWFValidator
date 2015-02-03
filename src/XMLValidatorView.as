@@ -23,21 +23,24 @@ package
 		private static const _BUFFER:int = 5;
 		private var _actionButton:Button;
 		private var _directoryScan:Button;
-		private var _fileScan:Button;
+		//private var _fileScan:Button;
 		private var _symbolTextfield:TextField;
-		private var _xmlTextfield:TextField;
-		private var _defaultXMLPath:String;
+		private var _directory:TextField;
 		private var _defaultSymbolPath:String;
 		private var _outputText:TextField;
-		private var _signalValidateDirectory:Signal;
-		private var _signalValidateFiles:Signal;
+		public var signaChangeDirectory:Signal;
 		private var _outputContainer:Sprite;
-		private var _signalValidateSymbol:Signal;
+		public var signalValidate:Signal;
+		private var _directoryToScan:String;
+		public var signalShowSymbol:Signal;
 		
 		public function XMLValidatorView()
 		{
-			_xmlTextfield = getInputTextfield();
-			//addChild(_xmlTextfield);
+			_directory = getInputTextfield();
+			_directory.autoSize = TextFieldAutoSize.LEFT;
+			_directory.addEventListener(MouseEvent.CLICK, clickedChangeDirectory);
+			signaChangeDirectory = new Signal();
+			addChild(_directory);
 			
 			_symbolTextfield = getInputTextfield();
 			_symbolTextfield.addEventListener(KeyboardEvent.KEY_UP, onKeyPressOnSymbolName);
@@ -46,23 +49,23 @@ package
 			_actionButton = new Button();
 			_actionButton.label = "Show Symbol";
 			_actionButton.buttonMode = true;
-			_actionButton.addEventListener(MouseEvent.CLICK, clickedSubmit);
+			_actionButton.addEventListener(MouseEvent.CLICK, clickedShowSymbol);
 			addChild(_actionButton);
-			_signalValidateSymbol = new Signal();
+			signalShowSymbol = new Signal();
 			
 			_directoryScan = new Button();
-			_directoryScan.label = "Validate Folder";
+			_directoryScan.label = "Validate";
 			_directoryScan.buttonMode = true;
-			_directoryScan.addEventListener(MouseEvent.CLICK, clickedScanDirectory);
+			_directoryScan.addEventListener(MouseEvent.CLICK, clickedValidate);
 			addChild(_directoryScan);
-			_signalValidateDirectory = new Signal();
+			signalValidate = new Signal();
 			
-			_fileScan = new Button();
-			_fileScan.label = "Validate File(s)";
-			_fileScan.buttonMode = true;
-			_fileScan.addEventListener(MouseEvent.CLICK, clickedValidateFiles);
-			addChild(_fileScan);
-			_signalValidateFiles = new Signal();
+//			_fileScan = new Button();
+//			_fileScan.label = "Validate File(s)";
+//			_fileScan.buttonMode = true;
+//			_fileScan.addEventListener(MouseEvent.CLICK, clickedValidateFiles);
+//			//addChild(_fileScan);
+//			_signalValidateFiles = new Signal();
 			
 			_outputContainer = new Sprite();
 			{
@@ -75,32 +78,45 @@ package
 			}
 			addChild(_outputContainer);
 			
+			hideSymbolButton();
+			
 			addEventListener(Event.ADDED_TO_STAGE, addedToStage);
 		}
 		
+		protected function clickedChangeDirectory(event:MouseEvent):void
+		{
+			signaChangeDirectory.dispatch();
+		}
+		
+		public function get directoryToScan():String
+		{
+			return _directoryToScan;
+		}
+
+		public function set directoryToScan(value:String):void
+		{
+			_directoryToScan = value;
+			_directory.text = _directoryToScan;
+		}
+
 		protected function onKeyPressOnSymbolName(event:KeyboardEvent):void
 		{
 			if (event.keyCode == Keyboard.ENTER)
 			{
-				clickedSubmit();
+				clickedShowSymbol();
 			}
 		}
 		
-		protected function clickedValidateFiles(event:MouseEvent):void
+		protected function clickedValidate(event:MouseEvent):void
 		{
-			_signalValidateFiles.dispatch();
+			signalValidate.dispatch();
 		}
 		
-		protected function clickedScanDirectory(event:MouseEvent):void
-		{
-			_signalValidateDirectory.dispatch();
-		}
-		
-		protected function clickedSubmit(event:Event = null):void
+		protected function clickedShowSymbol(event:MouseEvent = null):void
 		{
 			if (symbolPath)
 			{
-				_signalValidateSymbol.dispatch();
+				signalShowSymbol.dispatch();
 			}
 			else
 			{
@@ -122,10 +138,11 @@ package
 		
 		private function addedToStage(event:Event):void
 		{
-			var y:Number = _directoryScan.height + _BUFFER;
-			var x:Number = _directoryScan.width + _BUFFER;
+			var y:Number = _directory.height + _BUFFER;
+			var x:Number = _directory.width + _BUFFER;
 			
-			_fileScan.x = x;			
+			//_fileScan.x = x;			
+			_directoryScan.x = x;
 			_symbolTextfield.y = y;
 			
 			_actionButton.y = y;
@@ -145,20 +162,6 @@ package
 			_outputText.appendText(value + "\n");
 		}
 		
-		public function get xmlPath():String
-		{
-			return _xmlTextfield.text;
-		}
-		
-		public function set defaultXMLPath(value:String):void
-		{
-			_defaultXMLPath = value;
-			if (!_xmlTextfield.text)
-			{
-				_xmlTextfield.text = _defaultXMLPath;
-			}
-		}
-		
 		public function get symbolPath():String
 		{
 			return _symbolTextfield.text != _defaultSymbolPath ? _symbolTextfield.text : "";
@@ -173,24 +176,21 @@ package
 			}
 		}
 		
-		public function get signalScanDriectory():Signal
-		{
-			return _signalValidateDirectory;
-		}
-		
-		public function get signalValidateFiles():Signal
-		{
-			return _signalValidateFiles;
-		}
-		
-		public function get signalValidateSymbol():Signal
-		{
-			return _signalValidateSymbol;
-		}
-		
 		public function get outputContainer():Sprite
 		{
 			return _outputContainer;
+		}
+		
+		public function showSymbolButton():void
+		{
+			_actionButton.alpha = 1;
+			_symbolTextfield.alpha = 1;
+		}
+		
+		private function hideSymbolButton():void
+		{
+			_actionButton.alpha = .25;
+			_symbolTextfield.alpha = .25;
 		}
 	}
 }

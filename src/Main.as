@@ -18,13 +18,14 @@ package
 	import flash.events.MouseEvent;
 	import flash.filesystem.File;
 	
+	import messages.SaveDirectory;
+	
 	[SWF(backgroundColor="0xFFFFFF", width="760" , height="750", frameRate="40")]
 	
 	public class Main extends Sprite
 	{
-		private static const _DEFAULT_XML:String = "TestXML.xml";
 		private static const _DEFAULT_SYMBOL:String = "Symbol Name";
-		public static var activeNamepace:Namespace; 
+		private var _directoryToScan:String;
 		private var _view:XMLValidatorView;
 		private var _testSymbol:DisplayObjectContainer;
 		private var _config:ConfigManager;
@@ -35,22 +36,29 @@ package
 			
 			new XBAUXManager();
 			
-			Message.messenger.add(LogDisplay, onLogDisplay);
-			
 			_view = new XMLValidatorView();
 			_view.defaultSymbolPath = _DEFAULT_SYMBOL;
-			_view.signalScanDriectory.add(clickedValidateDirectory);
-			_view.signalValidateFiles.add(clickedValidateFiles);
-			_view.signalValidateSymbol.add(clickedValidateSymbol);
-			//_view.scaleX = 2;
-			//_view.scaleY = 2;
+			_view.signaChangeDirectory.add(clickedChangeDirectory);
+			_view.signalValidate.add(clickedValidate);
+			_view.directoryToScan = _config.lastKnownDirectory;
 			addChild(_view);				
 			
 			new ValidateXMLonDnD(_view.outputContainer);
 			
 			Message.messenger.add(SymbolLoaded, onSymbolLoaded);
 			
+			Message.messenger.add(LogDisplay, onLogDisplay);
+
+			Message.messenger.add(SaveDirectory, onDirectoryChange);
+			
 			scanLastKnownDirectory();
+		}
+		
+		private function onDirectoryChange(message:SaveDirectory):void
+		{
+			_directoryToScan = message.directory;
+			_view.directoryToScan = _directoryToScan;
+			_config.lastKnownDirectory = _directoryToScan;
 		}
 		
 		private function scanLastKnownDirectory():void
@@ -81,6 +89,7 @@ package
 				
 				Message.messenger.remove(SymbolLoaded, onSymbolLoaded);
 			}
+			_view.showSymbolButton();
 		}
 		
 		protected function clickedTestSymbol(event:Event):void
@@ -92,19 +101,21 @@ package
 			_testSymbol = null;
 		}
 		
-		private function clickedValidateDirectory():void
+		private function clickedChangeDirectory():void
 		{
 			new ValidateXMLInDirectory();
 		}
 		
-		private function clickedValidateFiles():void
+		private function clickedValidate():void
 		{
-			new ValidateXMLFiles();
-		}
-		
-		private function clickedValidateSymbol():void
-		{
-			Message.messenger.dispatch(new SymbolRequest(_view.symbolPath));
+			if (_view.symbolPath)
+			{
+				Message.messenger.dispatch(new SymbolRequest(_view.symbolPath));
+			}
+			else
+			{
+				new ValidateXMLInDirectory(new File(_directoryToScan));
+			}
 		}
 		
 		private function onLogDisplay(message:LogDisplay):void

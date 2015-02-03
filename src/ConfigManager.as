@@ -20,14 +20,8 @@ package
 		
 		public function ConfigManager()
 		{
-			Message.messenger.add(SaveDirectory, configUpdated);
 			load();
-		}
-		
-		private function configUpdated(message:SaveDirectory):void
-		{
-			lastKnownDirectoy = message.directory;
-		}
+		}		
 		
 		private function load():void
 		{
@@ -69,7 +63,7 @@ package
 			return _lastKnownDirectory;//_configXML.lastKnownDirectory;
 		}
 		
-		public function set lastKnownDirectoy(value:String):void
+		public function set lastKnownDirectory(value:String):void
 		{
 			_lastKnownDirectory = value;
 			save();
