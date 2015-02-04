@@ -20,4 +20,22 @@
 		<nature>com.adobe.flexbuilder.project.apollonature</nature>
 		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>com.kixeye.wc.aibox.interfaces</name>
+			<type>2</type>
+			<locationURI>WC_ENYO_DIR/actionscript/interfaces/src</locationURI>
+		</link>
+		<link>
+			<name>warlords sources</name>
+			<type>2</type>
+			<locationURI>WARLORDS_SRC</locationURI>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>WARLORDS_SRC</name>
+			<value>file:/Users/ssemenov/projects/warlords.trunk/client/src</value>
+		</variable>
+	</variableList>
 </projectDescription>
