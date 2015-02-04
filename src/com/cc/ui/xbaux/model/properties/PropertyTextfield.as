@@ -2,6 +2,7 @@ package com.cc.ui.xbaux.model.properties
 {
 	import flash.display.DisplayObjectContainer;
 	import flash.text.TextField;
+	import com.cc.ui.xbaux.errors.ContractError;
 	
 	public class PropertyTextfield extends Property
 	{

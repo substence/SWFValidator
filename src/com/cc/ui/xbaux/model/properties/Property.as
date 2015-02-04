@@ -4,6 +4,7 @@ package com.cc.ui.xbaux.model.properties
 	
 	import flash.display.DisplayObject;
 	import flash.display.DisplayObjectContainer;
+	import com.cc.ui.xbaux.errors.ContractError;
 	
 	public class Property
 	{

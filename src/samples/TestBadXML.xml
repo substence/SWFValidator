@@ -2,11 +2,11 @@
 <swf path="XP_Earned_Animations.swf">
 	<symbol path="XPEarnedBracket">
 		<property type="text" path="btnCollect.bBuild.label"/>
-		<property type="button" path="btnCollect"/>
-		<property type="movieclip" path="progressMC"/>
-		<property type="image" path="bracketText.label"/>
+		<property type="buttton" path="btnCollect"/>
+		<property type="movieclip" path="progresssMC"/>
+		<property type="image"/>
 	</symbol>
-	<symbol path="BonusXP">
+	<symbol path="BonusXP" poop="a lot">
 		<property type="text" path="mcXP.tXP"/>
 	</symbol>
 </swf>

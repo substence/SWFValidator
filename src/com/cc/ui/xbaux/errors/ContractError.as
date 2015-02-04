@@ -1,4 +1,4 @@
-package com.cc.ui.xbaux.model.properties
+package com.cc.ui.xbaux.errors
 {
 	public class ContractError extends Error
 	{

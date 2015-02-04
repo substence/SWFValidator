@@ -40,6 +40,7 @@ package
 			_view.defaultSymbolPath = _DEFAULT_SYMBOL;
 			_view.signaChangeDirectory.add(clickedChangeDirectory);
 			_view.signalValidate.add(clickedValidate);
+			_view.signalShowSymbol.add(clickedShowSymbol);
 			_view.directoryToScan = _config.lastKnownDirectory;
 			addChild(_view);				
 			
@@ -110,11 +111,7 @@ package
 		private function clickedValidate():void
 		{
 			_view.clearLog();
-			if (_view.symbolPath)
-			{
-				Message.messenger.dispatch(new SymbolRequest(_view.symbolPath));
-			}
-			else if (_directoryToScan)
+			if (_directoryToScan)
 			{
 				new ValidateXMLInDirectory(new File(_directoryToScan));
 			}
@@ -122,6 +119,12 @@ package
 			{
 				new ValidateXMLInDirectory();
 			}
+		}
+		
+		private function clickedShowSymbol():void
+		{
+			_view.clearLog();
+			Message.messenger.dispatch(new SymbolRequest(_view.symbolPath));
 		}
 		
 		private function onLogDisplay(message:LogDisplay):void

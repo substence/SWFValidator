@@ -3,9 +3,9 @@ package com.cc.ui.xbaux
 	import com.cc.messenger.Message;
 	import com.cc.ui.xbaux.messages.LogRequest;
 	import com.cc.ui.xbaux.model.XBAUXContract;
-	import com.cc.ui.xbaux.model.XBAUXError;
+	import com.cc.ui.xbaux.errors.XBAUXError;
 	import com.cc.ui.xbaux.model.XBAUXSymbol;
-	import com.cc.ui.xbaux.model.properties.ContractError;
+	import com.cc.ui.xbaux.errors.ContractError;
 	import com.cc.ui.xbaux.model.properties.Property;
 	
 	import flash.display.MovieClip;

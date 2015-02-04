@@ -1,4 +1,4 @@
-package com.cc.ui.xbaux.model
+package com.cc.ui.xbaux.errors
 {
 	public class XBAUXError extends Error
 	{

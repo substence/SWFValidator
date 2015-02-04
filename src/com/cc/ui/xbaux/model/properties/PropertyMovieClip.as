@@ -2,6 +2,7 @@ package com.cc.ui.xbaux.model.properties
 {
 	import flash.display.DisplayObjectContainer;
 	import flash.display.MovieClip;
+	import com.cc.ui.xbaux.errors.ContractError;
 
 	public class PropertyMovieClip extends Property
 	{

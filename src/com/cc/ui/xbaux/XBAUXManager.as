@@ -16,6 +16,7 @@ package com.cc.ui.xbaux
 	{
 		//todo clean this up?
 		private var _contracts:Dictionary;
+		private static const _DOES_SAVE:Boolean = false;
 		public namespace desktop;
 		
 		public function XBAUXManager()
@@ -99,7 +100,10 @@ package com.cc.ui.xbaux
 		private function onInterpretationComplete(interpreter:XBAUXInterpreter):void
 		{
 			var contract:XBAUXContract = interpreter.contract;
-			_contracts[interpreter.name] = contract;
+			if (_DOES_SAVE)
+			{
+				_contracts[interpreter.name] = contract;
+			}
 			
 			dispatchLoadedContract(contract);
 		}
