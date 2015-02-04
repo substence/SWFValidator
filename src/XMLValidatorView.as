@@ -44,7 +44,7 @@ package
 			{
 				_directory = getInputTextfield();
 				_directory.autoSize = TextFieldAutoSize.LEFT;
-				_directory.addEventListener(MouseEvent.CLICK, clickedChangeDirectory);
+				_directoryContainer.addEventListener(MouseEvent.CLICK, clickedChangeDirectory);
 				_directoryContainer.addChild(_directory);
 				_directoryContainer.buttonMode = true;
 				_directoryContainer.mouseChildren = false;

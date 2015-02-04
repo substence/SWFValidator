@@ -16,7 +16,7 @@ package com.cc.ui.xbaux
 	{
 		//todo clean this up?
 		private var _contracts:Dictionary;
-		private static const _DOES_SAVE:Boolean = false;
+		private static const _DOES_CLEAR_CACHE_ON_CONTRACT_REQUEST:Boolean = false;
 		public namespace desktop;
 		
 		public function XBAUXManager()
@@ -30,6 +30,10 @@ package com.cc.ui.xbaux
 		
 		private function onContractRequest(request:ContractRequest):void
 		{
+			if (_DOES_CLEAR_CACHE_ON_CONTRACT_REQUEST)
+			{
+				_contracts = new Dictionary();
+			}
 			var contract:XBAUXContract = _contracts[request.contractName];
 			if (contract)
 			{
@@ -100,10 +104,7 @@ package com.cc.ui.xbaux
 		private function onInterpretationComplete(interpreter:XBAUXInterpreter):void
 		{
 			var contract:XBAUXContract = interpreter.contract;
-			if (_DOES_SAVE)
-			{
-				_contracts[interpreter.name] = contract;
-			}
+			_contracts[interpreter.name] = contract;
 			
 			dispatchLoadedContract(contract);
 		}
