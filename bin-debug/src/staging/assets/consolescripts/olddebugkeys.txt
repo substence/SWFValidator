@@ -1,3 +1,0 @@
-echo "Running olddebugkeys script"
-debugRequiresCmd 0
-debugKeysToggle 1

@@ -22,6 +22,16 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>[source path] WARLORDS_SRC</name>
+			<type>2</type>
+			<locationURI>WARLORDS_SRC</locationURI>
+		</link>
+		<link>
+			<name>[source path] src</name>
+			<type>2</type>
+			<locationURI>WC_ENYO_DIR/actionscript/interfaces/src</locationURI>
+		</link>
+		<link>
 			<name>com.kixeye.wc.aibox.interfaces</name>
 			<type>2</type>
 			<locationURI>WC_ENYO_DIR/actionscript/interfaces/src</locationURI>
@@ -35,7 +45,11 @@
 	<variableList>
 		<variable>
 			<name>WARLORDS_SRC</name>
-			<value>file:/Users/ssemenov/projects/warlords.trunk/client/src</value>
+			<value>file:/Users/omartinez/Documents/workspace/warlords-ui-update/client/src</value>
+		</variable>
+		<variable>
+			<name>WC_ENYO_DIR</name>
+			<value>file:/Users/omartinez/Documents/workspace/enyo-trunk</value>
 		</variable>
 	</variableList>
 </projectDescription>

@@ -1,5 +1,0 @@
-[{"sound":"nuke","key":"special/halloween/allwhite.jpg", "offset":{"x":-20,"y":-20}, "time":1,"staycount":1, "fadetime":4, "shake":10, "alpha":1,"gamescale":1,"advancedelay":4},
-{"sound":"","key":"special/halloween/scorchmarks.png","time":1,"staycount":5, "fadetime":1, "shake":30,"alpha":1,"gamescale":0.5,"advancedelay":0},
-{"sound":"","key":"special/halloween/craters.png","time":1,"staycount":3, "shake":30, "fadetime":4, "startdelay":2, "alpha":1,"gamescale":0.5,"advancedelay":0},
-{"sound":"","key":"special/halloween/nuke.png", "offset":{"x":-378,"y":-336}, "scaleto":1.2,"fadetime":2, "shake":200, "time":0,"staycount":1,"alpha":1,"gamescale":0.5,"advancedelay":9},
-{"sound":"birds","key":"special/halloween/rubble.png","time":1,"staycount":1,"alpha":1, "shake":30,"fadetime":4, "gamescale":0.5,"advancedelay":12}]
